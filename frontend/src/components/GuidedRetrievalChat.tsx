@@ -9,7 +9,8 @@ interface GuidedRetrievalChatProps {
 
 interface ExtendedChatMessage extends ChatMessage {
   candidates?: Photo[];
-  confirmedPhotoId?: string;
+  confirmedPhotoIds?: string[];
+  isLocked?: boolean;
 }
 
 export const GuidedRetrievalChat: React.FC<GuidedRetrievalChatProps> = ({ onClose, onOpenPhotoViewer }) => {
@@ -22,7 +23,7 @@ export const GuidedRetrievalChat: React.FC<GuidedRetrievalChatProps> = ({ onClos
   const [input, setInput] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false);
   const [selectedPhotoIds, setSelectedPhotoIds] = useState<string[]>([]);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
 
   // Ensure clean landing at top of conversation on mount
   useEffect(() => {
@@ -30,7 +31,12 @@ export const GuidedRetrievalChat: React.FC<GuidedRetrievalChatProps> = ({ onClos
   }, []);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (chatContainerRef.current) {
+      chatContainerRef.current.scrollTo({
+        top: chatContainerRef.current.scrollHeight,
+        behavior: 'smooth',
+      });
+    }
   };
 
   useEffect(() => {
@@ -43,6 +49,39 @@ export const GuidedRetrievalChat: React.FC<GuidedRetrievalChatProps> = ({ onClos
     setSelectedPhotoIds((prev) =>
       prev.includes(photoId) ? prev.filter((id) => id !== photoId) : [...prev, photoId]
     );
+  };
+
+  const handleConfirmSelected = async (targetMsgIdx: number) => {
+    if (selectedPhotoIds.length === 0) return;
+
+    const confirmedIds = [...selectedPhotoIds];
+    setSelectedPhotoIds([]);
+
+    // Instantly lock ONLY the specific target candidate card (No LLM call!)
+    setMessages((prev) => {
+      const updated = [...prev];
+      if (updated[targetMsgIdx]) {
+        updated[targetMsgIdx] = {
+          ...updated[targetMsgIdx],
+          isLocked: true,
+          confirmedPhotoIds: confirmedIds,
+        };
+      }
+      return [
+        ...updated,
+        { role: 'user', content: `[Confirmed ${confirmedIds.length} photo(s)]` },
+        { role: 'assistant', content: 'found it, glad that worked!' },
+      ];
+    });
+
+    // Send confirmation event for retrieval tracking
+    try {
+      for (const pid of confirmedIds) {
+        await confirmMatch(pid);
+      }
+    } catch (err) {
+      console.error('Error sending confirm match:', err);
+    }
   };
 
   const handleSend = async (e?: React.FormEvent) => {
@@ -124,10 +163,12 @@ export const GuidedRetrievalChat: React.FC<GuidedRetrievalChatProps> = ({ onClos
         )}
       </div>
 
-      {/* Messages Scroll Area */}
-      <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-4 pb-4">
+      {/* Messages Scroll Area - Scroll strictly constrained internally */}
+      <div ref={chatContainerRef} className="flex-1 overflow-y-auto p-4 flex flex-col gap-4 pb-4">
         {messages.map((msg, idx) => {
           const isUser = msg.role === 'user';
+          const isLocked = msg.isLocked || false;
+          const confirmedPhotoIds = msg.confirmedPhotoIds || [];
 
           return (
             <div
@@ -148,14 +189,17 @@ export const GuidedRetrievalChat: React.FC<GuidedRetrievalChatProps> = ({ onClos
               {/* Candidate Photo Grid Inside Chat */}
               {!isUser && msg.candidates && msg.candidates.length > 0 && (
                 <div className="mt-3 w-full bg-surface-container-lowest p-3 rounded-2xl shadow-sm border border-surface-container-high flex flex-col gap-2">
-                  <span className="text-xs font-semibold text-on-surface-variant flex items-center gap-1">
-                    <span className="material-symbols-outlined text-[14px]">touch_app</span>
-                    Tap ✓ to select photos to chat about, or tap image to view:
-                  </span>
+                  {!isLocked && (
+                    <span className="text-xs font-semibold text-on-surface-variant flex items-center gap-1">
+                      <span className="material-symbols-outlined text-[14px]">touch_app</span>
+                      Tap ✓ on any photo that might be the one, then hit Confirm below.
+                    </span>
+                  )}
 
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
                     {msg.candidates.map((photo, candIdx) => {
                       const isSelected = selectedPhotoIds.includes(photo.id);
+                      const isConfirmed = confirmedPhotoIds.includes(photo.id);
 
                       const handleTileClick = () => {
                         if (onOpenPhotoViewer && msg.candidates) {
@@ -165,7 +209,9 @@ export const GuidedRetrievalChat: React.FC<GuidedRetrievalChatProps> = ({ onClos
 
                       const handleToggleClick = (e: React.MouseEvent) => {
                         e.stopPropagation();
-                        toggleSelectCandidate(photo.id);
+                        if (!isLocked) {
+                          toggleSelectCandidate(photo.id);
+                        }
                       };
 
                       return (
@@ -173,7 +219,9 @@ export const GuidedRetrievalChat: React.FC<GuidedRetrievalChatProps> = ({ onClos
                           key={photo.id}
                           onClick={handleTileClick}
                           className={`relative aspect-square rounded-xl overflow-hidden bg-surface-container cursor-pointer group border-2 transition-all ${
-                            isSelected
+                            isConfirmed
+                              ? 'border-[#1e8e3e] ring-2 ring-[#1e8e3e]'
+                              : isSelected && !isLocked
                               ? 'border-[#0058bd] ring-4 ring-[#0058bd] ring-inset scale-95'
                               : 'border-transparent hover:border-primary'
                           }`}
@@ -184,40 +232,53 @@ export const GuidedRetrievalChat: React.FC<GuidedRetrievalChatProps> = ({ onClos
                             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                           />
 
-                          {/* Top-Left Corner Multi-Select Checkmark Button */}
-                          <button
-                            onClick={handleToggleClick}
-                            aria-label="Select photo"
-                            className={`absolute top-1.5 left-1.5 w-6 h-6 rounded-full flex items-center justify-center transition-all z-20 ${
-                              isSelected
-                                ? 'bg-[#0058bd] text-white opacity-100 shadow-md ring-2 ring-white scale-100'
-                                : 'bg-black/50 backdrop-blur-xs text-white opacity-80 hover:opacity-100 hover:scale-110 active:scale-95'
-                            }`}
-                            title={isSelected ? 'Deselect photo' : 'Select photo'}
-                          >
-                            <span className="material-symbols-outlined text-[15px] font-bold leading-none select-none">
-                              check
-                            </span>
-                          </button>
-
-                          {/* Tag Badges */}
-                          {photo.tags.length > 0 && !isSelected && (
-                            <div className="absolute bottom-1 left-1 right-1 bg-black/60 backdrop-blur-sm text-white px-1.5 py-0.5 rounded-md text-[10px] truncate">
-                              {photo.tags[0].label}
+                          {/* Checkbox (if active) or Static Confirmed Badge (if locked) */}
+                          {!isLocked ? (
+                            <button
+                              onClick={handleToggleClick}
+                              aria-label="Select photo"
+                              className={`absolute top-1.5 left-1.5 w-6 h-6 rounded-full flex items-center justify-center transition-all z-20 ${
+                                isSelected
+                                  ? 'bg-[#0058bd] text-white opacity-100 shadow-md ring-2 ring-white scale-100'
+                                  : 'bg-black/50 backdrop-blur-xs text-white opacity-80 hover:opacity-100 hover:scale-110 active:scale-95'
+                              }`}
+                              title={isSelected ? 'Deselect photo' : 'Select photo'}
+                            >
+                              <span className="material-symbols-outlined text-[15px] font-bold leading-none select-none">
+                                check
+                              </span>
+                            </button>
+                          ) : isConfirmed ? (
+                            <div className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-full bg-[#1e8e3e] text-white text-[10px] font-bold flex items-center gap-1 shadow-sm z-20">
+                              <span className="material-symbols-outlined text-[12px] font-bold leading-none">check</span>
+                              <span>Confirmed</span>
                             </div>
-                          )}
+                          ) : null}
 
-                          {/* Selection Badge Overlay */}
-                          {isSelected && (
-                            <div className="absolute bottom-1 left-1 right-1 bg-[#0058bd]/90 backdrop-blur-sm text-white px-1.5 py-0.5 rounded-md text-[10px] font-semibold flex items-center justify-center gap-1 shadow-xs">
-                              <span className="material-symbols-outlined text-[12px] font-bold">check_circle</span>
-                              <span>Selected</span>
+                          {/* Tag Badges - Always preserved on thumbnail */}
+                          {photo.tags.length > 0 && (
+                            <div className="absolute bottom-1 left-1 right-1 bg-black/60 backdrop-blur-sm text-white px-1.5 py-0.5 rounded-md text-[10px] truncate z-10">
+                              {photo.tags[0].label}
                             </div>
                           )}
                         </div>
                       );
                     })}
                   </div>
+
+                  {/* Single Confirm Button - ONLY below photo grid, ONLY when active & selected */}
+                  {!isLocked && selectedPhotoIds.length > 0 && (
+                    <div className="mt-2 flex items-center justify-end">
+                      <button
+                        type="button"
+                        onClick={() => handleConfirmSelected(idx)}
+                        className="px-4 py-2 bg-[#0058bd] text-white text-xs font-semibold rounded-full shadow-md hover:bg-[#004494] active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer z-10"
+                      >
+                        <span className="material-symbols-outlined text-[16px] font-bold">check</span>
+                        <span>Confirm ({selectedPhotoIds.length})</span>
+                      </button>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
@@ -231,11 +292,9 @@ export const GuidedRetrievalChat: React.FC<GuidedRetrievalChatProps> = ({ onClos
             <span>Searching memory library...</span>
           </div>
         )}
-
-        <div ref={messagesEndRef} />
       </div>
 
-      {/* Contextual Selected Photos Indicator Pill */}
+      {/* Contextual Selected Photos Indicator Pill (No duplicate Confirm button) */}
       {selectedPhotoIds.length > 0 && (
         <div className="px-4 py-2 bg-[#E8F0FE] border-t border-[#adc6ff] flex items-center justify-between gap-2 shrink-0 animate-in slide-in-from-bottom-2 duration-200">
           <div className="flex items-center gap-2 min-w-0">
@@ -245,16 +304,12 @@ export const GuidedRetrievalChat: React.FC<GuidedRetrievalChatProps> = ({ onClos
             <span className="text-xs font-semibold text-[#0058bd] truncate font-sans">
               {selectedPhotoIds.length} photo{selectedPhotoIds.length > 1 ? 's' : ''} selected
             </span>
-            <span className="text-[11px] text-[#5F6368] hidden sm:inline font-sans font-normal">
-              — Your reply will reference these photos
-            </span>
           </div>
           <button
             type="button"
             onClick={() => setSelectedPhotoIds([])}
-            className="text-xs font-medium text-[#5F6368] hover:text-[#202124] flex items-center gap-0.5 hover:underline font-sans"
+            className="text-xs font-medium text-[#5F6368] hover:text-[#202124] flex items-center gap-0.5 hover:underline font-sans px-2 py-1"
           >
-            <span className="material-symbols-outlined text-sm">close</span>
             Clear selection
           </button>
         </div>

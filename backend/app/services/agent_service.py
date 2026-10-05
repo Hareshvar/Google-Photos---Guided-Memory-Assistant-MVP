@@ -46,6 +46,10 @@ class AgentService:
         """
         selected_photo_ids, clean_user_message = _parse_selection_and_clean(user_message)
 
+        # Sliding Window Memory: Carry context from the last 5 exchanges (max 10 messages)
+        # Drop oldest exchange first when history exceeds 10 messages
+        history = history[-10:] if len(history) > 10 else history
+
         # Count prior assistant clarifying follow-ups in history (excluding initial welcome greeting)
         prior_followups = sum(
             1 for m in history
@@ -62,6 +66,7 @@ History: {[{"role": m.role, "content": m.content} for m in history]}
 
 Extract a JSON object with these keys:
 - "is_out_of_scope": boolean (true ONLY if prompt is totally unrelated to photo memory search, e.g. general trivia, coding, poem requests)
+- "is_factual_question_about_photo": boolean (true if user is asking a factual question about a photo on screen/selected, e.g. "when was the image taken", "with whom did I take the picture", "who is in this photo", "where was this", "what date is this", "tell me about this photo")
 - "is_negative_feedback": boolean (true if user indicates selected photo(s) are NOT relevant, wrong tag, wrong photo, e.g. "this is not related to job", "not relevant", "wrong photo", "remove")
 - "time_anchor": string or null (e.g. "Started New Job", "Goa Trip", "Moved to New City", "March 2023", "2022", "last year")
 - "public_event": string or null (e.g. "Diwali 2023", "Diwali", "Elections 2023")
@@ -75,6 +80,235 @@ Extract a JSON object with these keys:
         if extracted.get("is_out_of_scope", False):
             return ChatResponse(
                 response=SCOPE_REDIRECT_TEXT,
+                candidates=[],
+                needs_followup=False,
+                meta=meta
+            )
+
+        msg_lower = clean_user_message.lower().strip()
+
+        # 1. Robust Greetings Normalizer (Handles "heyyy", "hiii", "hellooo", etc.)
+        normalized_word = re.sub(r'^(h+e+y+|h+i+|h+e+l+o+|y+o+|s+u+p+).*$', r'\1', msg_lower)
+        normalized_word = re.sub(r'(.)\1+', r'\1', normalized_word)
+        GREETINGS_SET = {"hi", "hello", "hey", "yo", "sup", "greetings"}
+        is_greeting = normalized_word in GREETINGS_SET or any(
+            g in msg_lower.split() for g in ["hi", "hello", "hey", "heyy", "heyyy", "hiii", "helloo", "hellooo", "good morning", "good afternoon"]
+        )
+
+        if is_greeting:
+            return ChatResponse(
+                response="Hi there! I can help you find photos from your library. Are you looking for photos around a specific life stage or memory anchor (like a trip, new job, or event)?",
+                candidates=[],
+                needs_followup=True,
+                meta=meta
+            )
+
+        # 2. Conversational Acknowledgments / Small Talk
+        ACKNOWLEDGMENTS = ["fine", "ok", "okay", "cool", "yeah", "yes", "sure", "thanks", "thank you", "got it", "great", "nice", "awesome", "alright"]
+        if msg_lower in ACKNOWLEDGMENTS:
+            return ChatResponse(
+                response="Great! What photo would you like to find? Tell me a bit about what you remember — like a trip, a new job, or a specific event.",
+                candidates=[],
+                needs_followup=True,
+                meta=meta
+            )
+
+        # Extract any active year mentioned in recent conversation history
+        active_year = None
+        if history:
+            for m in reversed(history):
+                m_content = m.content if hasattr(m, 'content') else (m.get('content', '') if isinstance(m, dict) else '')
+                ym = re.search(r'\b(202[0-9]|201[0-9])\b', m_content)
+                if ym:
+                    active_year = ym.group(1)
+                    break
+
+        # 3. Generic Vague Prompts & Broad Anchors ("trip", "job", "city", "photo", etc.)
+        if msg_lower in ["trip", "a trip", "vacation", "trips"]:
+            if active_year:
+                all_photos = data_manager.load_photos()
+                matching_yr_photos = [p for p in all_photos if p.timestamp.startswith(active_year) and any("trip" in t.label.lower() for t in p.tags)]
+                if matching_yr_photos:
+                    return ChatResponse(
+                        response="Here are the photos from your library that match what you described.",
+                        candidates=matching_yr_photos,
+                        needs_followup=False,
+                        meta=meta
+                    )
+                else:
+                    return ChatResponse(
+                        response=f"I couldn't find any trip photos from {active_year} in your library. Would you like to try searching by another year or memory anchor?",
+                        candidates=[],
+                        needs_followup=False,
+                        meta=meta
+                    )
+            else:
+                return ChatResponse(
+                    response="Was this your Goa Trip around June 2024, or a different trip?",
+                    candidates=[],
+                    needs_followup=True,
+                    meta=meta
+                )
+
+        if msg_lower in ["job", "new job", "work"]:
+            if active_year:
+                all_photos = data_manager.load_photos()
+                matching_yr_photos = [p for p in all_photos if p.timestamp.startswith(active_year) and any("job" in t.label.lower() for t in p.tags)]
+                if matching_yr_photos:
+                    return ChatResponse(
+                        response="Here are the photos from your library that match what you described.",
+                        candidates=matching_yr_photos,
+                        needs_followup=False,
+                        meta=meta
+                    )
+                else:
+                    return ChatResponse(
+                        response=f"I couldn't find any job photos from {active_year} in your library. Would you like to try searching by another year or memory anchor?",
+                        candidates=[],
+                        needs_followup=False,
+                        meta=meta
+                    )
+            else:
+                return ChatResponse(
+                    response="Was this around when you Started New Job in December 2025, or a different time?",
+                    candidates=[],
+                    needs_followup=True,
+                    meta=meta
+                )
+
+        if msg_lower in ["city", "moved", "moving", "new city"]:
+            if active_year:
+                all_photos = data_manager.load_photos()
+                matching_yr_photos = [p for p in all_photos if p.timestamp.startswith(active_year) and any("city" in t.label.lower() or "move" in t.label.lower() for t in p.tags)]
+                if matching_yr_photos:
+                    return ChatResponse(
+                        response="Here are the photos from your library that match what you described.",
+                        candidates=matching_yr_photos,
+                        needs_followup=False,
+                        meta=meta
+                    )
+                else:
+                    return ChatResponse(
+                        response=f"I couldn't find any moving or city photos from {active_year} in your library. Would you like to try searching by another year or memory anchor?",
+                        candidates=[],
+                        needs_followup=False,
+                        meta=meta
+                    )
+            else:
+                return ChatResponse(
+                    response="Was this when you Moved to New City in August 2023, or another time?",
+                    candidates=[],
+                    needs_followup=True,
+                    meta=meta
+                )
+
+        if msg_lower in ["festival", "festivals", "celebration", "celebrations", "holiday", "holidays", "event", "events"]:
+            return ChatResponse(
+                response="Which festival or celebration were you looking for — for example, Diwali 2023, or a different event?",
+                candidates=[],
+                needs_followup=True,
+                meta=meta
+            )
+
+        # Broad Standalone Year Prompts ("2024", "2023", "2025", etc.)
+        year_match = re.search(r'\b(202[0-9]|201[0-9])\b', msg_lower)
+        if year_match and len(msg_lower.split()) <= 3 and not any(kw in msg_lower for kw in ["goa", "diwali", "job", "city", "moved", "trip", "beach"]):
+            yr = year_match.group(1)
+            if yr == "2024":
+                yr_prompt = "What are you looking for from 2024 — for example, your Goa Trip, or a different memory?"
+            elif yr == "2023":
+                yr_prompt = "What are you looking for from 2023 — for example, Diwali 2023 or when you Moved to New City?"
+            elif yr == "2025":
+                yr_prompt = "What are you looking for from 2025 — for example, when you Started New Job in December 2025?"
+            else:
+                yr_prompt = f"What photo are you looking for from {yr}? Tell me a bit about what you remember (like a trip or event)."
+
+            return ChatResponse(
+                response=yr_prompt,
+                candidates=[],
+                needs_followup=True,
+                meta=meta
+            )
+
+        VAGUE_PHOTO_PROMPTS = [
+            "photo", "photos", "a photo", "picture", "pictures", "find a photo", "find photo",
+            "search photo", "help me find a photo", "looking for a photo", "show photos",
+            "i want to find a photo", "find me a photo", "get photo"
+        ]
+        if msg_lower in VAGUE_PHOTO_PROMPTS:
+            return ChatResponse(
+                response="Was this photo around a specific time — starting a new job, moving, or a trip?",
+                candidates=[],
+                needs_followup=True,
+                meta=meta
+            )
+
+        # 4. Handle Factual Follow-up Questions about Already-Shown / Selected Photos
+        is_factual_q = extracted.get("is_factual_question_about_photo", False) or any(
+            kw in msg_lower for kw in [
+                "when was", "date of", "timestamp", "taken", "where was", "location", "place of",
+                "who is", "who was", "with whom", "who took", "people in", "person in",
+                "what tag", "which tag", "tag on", "details of", "tell me about",
+                "what camera", "what device", "phone model", "when was the image", "when was the photo"
+            ]
+        )
+
+        all_photos = data_manager.load_photos()
+
+        if is_factual_q:
+            target_photos = []
+            if selected_photo_ids:
+                target_photos = [p for p in all_photos if p.id in selected_photo_ids]
+            elif history:
+                # Look for most recent candidate photos in history
+                for m in reversed(history):
+                    candidates_list = getattr(m, 'candidates', None) or (m.get('candidates') if isinstance(m, dict) else None)
+                    if candidates_list:
+                        c_ids = [c.id if hasattr(c, 'id') else c.get('id') for c in candidates_list if c]
+                        target_photos = [p for p in all_photos if p.id in c_ids]
+                        if target_photos:
+                            break
+
+            msg_lower = clean_user_message.lower()
+            if any(k in msg_lower for k in ["who", "whom", "people", "person", "friend", "family", "with me"]):
+                resp = "I don't have information about who is in this photo recorded in the metadata."
+
+            elif any(k in msg_lower for k in ["when", "date", "timestamp", "time", "taken"]):
+                if target_photos:
+                    dates = sorted(list(set([p.timestamp for p in target_photos if p.timestamp])))
+                    if len(dates) == 1:
+                        d_str = dates[0]
+                        try:
+                            dt = datetime.strptime(d_str, "%Y-%m-%d")
+                            formatted_date = dt.strftime("%B %d, %Y")
+                            resp = f"This photo was taken on {formatted_date} ({d_str})."
+                        except Exception:
+                            resp = f"This photo was taken on {d_str}."
+                    elif len(dates) > 1:
+                        resp = f"The selected photos were taken between {dates[0]} and {dates[-1]}."
+                    else:
+                        resp = "I don't have date or timestamp information available for this photo."
+                else:
+                    resp = "I don't have date or timestamp information available for that photo."
+
+            elif any(k in msg_lower for k in ["where", "location", "place", "city"]):
+                resp = "I don't have location information available for this photo in the metadata."
+
+            elif any(k in msg_lower for k in ["tag", "label", "event", "trip"]):
+                if target_photos and target_photos[0].tags:
+                    tag_names = ", ".join([f"'{t.label}'" for t in target_photos[0].tags])
+                    resp = f"This photo is tagged with {tag_names}."
+                else:
+                    resp = "I don't have tag or label information available for this photo."
+
+            elif any(k in msg_lower for k in ["camera", "device", "phone"]):
+                resp = "I don't have camera or device information recorded for this photo."
+
+            else:
+                resp = "I don't have information available for that question regarding this photo."
+
+            return ChatResponse(
+                response=resp,
                 candidates=[],
                 needs_followup=False,
                 meta=meta
@@ -141,6 +375,10 @@ Extract a JSON object with these keys:
         if is_generic_vague:
             time_anchor = None
             needs_followup = True
+        else:
+            # If not a generic vague phrase and no time_anchor or public_event, don't force generic followup
+            if not (time_anchor or public_event):
+                needs_followup = False
 
         # Enforce Max 1 Follow-up Rule (Edge case 3.1 & 3.2)
         if already_asked_followup:
@@ -168,7 +406,7 @@ Extract a JSON object with these keys:
 
         # Step 3: Metadata Filter against photos.json
         all_photos = data_manager.load_photos()
-        candidates = self._filter_photos(all_photos, time_anchor, public_event, resolved_date_range)
+        candidates = self._filter_photos(all_photos, time_anchor, public_event, resolved_date_range, clean_user_message)
         if selected_photo_ids:
             candidates = [p for p in candidates if p.id not in selected_photo_ids]
 
@@ -207,7 +445,7 @@ Extract a JSON object with these keys:
             if p not in ordered_candidates:
                 ordered_candidates.append(p)
 
-        response_text = "Here are the photos from your library that match what you described. Tap the photo to confirm if it's the one you were looking for!"
+        response_text = "Here are the photos from your library that match what you described."
 
         return ChatResponse(
             response=response_text,
@@ -221,7 +459,8 @@ Extract a JSON object with these keys:
         photos: List[Photo],
         time_anchor: Optional[str],
         public_event: Optional[str],
-        resolved_date_range: Optional[Tuple[str, str]]
+        resolved_date_range: Optional[Tuple[str, str]],
+        raw_message: Optional[str] = None
     ) -> List[Photo]:
         """Filters photos.json by matching tag labels, resolved event dates, or timeframe."""
         matches = []
@@ -232,8 +471,28 @@ Extract a JSON object with these keys:
         if public_event:
             query_terms.append(public_event.lower())
 
+        # Fallback raw message terms ONLY if no structured time_anchor or public_event was extracted
+        if not query_terms and raw_message:
+            raw_words = [w.strip().lower() for w in raw_message.split() if len(w.strip()) >= 3]
+            stop_words = {"the", "and", "for", "are", "you", "can", "see", "show", "find", "get", "with", "this", "that", "want", "some", "like", "yes", "yeah", "sure", "one", "that's", "one's"}
+            for w in raw_words:
+                if w not in stop_words and w not in query_terms:
+                    query_terms.append(w)
+
+        # Check if an explicit year filter is requested (e.g. "2024" or "2023")
+        explicit_year = None
+        if time_anchor and re.search(r'\b(202[0-9]|201[0-9])\b', time_anchor):
+            explicit_year = re.search(r'\b(202[0-9]|201[0-9])\b', time_anchor).group(1)
+        elif raw_message and re.search(r'\b(202[0-9]|201[0-9])\b', raw_message):
+            explicit_year = re.search(r'\b(202[0-9]|201[0-9])\b', raw_message).group(1)
+
         for p in photos:
             photo_matched = False
+
+            # Enforce strict year constraint if explicit year was specified
+            if explicit_year and not p.timestamp.startswith(explicit_year):
+                continue
+
             # 1. Match tag label
             photo_tag_labels = [t.label.lower() for t in p.tags]
             for term in query_terms:
@@ -254,17 +513,6 @@ Extract a JSON object with these keys:
 
             if photo_matched:
                 matches.append(p)
-
-        # If query terms exist but no tag/date matched, try broader matching
-        if not matches and (time_anchor or public_event):
-            # Check if any tag label contains partial word matches
-            for p in photos:
-                labels_str = " ".join([t.label.lower() for t in p.tags])
-                for term in query_terms:
-                    words = term.split()
-                    if any(w in labels_str for w in words if len(w) > 3):
-                        matches.append(p)
-                        break
 
         return matches
 

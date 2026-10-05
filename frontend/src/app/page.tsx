@@ -200,13 +200,13 @@ export default function Home() {
             </div>
           )}
 
-          {/* Tab 1: Guided Search Chat View */}
-          {activeTab === 'chat' && (
+          {/* Tab 1: Guided Search Chat View (Kept mounted to preserve session chat history across tab switches) */}
+          <div className={activeTab === 'chat' ? 'block' : 'hidden'}>
             <GuidedRetrievalChat
               onClose={() => setActiveTab('photos')}
               onOpenPhotoViewer={handleOpenPhotoViewer}
             />
-          )}
+          </div>
 
           {/* Tab 2: Photos Library View */}
           {activeTab === 'photos' && (
