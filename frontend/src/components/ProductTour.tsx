@@ -62,18 +62,22 @@ export const ProductTour: React.FC<ProductTourProps> = ({
 
   const step = TOUR_STEPS.find((s) => s.stepNumber === currentStep) || TOUR_STEPS[0];
 
-  // Auto-scroll on Step 3 so both yellow and green tag sections are centered in viewport
+  // Auto-scroll logic for steps to ensure target element is cleanly in viewport
   useEffect(() => {
-    if (isOpen && currentStep === 3) {
-      const scrollTimer = setTimeout(() => {
-        const elemYellow = document.getElementById('tour-step-3-yellow');
-        if (elemYellow) {
-          elemYellow.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-          window.scrollTo({ top: 250, behavior: 'smooth' });
-        }
-      }, 50);
-      return () => clearTimeout(scrollTimer);
+    if (isOpen) {
+      if (currentStep === 1 || currentStep === 2) {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+      } else if (currentStep === 3) {
+        const scrollTimer = setTimeout(() => {
+          const elemYellow = document.getElementById('tour-step-3-yellow');
+          if (elemYellow) {
+            elemYellow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            window.scrollTo({ top: 250, behavior: 'smooth' });
+          }
+        }, 50);
+        return () => clearTimeout(scrollTimer);
+      }
     }
   }, [isOpen, currentStep]);
 
@@ -115,7 +119,11 @@ export const ProductTour: React.FC<ProductTourProps> = ({
 
     const elem = document.getElementById(step.targetId);
     if (elem) {
-      const rect = elem.getBoundingClientRect();
+      let rect = elem.getBoundingClientRect();
+      if ((currentStep === 1 || currentStep === 2) && rect.top < 50) {
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        rect = elem.getBoundingClientRect();
+      }
       setTargetRect(rect);
 
       // Compute tooltip placement within screen boundaries
