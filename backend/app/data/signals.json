@@ -1,0 +1,11 @@
+{
+  "calendar_events": [
+    { "title": "First day — new job", "date": "2023-03-01", "inferred_tag": "Started New Job" }
+  ],
+  "gmail_signals": [
+    { "subject": "Redbus booking confirmation — Goa", "date_range": ["2024-06-14", "2024-06-18"], "inferred_tag": "Goa Trip" }
+  ],
+  "maps_signals": [
+    { "pattern": "location_change", "detected_week": "2023-08-07", "inferred_tag": "Moved to New City" }
+  ]
+}

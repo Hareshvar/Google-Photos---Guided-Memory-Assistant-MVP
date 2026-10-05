@@ -1,0 +1,552 @@
+<!DOCTYPE html><html lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary-fixed-dim":"#fbbc05","inverse-primary":"#adc6ff","on-surface-variant":"#424753","secondary-fixed":"#89fa9b","secondary-fixed-dim":"#6ddd81","surface-container-lowest":"#ffffff","inverse-on-surface":"#f1f0f4","tertiary":"#765700","surface-container-high":"#e9e7eb","on-secondary-fixed":"#002108","error-container":"#ffdad6","primary-fixed-dim":"#adc6ff","secondary-container":"#86f898","tertiary-container":"#956e00","on-primary":"#ffffff","surface-container-highest":"#e3e2e6","primary-container":"#2771df","on-tertiary-fixed":"#261a00","surface-container":"#efedf1","on-tertiary":"#ffffff","secondary":"#006e2c","on-secondary":"#ffffff","on-primary-fixed-variant":"#004494","primary":"#0058bd","on-background":"#1a1b1e","surface-container-low":"#f4f3f7","outline-variant":"#c2c6d5","on-primary-fixed":"#001a41","on-error":"#ffffff","on-tertiary-fixed-variant":"#5c4300","background":"#faf9fd","on-surface":"#1a1b1e","on-error-container":"#93000a","outline":"#727785","surface-tint":"#005ac1","surface-dim":"#dbd9dd","on-primary-container":"#fefcff","on-tertiary-container":"#fffbff","tertiary-fixed":"#ffdfa0","surface-variant":"#e3e2e6","on-secondary-fixed-variant":"#005320","inverse-surface":"#2f3033","primary-fixed":"#d8e2ff","surface-bright":"#faf9fd","on-secondary-container":"#00722f","surface":"#faf9fd","error":"#ba1a1a"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-md":"1rem","space-sm":"0.5rem","space-xs":"0.25rem","gutter-normal":"0.5rem","margin-mobile":"1rem","space-xl":"2rem","gutter-dense":"0.25rem","space-lg":"1.5rem","gutter":"1rem","margin":"1.5rem"},"fontFamily":{"headline-xl":["Roboto Flex"],"label-md":["Roboto Flex"],"headline-sm":["Roboto Flex"],"label-lg":["Roboto Flex"],"body-lg":["Roboto Flex"],"body-md":["Roboto Flex"],"headline-lg-mobile":["Roboto Flex"],"headline-xl-mobile":["Roboto Flex"],"headline-lg":["Roboto Flex"],"headline-md":["Roboto Flex"]},"fontSize":{"headline-xl":["36px",{"lineHeight":"44px","fontWeight":"400"}],"label-md":["14px",{"lineHeight":"18px","fontWeight":"500"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"500"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"500"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"36px","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"500"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest z-40 px-margin flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm w-64 shrink-0 pr-6"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvQfjEm6l4JzSuGzZeVzu-67wsOpXDfiaWmg1mI6JkD8CDAshjN_T5W9y53vpqz-GBcIXYfNmIEM_1Lf7VTDVaf70mY8_R3gRGo554oXTgdf1JtM-4hxL7bO23oRniJOwPm5Xs8H2JFJczXrdsiQPZkO0h_uCVU5B2jNzlZkjO20eOjPPNWSFH5Vsnu2xZZfeZXzsGALkm-scBXwPhEaRayXKGhEGvvLrgrm5rZo1P-MlleGp25n5EIwUCRHXK90S2uYo" alt="Google Photos" class="w-8 h-8 object-contain"><span class="font-headline-md text-headline-md tracking-tight text-on-surface">Photos</span></div><div class="flex-1 max-w-3xl px-space-md hidden md:flex items-center"><div class="w-full h-12 bg-surface-container-low rounded-full flex items-center px-space-md gap-space-sm transition-all focus-within:bg-surface-container-lowest focus-within:shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><span class="material-symbols-outlined text-outline shrink-0">search</span><input class="w-full bg-transparent border-none outline-none font-body-md text-body-md text-on-surface placeholder:text-outline" placeholder="Search your photos, memories, or ask a question..." type="text"><a class="shrink-0 flex items-center gap-space-xs px-space-md py-1.5 bg-primary-fixed text-on-primary-fixed rounded-full hover:bg-primary-fixed-dim transition-colors" data-path="guided-retrieval" href="#"><span class="material-symbols-outlined text-[18px] text-primary">auto_awesome</span><span class="font-label-md text-label-md font-medium text-primary">Can't describe it? Guided search</span></a></div></div><div class="flex items-center gap-space-sm shrink-0 pr-6"><div class="relative flex items-center" id="tour-anchor-upload"><button class="relative z-50 flex items-center gap-space-xs px-space-md h-9 bg-primary-fixed text-primary rounded-full hover:bg-primary-fixed-dim transition-colors font-label-md text-label-md font-medium ring-4 ring-[#d8e2ff] ring-offset-2 ring-offset-surface shadow-sm"><span class="material-symbols-outlined text-[20px]">add</span><span class="">Upload</span></button><div class="absolute -top-1.5 -right-1.5 z-50 flex h-3.5 w-3.5"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#1a73e8] opacity-75"></span><span class="relative inline-flex rounded-full h-3.5 w-3.5 bg-[#1a73e8] border-2 border-white"></span></div><div class="product-tour-tooltip absolute right-0 top-11 z-50 w-80 sm:w-[320px] pt-2" id="product-tour-popover" role="dialog" aria-label="Feature Tour: Smart Upload"><div class="absolute top-0 right-6 w-0 h-0 border-x-8 border-x-transparent border-b-8 border-b-white pointer-events-none"></div><div class="bg-white rounded-2xl p-4 shadow-[0_8px_28px_rgba(0,0,0,0.18)] border border-[#dadce0] relative text-left"><button aria-label="Close tour" class="absolute top-3 right-3 p-1 rounded-full text-[#5f6368] hover:bg-[#f1f3f4] hover:text-[#202124] transition-colors" onclick="document.getElementById('product-tour-popover').style.display='none'"><span class="material-symbols-outlined text-[18px] leading-none block">close</span></button><div class="flex items-center gap-1.5 mb-2"><span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#e8f0fe] text-[#1a73e8] text-[11px] font-semibold tracking-wide uppercase"><span class="material-symbols-outlined text-[14px]">auto_awesome</span>New Feature</span><span class="text-[#5f6368] text-[12px] font-medium">• 1 of 3</span></div><h3 class="text-[#202124] text-[15px] font-medium leading-snug tracking-tight mb-1 pr-6">Try Simulated Smart Upload</h3><p class="text-[#5f6368] text-[12px] leading-relaxed mb-3.5">Upload photos to test automatic location detection, smart life-stage clustering, and guided memory retrieval.</p><div class="flex items-center justify-between pt-1 border-t border-[#f1f3f4]"><div class="flex items-center gap-1.5" aria-label="Step 1 of 3"><span class="h-2 w-2 rounded-full bg-[#1a73e8]"></span><span class="h-2 w-2 rounded-full bg-[#dadce0]"></span><span class="h-2 w-2 rounded-full bg-[#dadce0]"></span></div><div class="flex items-center gap-1"><button class="px-3 py-1 rounded-full text-[#5f6368] hover:bg-[#f1f3f4] text-[12px] font-medium transition-colors" onclick="document.getElementById('product-tour-popover').style.display='none'">Skip</button><button class="px-3.5 py-1 rounded-full bg-[#1a73e8] hover:bg-[#1557b0] text-white text-[12px] font-medium shadow-sm transition-colors" onclick="document.getElementById('product-tour-popover').style.display='none'">Next</button></div></div></div></div></div><button class="p-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">help_outline</span></button><button class="p-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">settings</span></button><div class="ml-space-xs shrink-0 flex items-center"><button class="w-8 h-8 rounded-full overflow-hidden shrink-0 flex items-center justify-center ring-2 ring-transparent hover:ring-[#dadce0] transition-all cursor-pointer focus:outline-none" aria-label="Dev Patel - Google Account"><img alt="Dev Patel" class="w-full h-full rounded-full object-cover shrink-0 block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR9dJqECcWAFENxTDrQoqH1if3Big8K-MgufjgzO831cOVYWYUubval01at4G0wra24vCGk9882ImTDO2TqclqF37k4j1WZL1TDyje3EeNX3qeChedxYM5wmeJRFC_EDqho38KEO6jXm7hKAO4PWkmAdEc_b5eJq-RM3OfN_jQoqXvdcL31EzEsZLk0VyXPLcLCC0He1L9qtkDD1NLVaAeaAI6ibZeH5-3GwXU75lW4bStRP_Wq69rPmFRm-xZjINg3T0"></button></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest z-30 flex flex-col justify-between py-space-md overflow-y-auto"><div class="flex flex-col gap-space-xs px-space-sm"><nav class="flex flex-col gap-1" data-active-classes="bg-primary-fixed text-primary font-medium rounded-full"><a aria-current="page" class="flex items-center gap-space-md px-space-md py-2.5 transition-all bg-primary-fixed text-primary font-medium rounded-full" data-path="photos" href="#"><span class="material-symbols-outlined text-[22px]">photo_library</span><span class="font-label-lg text-label-lg">Photos</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="guided-retrieval" href="#"><span class="material-symbols-outlined text-[22px]">search</span><span class="font-label-lg text-label-lg">Explore / Search</span></a><a class="flex items-center justify-between px-space-md py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="life-stages" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[22px]">loyalty</span><span class="font-label-lg text-label-lg">Life Stages</span></div><span class="bg-secondary-fixed text-on-secondary-fixed text-[11px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wider">NEW</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="tagging" href="#"><span class="material-symbols-outlined text-[22px]">label</span><span class="font-label-lg text-label-lg">Memory Tags</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="sharing" href="#"><span class="material-symbols-outlined text-[22px]">group</span><span class="font-label-lg text-label-lg">Sharing</span></a></nav><div class="h-px bg-surface-container-high my-space-sm mx-space-md"></div><div class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant font-medium">Library</div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-fixed text-primary font-medium rounded-full"><a class="flex items-center gap-space-md px-space-md py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="favorites" href="#"><span class="material-symbols-outlined text-[20px]">star_outline</span><span class="font-label-md text-label-md">Favorites</span></a><a class="flex items-center gap-space-md px-space-md py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="albums" href="#"><span class="material-symbols-outlined text-[20px]">photo_album</span><span class="font-label-md text-label-md">Albums</span></a><a class="flex items-center gap-space-md px-space-md py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="utilities" href="#"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span class="font-label-md text-label-md">Utilities</span></a><a class="flex items-center gap-space-md px-space-md py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="archive" href="#"><span class="material-symbols-outlined text-[20px]">archive</span><span class="font-label-md text-label-md">Archive</span></a><a class="flex items-center gap-space-md px-space-md py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="trash" href="#"><span class="material-symbols-outlined text-[20px]">delete</span><span class="font-label-md text-label-md">Trash</span></a></nav></div><div class="px-space-lg pt-space-md"><div class="flex items-center gap-space-sm text-on-surface-variant mb-space-xs"><span class="material-symbols-outlined text-[18px]">cloud</span><span class="font-label-md text-label-md">Storage</span></div><div class="w-full bg-surface-container h-1 rounded-full overflow-hidden mb-space-xs"><div class="bg-primary h-full rounded-full" style="width: 82%;"></div></div><p class="font-body-md text-[12px] text-outline">12.4 GB of 15 GB used</p></div></aside><div class="pl-64"><main class="w-full pt-16 bg-surface min-h-screen px-margin"><div class="flex flex-col w-full pb-space-xl">
+<!-- Multi-Select Floating Action Bar (Initially Hidden) -->
+<div class="fixed top-20 left-1/2 -translate-x-1/2 z-50 items-center gap-space-md px-space-lg py-2.5 bg-surface-container-lowest shadow-xl rounded-full transition-all hidden" id="selection-bar">
+<div class="flex items-center gap-space-sm pr-space-sm">
+<button class="p-1 rounded-full hover:bg-surface-container-high text-on-surface-variant flex items-center justify-center" id="clear-selection">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+<span class="font-label-lg text-label-lg font-medium text-on-surface" id="selected-count">1 selected</span>
+</div>
+<div class="h-4 w-px bg-surface-container-high"></div>
+<div class="flex items-center gap-space-xs">
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-primary text-on-primary hover:bg-primary-container transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">loyalty</span>
+<span class="">Assign Life Stage</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface hover:bg-surface-container-highest transition-colors font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px]">share</span>
+<span class="">Share</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant flex items-center justify-center" title="Download">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant flex items-center justify-center" title="Delete">
+<span class="material-symbols-outlined text-[20px]">delete</span>
+</button>
+</div>
+</div>
+<!-- In-App CheckInBanner Section -->
+<div class="w-full mb-space-lg bg-surface-container-lowest rounded-xl shadow-sm p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md transition-all border border-[#dadce0] mt-2" id="check-in-banner"><div class="flex items-start gap-space-md max-w-3xl"><div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center shrink-0 mt-0.5 shadow-sm"><span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings: 'FILL' 1;">location_on</span></div><div class="flex flex-col"><div class="flex items-center gap-space-xs mb-0.5"><span class="font-label-md text-label-md uppercase tracking-wider text-primary font-semibold">Life Stage Detection</span><span class="text-outline text-xs">•</span><span class="font-label-md text-label-md text-on-surface-variant">Pattern identified</span></div><p class="font-body-lg text-body-lg text-on-surface font-medium leading-snug">We noticed a regular location in Seattle — want to tag these photos as a life stage?</p><p class="font-body-md text-body-md text-on-surface-variant mt-1 leading-normal">Over 48 photos clustered in Queen Anne and Capitol Hill since late September. Grouping preserves early relocation memories.</p></div></div><div class="flex items-center gap-space-sm shrink-0 self-end md:self-center"><button class="px-space-md py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high font-label-lg text-label-lg transition-colors" id="dismiss-banner-btn">Dismiss</button><button class="flex items-center gap-space-xs px-space-lg py-2 rounded-full bg-primary text-on-primary hover:bg-primary-container font-label-lg text-label-lg shadow-sm transition-colors"><span class="material-symbols-outlined text-[18px]">add_location_alt</span><span class="">Confirm tag</span></button><button aria-label="Close notification" class="p-1.5 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors ml-1" id="close-banner-x"><span class="material-symbols-outlined text-[20px]">close</span></button></div></div>
+<!-- Sub-Header Utility Bar -->
+<div class="flex items-center justify-between py-space-sm mb-space-md">
+<div class="flex items-center gap-space-md">
+<div class="flex items-center gap-1.5 text-on-surface">
+<span class="font-headline-sm text-headline-sm">Photos Timeline</span>
+</div>
+<div class="hidden sm:flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span class="font-label-md text-label-md text-secondary">Life Stages Active</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span class="">Filter Tags</span>
+</button>
+<button class="flex items-center gap-1.5 px-space-md py-1.5 rounded-full bg-surface-container-low text-on-surface-variant hover:bg-surface-container-high font-label-md text-label-md transition-colors">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+<span class="">Density</span>
+</button>
+</div>
+</div>
+<!-- Chronological Photos Container -->
+<div class="flex flex-col gap-space-xl">
+<!-- Group 1: October 2023 -->
+<section class="flex flex-col gap-space-sm">
+<!-- Sticky Month Header -->
+<div class="sticky top-16 z-20 py-2.5 bg-surface/95 backdrop-blur-sm flex items-center justify-between">
+<div class="flex items-baseline gap-space-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">October 2023</h2>
+<span class="font-label-md text-label-md text-on-surface-variant">Seattle, WA &amp; San Francisco, CA</span>
+</div>
+<button class="select-range-btn flex items-center gap-1 px-space-sm py-1 rounded-full text-primary hover:bg-primary-fixed/50 font-label-md text-label-md transition-colors" data-target="group-oct-2023">
+<span class="material-symbols-outlined text-[18px]">select_all</span>
+<span class="">Select range</span>
+</button>
+</div>
+<!-- Date Subheader: Sat, Oct 14 -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="font-label-lg text-label-lg font-medium text-on-surface">Sat, Oct 14</span>
+<span class="text-outline text-xs">•</span>
+<span class="font-body-md text-body-md">Pike Place &amp; New Apartment</span>
+</div>
+</div>
+<!-- Candidate Photo Grid - 6 to 7 Columns -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-gutter-dense" id="group-oct-2023">
+<!-- Item 1: Moving boxes in apartment (Suggested Tag State) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Stacked moving cardboard boxes filled with belongings inside a bright contemporary living room with large windows overlooking a misty Seattle cityscape, warm natural diffused morning light, modern minimalist interior aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbNScWVVBohUkylENpCHDhFzt07XwngpeEd1BrFSZTz0bgdvyG2MxRlhaSVFW5jAMUqfswZ7OKbECmQ4ST9wBQfyX_ws_NPtFlC8DoAs7loFnzGdGjAk3AR-qX3CEJLYNMb4Ck9pN3nUIxnGkT7UdhhzfrOf3lnhc2IfXf_0Mi2yCLvE5ctzq4WppGTN06Gj5YwofCxitTqK76NTzERthNRkYwgAwZqTlhPhXhAe-J6Hi8tMRzuoK8zQ">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<!-- Selection Checkbox Target -->
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<!-- Suggested Tag Badge -->
+<div class="absolute bottom-2 left-2 z-10 max-w-[85%] right-2">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-[14px] text-tertiary font-bold">auto_awesome</span>
+<span class="font-label-md text-[11px] leading-tight font-medium truncate">Seattle Move • Suggested</span>
+</div>
+</div>
+</div>
+<!-- Item 2: Unpacking kitchen living (Suggested Tag State) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="A smiling couple organizing ceramic coffee mugs and white plates into open pine wood shelving in a new Seattle apartment kitchen, warm pendant lighting, cozy residential lifestyle photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqQaWYIhnEYh3fCcwZa37LUyj6Dgnoeo4UIGkoBTgGCJisDRPrjagK4KSrKqGMovNwTja-Y1mgiYlg84JYwUEOPSnQGY-4NZ5YZ-z-T10kHwrmxxxxDpIKlJUpoMUIbyO8J894vqv9yVoTPzMDGrWY5cpvkzr1ESTdOMjlfkhv2ejZOIKN84ZbheX3yjct8f3gOl4n_LneNfvhdrJeGhAu10g2UElcNuiF-c12a5qj07fQsYkAwuTPdw">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<!-- Suggested Tag Badge -->
+<div class="absolute bottom-2 left-2 z-10 max-w-[85%] right-2">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-[14px] text-tertiary font-bold">auto_awesome</span>
+<span class="font-label-md text-[11px] leading-tight font-medium truncate">Seattle Move • Suggested</span>
+</div>
+</div>
+</div>
+<!-- Item 3: Coffee shop table rainy afternoon (Regular Untagged) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Close-up aesthetic shot of an artisanal pour-over coffee glass and open journal on a rustic dark timber table near a rain-streaked cafe window, soft natural overcast daylight, peaceful urban atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjP8KzO_vHaTRjlPZILB6DENvmCdi2e7ipSwS13UNUDQVTklByDY8uOEoii1IHEuLyWzRH-z3urZeAnnmJPF3UJLKPwGPlP-PXSsKx2PSEHfiJDWeJCfCgzXrvYOCetT44v_yInD8UF_bJ0lRKmKNAa3eLc-QHS3k0jOobcrzQsi23-xYEQvxjyUwhNnWIMAaDBp1Z4YOPLRnvPf-sRNN4nbgVcn6Gd9CWFQLqBhpB4qcyHpiCUlXpGQ">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<!-- Item 4: Dog in autumn park (Confirmed Tag State: Cooper Adoption) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none ring-4 ring-primary ring-inset">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Golden retriever rescue dog happily sitting amidst fallen orange and golden maple leaves in a misty Pacific Northwest autumn park, candid shallow depth of field, vivid crisp autumn palette." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUHXFlXbYq4cY3J1bciQa9SDx0AdqdS26p_7CjRi9MyUVTNs6c5jvKzsn1vwC5bePUegCHykwb6GPUznJ1km2Xl5B5dJmb81S60MIiDvOEPDSU1WDK51lgZ6ZhrthjVn-cVdDIO9gOsHlyy2WnTH5ibxRXfTl_vMCg8vlGjZXDsQngMYHBYZrPrPNsq6Lk0ccI8oFup8SaQo_AjsrI9LooDOwLmu8VstdtE3Gwo80NeiH-2VM-giIwmg">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest !opacity-100 !bg-primary !text-on-primary"><span class="material-symbols-outlined text-[16px] font-bold">check</span></div>
+<!-- Confirmed Tag Badge -->
+<div class="absolute bottom-2 left-2 z-10 max-w-[85%] right-2">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-[14px] text-secondary font-bold">check_circle</span>
+<span class="font-label-md text-[11px] leading-tight font-medium truncate">🐕 Cooper Adoption</span>
+</div>
+</div>
+</div>
+<!-- Item 5: Pike Place Market flowers (Regular Untagged) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Vibrant array of fresh autumn dahlias and eucalyptus bundles arranged in galvanized buckets at Pike Place Market, soft warm ambient lighting, sharp focus on floral textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_aDlwQnjP_stKzmOHmk_zD9H9J7_CHMrTiVV8gPWr8uM7qcZlc1RR2NzC4Pci8OBg4sySqU3QZ0_3xjw9JWVhUIn0TocS_0fDFfLVnIi7Vo56odew5_G0yzENvBKr3YqVgaNT3UK6EhKWvtGy2Bd-ZjFck-_tJ_QJiWoBEUZmFwqfi2s-_f_ZOFBt5oqDkaHJ4W8yXd-guzuKVIUBVvwRNgg7a9GEltO8dQOl6WnLJKetYSPs6Ekv_Q">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<!-- Item 6: Balcony view with Space Needle (Suggested Tag State) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Sunset balcony view framed with small potted succulents overlooking the distant Seattle Space Needle silhouetted against a lavender and rose-tinted twilight sky, soft dusk photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8iiFXrn47gK5PvEnuR38QzJMTkLxrEMEq99uV2wwUBrJNTnd54SQiRRkvDIEfRyrS0FDAcS0cLk7QV6tmaz_1-AaAKqCfc6lhN6ICLqNonPhAAedR7yI8uWPHGtfniOqJiikhCd91PeS8TWQP5ZNWL4OpVJjZS5kVZPqb0raSSCO1aFj7Cl9KGcPyfJRx3QyZxYk0XoZOp5SNV_SAUwmcJ53P2QHN9RqcKPgTj_-GZ0-Zu_IaY-9uHg">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<!-- Suggested Tag Badge -->
+<div class="absolute bottom-2 left-2 z-10 max-w-[85%] right-2">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-[14px] text-tertiary font-bold">auto_awesome</span>
+<span class="font-label-md text-[11px] leading-tight font-medium truncate">Seattle Move • Suggested</span>
+</div>
+</div>
+</div>
+<!-- Item 7: Ferry to Bainbridge (Regular Untagged) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Outdoor deck of a green and white Washington State Ferry churning white sea foam across Puget Sound with seagulls soaring in a cool breezy autumn breeze, wide landscape photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-CyplcmSovldSebXcD4SpvJKCV2JXvGFHAsndTOYe1BY79ixy8NtylHnn2jgwP9sJnxn3PD8lKTqsoCcHdliVArRTjdp_jxQEcWZ1cp9eTl0b1D7Dd7Za_EytEigG0eAqYDaQS65CSoWzeQr5Wo3idGv-SgXZcCn2T1q_asgb4p3fwDrKqRfUL4SuSJNLaUSmesRsmkUa1BPn99PX_STAPXuKVhLIEZQxH7al-PCy8HDga9iSo9WiGA">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+</div>
+<!-- Date Subheader: Tue, Oct 3 -->
+<div class="flex items-center justify-between pt-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="font-label-lg text-label-lg font-medium text-on-surface">Tue, Oct 3</span>
+<span class="text-outline text-xs">•</span>
+<span class="font-body-md text-body-md">Dog Park &amp; Puget Sound</span>
+</div>
+</div>
+<!-- Grid for Oct 3 -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-gutter-dense">
+<!-- Item 8: Cooper playing fetch (Confirmed Tag State) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Golden retriever running across green meadow grass with a red rubber ball held proudly in mouth, sunny bright afternoon, dynamic pet action shot." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1qXxxdc0lZE50C0YVc-aiCiDqDR1NLsranc6ctSobx9VnxKuydkZ8Vk0UWXLrFxLjGjl07Ad1fQKHVhUSC_sM-TVa_Xy3fZOiSjvGwjS6isiNg8OCqHn3JYDI4HBXHjoyO8BLhYGBCZsUu6Qvvn0sBCwbIEfqowAb5-7w4xZwMmmlBmcDAabLrd4IZgyT-TIR7qE_QSRPx2FiXjo6l6qWgz9KJaQ47VL2r_JIGW7JPXCJ9pGwus1JBw">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest"><span class="material-symbols-outlined text-[16px]">check</span></div>
+<div class="absolute bottom-2 left-2 z-10 max-w-[85%] right-2">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-[14px] text-secondary font-bold">check_circle</span>
+<span class="font-label-md text-[11px] leading-tight font-medium truncate">🐕 Cooper Adoption</span>
+</div>
+</div>
+</div>
+<!-- Item 9: Coffee roastery interior (Regular Untagged) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Modern high-ceiling industrial coffee roastery in Capitol Hill Seattle with steel roasting drums, warm Edison lights, and patrons conversing at a long counter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6CaKf8zYtJ0Y8-4N0m5xwR3x9p9KlQZxFPeIZdtdJc_syIqOic84IgAQo-IBXGhAoy04Fp7ozgumb4NnGIq2mMENXog0qiMdWKBSg-bLlD21SdQGgXj0fqHFkQBGfWmLLu5xZl9N1s4PxCEIMpGeEHlhYNMzyxpu7xxm6p5MTxIprC6J7gGNVDG_fBUuu4pT2z8jrbtfXkaBVYrtGoqq4vVLFoNwX9zDDFBVY_cdQ4BQp8Kc69spiMA">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<!-- Item 10: Living room plant shelf (Suggested Tag State) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Sunlit minimalist shelving displaying monstera, pothos vines, and ceramic pots against a clean neutral off-white drywall, interior decoration detail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBApdajhmgztA2zPxBMWM6ZhNNEy_MTLR4ta-coruebUSsywEFdnEQChOtnTsUVH6vazQJ3dIhJIQYl3kugHR3ROdUDBVNvJSZeYGre9TLJh3ML9uRvHcLZmkRFFZPY2EX4q_CobR4K4s4u2DVSX3KtOTSk_0Vo6_zLieIa1LZMk9YZsJNYKIosB_WnBNf9cKwVVmxZNmg6QNOx0NcN8yRpm_YtaIRYv3P-XkVq9BOIstmBAKjWauIl2A">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="absolute bottom-2 left-2 z-10 max-w-[85%] right-2">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-[14px] text-tertiary font-bold">auto_awesome</span>
+<span class="font-label-md text-[11px] leading-tight font-medium truncate">Seattle Move • Suggested</span>
+</div>
+</div>
+</div>
+<!-- Item 11: Dinner with neighbors (Regular Untagged) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Casual evening family-style dinner gathering around a wooden dining table with wine glasses, warm candlelight, handmade pasta bowls, authentic candid smiles." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDztExICKWjfF-LZbALTbmCqvtBNP-5FtsplAcaOOxzbTw8Ug-wxGgY1UsSTqn4W7pHPrKmKK9_1a17nDIwyp_fWFFpuAQgGH3mVdJS0ofIPlHJFb3r_PhoJA8JnWRXTpe86rvePjt444YMO-hd6caQFtWWfc8nwTyoSfCq1Fzt8a5TzMQKtAaZu1Ia1iwYAlxPL2QrrkEN_9m2Y-oNV3ou_V_ShTyTEFQ37-I_SWSMm9iHxozN1oxRTg">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Group 2: September 2023 -->
+<section class="flex flex-col gap-space-sm pt-space-md">
+<!-- Sticky Month Header -->
+<div class="sticky top-16 z-20 py-2.5 bg-surface/95 backdrop-blur-sm flex items-center justify-between">
+<div class="flex items-baseline gap-space-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">September 2023</h2>
+<span class="font-label-md text-label-md text-on-surface-variant">San Francisco, CA &amp; California Coast</span>
+</div>
+<button class="select-range-btn flex items-center gap-1 px-space-sm py-1 rounded-full text-primary hover:bg-primary-fixed/50 font-label-md text-label-md transition-colors" data-target="group-sep-2023">
+<span class="material-symbols-outlined text-[18px]">select_all</span>
+<span class="">Select range</span>
+</button>
+</div>
+<!-- Date Subheader: Sun, Sep 24 -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="font-label-lg text-label-lg font-medium text-on-surface">Sun, Sep 24</span>
+<span class="text-outline text-xs">•</span>
+<span class="font-body-md text-body-md">Farewell Gathering &amp; Packing</span>
+</div>
+</div>
+<!-- Candidate Photo Grid - 6 to 7 Columns -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-gutter-dense" id="group-sep-2023">
+<!-- Item 12: Friends rooftop farewell (Regular Untagged) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="A group of diverse smiling friends on a San Francisco rooftop terrace holding sparkling drinks at golden hour with city skyline and warm pastel sunset glow in background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZJ7lI07CyT4ouHoxt7rGrZjq1cBOV9NzMqSnh6m-FM0K0GxhgweuGNhC8K5_DsieY2sp-6tTuWD1nDw6WQBfx_rbsx50PS4b2BFqDycgR_XQfyPG74dPDcRWHt0hHMQSAoIygIv2vd8oHhs3HHjjVE96aIOKUSesVnvgSOpSYTt7eFSElgRg5QrDht7oT9EZaLur6JXD6fBMv3d_kY753V1pQPj-KN6Xnx-vsBw50SUw_Lqniw_y0iQ">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<!-- Item 13: Moving truck parked outside (Suggested Tag State) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Yellow moving rental truck parked along a tree-lined Victorian street in San Francisco on a crisp sunny day with open cargo doors, lifestyle documentary style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9rQqi86fj9XMUZMdYURV9A09L7lPZjJkIoRxpbqSdKiUVHLGztKP7FefwiDIe6tJLHTttu7jcQzmqWEiyCgUNFwK1FajqoGIW-Hr1nb6i5w0FNKHXE-q4SPM0Bp_RICtXGa8b9zEngiE0i7aOBq502zD3RDxv54nsk49vhM8qX4zwBozDH8-Hbs44vcSe8rG8PmTpV0UJv3UW7PZfvZbXyFmRiNhyWbkm0XfpTWLJvl51Lw95nbMLAQ">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="absolute bottom-2 left-2 z-10 max-w-[85%] right-2">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-[14px] text-tertiary font-bold">auto_awesome</span>
+<span class="font-label-md text-[11px] leading-tight font-medium truncate">Seattle Move • Suggested</span>
+</div>
+</div>
+</div>
+<!-- Item 14: Golden Gate Bridge drive (Regular Untagged) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="View through a car windshield driving across the iconic international orange Golden Gate Bridge with subtle Pacific fog rolls, cinematic roadway framing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbtHOHrpojQAltFM4rkiPfxugFbnEbYsIo-G2DUWIVFQ1w2G7Nu_v8E90nq1qznHMI35kmp5ZeNN9V1RZf0CSLjNvVsd41usxhky9VKCT1ovGhZW6z-FRoW8FH8uj0rC9DajFW7PKyxTnf0jFeYuvUeaQ5IlSXiM1Md-6ZXqr3f2wEer9KSzQi-d5WQ_f4TnuX-xlfJp8b01B9ORdQUNbwsu6EMbXsvY_mTGCHmQWhYfCliPiOsslr8A">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<!-- Item 15: Dog looking out car window (Confirmed Tag State: Cooper Adoption) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Golden retriever resting head peacefully on backseat car window sill watching coastal highway scenery rush past, warm sunset light reflecting in fur." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNDHvjKGB7I7aU_Z0WlXiavPtoocCODXxmXoWEfMdSc-LbgDALKYHpZ3rQ-n9PuX2eo7BoiOeVwi1MjQCIiSF3tB51T12eOnVLW_e_UAHOWUxty19Lu_0hHpEo6KYXnDQ6NyEnprIeXJoKXpxIHPkLPNjFsqIPMbnB594L_SQe6VOr2MeKF_itKeoLLp8fIPk7E4-lNsrBRaqfEHEovVmTHjLnAybXdmCnqBRO2cf-Du_QOpdSKAIz9Q">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="absolute bottom-2 left-2 z-10 max-w-[85%] right-2">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-[14px] text-secondary font-bold">check_circle</span>
+<span class="font-label-md text-[11px] leading-tight font-medium truncate">🐕 Cooper Adoption</span>
+</div>
+</div>
+</div>
+<!-- Item 16: Empty apartment floor keys (Suggested Tag State) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Set of apartment keys with brass ring lying on a polished hardwood floor in a completely empty sunny apartment room, deep afternoon window shadows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6bUQo5yUZ_i75tV8fLGIdcfSmqFs6wy5rvG_x_nGE3gXCz-4-t9v7reJC_dzi7fw1g5b6osYCOE8iGRCrkgpXxRhVUkXEspAwY0lWJsUVC-H1_cuAzHS22qY5M6rTjKM3YeBl67Rbmg8ehnTDKQ4OXzQog55w8cTiSoup4ZcAIj3AhuoZ8J1rzKBAhbT5fWD2FdwulUiEPUHZKWe9Ic6JKRjqkMI6uZnpYkITwCz-996GMRX6ntOIoA">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="absolute bottom-2 left-2 z-10 max-w-[85%] right-2">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-[14px] text-tertiary font-bold">auto_awesome</span>
+<span class="font-label-md text-[11px] leading-tight font-medium truncate">Seattle Move • Suggested</span>
+</div>
+</div>
+</div>
+<!-- Item 17: Bakery morning croissants (Regular Untagged) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Freshly baked flaky butter croissants and pain au chocolat on parchment paper inside a bright French bakery vitrine, mouthwatering natural culinary lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-3CzOgonP_k6t4rENflebRSwwh5ZxD2xTjSbS5ynjcckXC90blsitK4suNqF7eXx96aPlSpnRLfPJjgHJUfP47evL3DW_vmXTYJKl-qoT02mJbEaKYYkcj5qYj94sGo-dGG6wFQwQuIb-XZrhfWRCz8Mz4K_4oL-KewvH32f2vVpQ_9rNDbE9P4GNOlw-ItZNqHCmu4Pn2QQvFHeRtK0LBf3otZEGHwSbUVdNvs_3vMu-_gNF7YieWw">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<!-- Item 18: Beach bonfire dusk (Regular Untagged) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Evening beach bonfire glowing with orange sparks against crashing Pacific ocean waves under a deep cobalt twilight sky, cinematic mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHSufZWfJxxKTP-vtdwWqkRU1vyY-qOVmRKeJZ6KLW9XQ8nBaqRjM3QEOITTQufRwHGVIia2QawLJewqW0DB0jiPew_zQugfDwi9sx26ZyKaP7rP04Blil89ImgdQVczJEJNHTm61c2uLt7AbpuZr6mFTh_EKt9Iac9ve6ihw3Ez1wqj1l5gzmektl0Rfo6QgrqMpR42dv6PohZwLnPLNxnB_9Bz3E28hHvq-_AKpLlZ3kWpMDPVtNMw">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Group 3: August 2023 -->
+<section class="flex flex-col gap-space-sm pt-space-md">
+<!-- Sticky Month Header -->
+<div class="sticky top-16 z-20 py-2.5 bg-surface/95 backdrop-blur-sm flex items-center justify-between">
+<div class="flex items-baseline gap-space-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface font-semibold tracking-tight">August 2023</h2>
+<span class="font-label-md text-label-md text-on-surface-variant">Stanford Campus &amp; Bay Area</span>
+</div>
+<button class="select-range-btn flex items-center gap-1 px-space-sm py-1 rounded-full text-primary hover:bg-primary-fixed/50 font-label-md text-label-md transition-colors" data-target="group-aug-2023">
+<span class="material-symbols-outlined text-[18px]">select_all</span>
+<span class="">Select range</span>
+</button>
+</div>
+<!-- Date Subheader: Fri, Aug 18 -->
+<div class="flex items-center justify-between pt-space-xs">
+<div class="flex items-center gap-space-xs text-on-surface-variant">
+<span class="font-label-lg text-label-lg font-medium text-on-surface">Fri, Aug 18</span>
+<span class="text-outline text-xs">•</span>
+<span class="font-body-md text-body-md">Graduation &amp; Lab Send-off</span>
+</div>
+</div>
+<!-- Candidate Photo Grid - 6 to 7 Columns -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-7 gap-gutter-dense" id="group-aug-2023">
+<!-- Item 19: Graduation cap throw (Confirmed Tag State: College Years) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="University graduate in black regalia tossing mortarboard cap high into an azure blue summer sky surrounded by stone cloister arches and sandstone campus architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbYKNA7qK-dSIYbXyou_Nom-A6De27Rr6iXL3RIIFAMwDag0pIqP4DqCt0ULmAizSPeI2HQvODPozmsSpIPjVSnaGecl5xNpGYYEw1M9XYpZFipHBZ0eQXOxT3qhc5dvEaEOsnxim0eiewnVtzPQa9mvfdUnPJSW-a-oLgLbk0rahXmdDsGbrYacUG3rU5Dr73UnIV0xpKxseE53nLQnKNn1JS2U-1MofA_uuz-USjkP2vXrg7LaR-Tw">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="absolute bottom-2 left-2 z-10 max-w-[85%] right-2">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-[14px] text-secondary font-bold">check_circle</span>
+<span class="font-label-md text-[11px] leading-tight font-medium truncate">🎓 College Years</span>
+</div>
+</div>
+</div>
+<!-- Item 20: Family portrait on campus (Confirmed Tag State: College Years) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Proud parents standing with graduate wearing sash and diploma on a sun-drenched university courtyard with palm trees, heartfelt celebratory family photograph." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCO6hLwuyZcXF41wjapIq9hwTTmPQ4N7qNP6nF9m1rmZ9CW46DJ3VyUaob543_w5bXuH5_IA9B-mckMLU2ddNRf3prcOfbaSdRcUqqIiBWoC6fdUgiq30GTVbdk04PhYbd-IOPDiFMIPG7Pnb5lom7lDuNCSXSdkrP8FfBFzerX0VQeTJiCCnnVnEI0p6if4Asfpz3v5V3uPOaw_UI9Y0RRn4Yg4YCwWkErcBiYOhaaPb5MeBDK9bw9Tg">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="absolute bottom-2 left-2 z-10 max-w-[85%] right-2">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-[14px] text-secondary font-bold">check_circle</span>
+<span class="font-label-md text-[11px] leading-tight font-medium truncate">🎓 College Years</span>
+</div>
+</div>
+</div>
+<!-- Item 21: Lab team cheers (Confirmed Tag State: College Years) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Research colleagues in casual clothes raising toast glasses inside an academic computational lab room, whiteboard full of algorithms in soft focus background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVDwxpLAv6ctLrpNbCL4fjrFMl5GF2_IwRXXxZuVFegzaFP2A8XGO2u0_k_cJIpKKQhcpXySLLGpXBs8ZjRfH4ES65nlm13Q-teyf4sFV6_4ZMG1xXHAX8SA4gYna9kjQ3yd4SD9akH5-PHTgmX7MOKk3lU42zeON8huurMsI0cC1OO6NKaTaROjtU8x9wzD11Bp9WXCfLcjKHV3weC7cKUBf6LdgdlyZKXs7zd3dS68YlmaE8rKpw7A">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="absolute bottom-2 left-2 z-10 max-w-[85%] right-2">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-[14px] text-secondary font-bold">check_circle</span>
+<span class="font-label-md text-[11px] leading-tight font-medium truncate">🎓 College Years</span>
+</div>
+</div>
+</div>
+<!-- Item 22: Cooper puppy in grass (Confirmed Tag State: Cooper Adoption) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Adorable two-month-old golden retriever puppy tumbling adorably in clover lawn with floppy ears and big dark eyes, sweet candid portrait." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCMxOCPQNRebu-e0w9GkgEgR-46K_vS9liTqLYhZEgE5pajlDaYt4aslC3NLvS_75JD-2p1ZeUPxm_g37pDQ0Bg1uoHozMtbAH7OqNuIxkw1m1CEWOMqgrsjAsejKxI5q9KAjijuao0-f2YtcT17xfyp7HvwBQzv4aonBkq4feRW1wRk1805AARaR9jZUnrKULQgdVX-kpPBJIkgeiIOqky5jCpV1dLpC4XV9DQIIKKa59IHVTgajEKuQ">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="absolute bottom-2 left-2 z-10 max-w-[85%] right-2">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-[14px] text-secondary font-bold">check_circle</span>
+<span class="font-label-md text-[11px] leading-tight font-medium truncate">🐕 Cooper Adoption</span>
+</div>
+</div>
+</div>
+<!-- Item 23: Sunset outdoor dinner (Regular Untagged) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Festive bistro string lights strung above an outdoor patio dinner table surrounded by lush bougainvillea with wine glasses and laughter." src="https://lh3.googleusercontent.com/aida-public/AB6AXuALN2T-V-fkiLjcg9VndpcLha-GJ48h6G0HgLWythnCPhi64cyyT0QYgzlnPEiXh2af61IPokMGs5m9kIwsXSS6q6Ay-w9avzaVZ0PgjU8yTXO0U8JUIV-wGd1PkKDn9tuVP1kDsci7Fwrd-xmJzB2vCNcAny2wMDqCYtvSAg4du8q0YRZANLaTiSVtu51rQuVMYQ-yhYfkus828Jj4Kw6vK_HPNjhC4PJ4HxhDMYWR1vH4FcQgnBUxUQ">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<!-- Item 24: Redwood trail hike (Regular Untagged) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Towering coastal redwood trees with dappled golden sunbeams cutting through morning forest mist and a hiker walking on pine needle trail." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdM5HhVwB94XQMMoN7ixVygem5BHpPv3EPQuBGETHvi1z4q_ioN8wLTMwrT3aQeRv2l1L135MPq7hrnyhqP1CvuSQ3St4ud_8g6eCKvZlM7svL3s7gGTb3AHdAeWj_Q52NefoOCl5aE0ATMCd-ousF5Wc611Yk86CCNugE0-bLytknjxEWiyPbQ12mZwXvA3T2NsgujfVdJxpLnSjNnE6JQwgPocNGO5q189G4vjVoMi_rQ6sgOjQMSw">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+</div>
+<!-- Item 25: Library stacks studying (Confirmed Tag State: College Years) -->
+<div class="photo-tile relative group aspect-square rounded-lg overflow-hidden bg-surface-container cursor-pointer select-none">
+<img class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]" data-alt="Cozy university law library aisle lined with vintage leather bound books and green banker reading lamps, nostalgic collegiate atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOLoWgSc-Vv1_Ykb7VdrHinWlet6oQAkYyp-DE1rVTMkHB1f_qgAwXcBnKZzeWDSfoXQQDRNSrDtIIQQ3oufNJnOJY2kv0DdHEtFSaTH9cbi5tsyEpGBepqaUydYwrqXzt2XIDKPmsk0SnjLfHYmpmlGgd8xXNjNhXfdNWnICB6bpBV9IeQjxlz-7oa6TM4_-DHgXu3c3DJqbbkQomzUnf8uMHGYjKz2u0tb2RCesLUPwLP4Vtc3IR9Q">
+<div class="tile-scrim absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors pointer-events-none"></div>
+<div class="selection-checkbox absolute top-2 left-2 w-6 h-6 rounded-full bg-surface-container-lowest/80 text-on-surface-variant opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity shadow-sm z-10 hover:bg-surface-container-lowest">
+<span class="material-symbols-outlined text-[16px]">check</span>
+</div>
+<div class="absolute bottom-2 left-2 z-10 max-w-[85%] right-2">
+<div class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed shadow-sm overflow-hidden">
+<span class="material-symbols-outlined text-[14px] text-secondary font-bold">check_circle</span>
+<span class="font-label-md text-[11px] leading-tight font-medium truncate">🎓 College Years</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  (function initPhotosLibrary() {
+    const banner = document.getElementById('check-in-banner');
+    const dismissBtn = document.getElementById('dismiss-banner-btn');
+    const closeXBtn = document.getElementById('close-banner-x');
+    const selectionBar = document.getElementById('selection-bar');
+    const clearSelectionBtn = document.getElementById('clear-selection');
+    const selectedCountLabel = document.getElementById('selected-count');
+    const photoTiles = document.querySelectorAll('.photo-tile');
+    const selectRangeButtons = document.querySelectorAll('.select-range-btn');
+
+    let selectedSet = new Set();
+
+    // 1. Dismiss CheckInBanner functionality
+    function hideBanner() {
+      if (banner) {
+        banner.style.opacity = '0';
+        banner.style.transform = 'translateY(-10px)';
+        setTimeout(() => {
+          banner.style.display = 'none';
+        }, 200);
+      }
+    }
+
+    if (dismissBtn) dismissBtn.addEventListener('click', hideBanner);
+    if (closeXBtn) closeXBtn.addEventListener('click', hideBanner);
+
+    // 2. Selection Management
+    function updateSelectionUI() {
+      const count = selectedSet.size;
+      if (count > 0) {
+        selectionBar.classList.remove('hidden');
+        selectionBar.classList.add('flex');
+        selectedCountLabel.textContent = `${count} selected`;
+      } else {
+        selectionBar.classList.remove('flex');
+        selectionBar.classList.add('hidden');
+      }
+    }
+
+    function toggleTileSelection(tile) {
+      const checkbox = tile.querySelector('.selection-checkbox');
+      if (selectedSet.has(tile)) {
+        selectedSet.delete(tile);
+        tile.classList.remove('ring-4', 'ring-primary', 'ring-inset');
+        if (checkbox) {
+          checkbox.classList.remove('!opacity-100', '!bg-primary', '!text-on-primary');
+          checkbox.innerHTML = '<span class="material-symbols-outlined text-[16px]">check</span>';
+        }
+      } else {
+        selectedSet.add(tile);
+        tile.classList.add('ring-4', 'ring-primary', 'ring-inset');
+        if (checkbox) {
+          checkbox.classList.add('!opacity-100', '!bg-primary', '!text-on-primary');
+          checkbox.innerHTML = '<span class="material-symbols-outlined text-[16px] font-bold">check</span>';
+        }
+      }
+      updateSelectionUI();
+    }
+
+    photoTiles.forEach((tile) => {
+      tile.addEventListener('click', (e) => {
+        // Toggle selection on tile click
+        toggleTileSelection(tile);
+      });
+    });
+
+    if (clearSelectionBtn) {
+      clearSelectionBtn.addEventListener('click', () => {
+        selectedSet.forEach((tile) => {
+          tile.classList.remove('ring-4', 'ring-primary', 'ring-inset');
+          const checkbox = tile.querySelector('.selection-checkbox');
+          if (checkbox) {
+            checkbox.classList.remove('!opacity-100', '!bg-primary', '!text-on-primary');
+          }
+        });
+        selectedSet.clear();
+        updateSelectionUI();
+      });
+    }
+
+    // 3. Select Range Handler
+    selectRangeButtons.forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const targetId = btn.getAttribute('data-target');
+        const container = document.getElementById(targetId);
+        if (!container) return;
+
+        const tiles = container.querySelectorAll('.photo-tile');
+        const allAlreadySelected = Array.from(tiles).every((t) => selectedSet.has(t));
+
+        tiles.forEach((tile) => {
+          if (allAlreadySelected) {
+            // Deselect all in section
+            selectedSet.delete(tile);
+            tile.classList.remove('ring-4', 'ring-primary', 'ring-inset');
+            const checkbox = tile.querySelector('.selection-checkbox');
+            if (checkbox) {
+              checkbox.classList.remove('!opacity-100', '!bg-primary', '!text-on-primary');
+            }
+          } else {
+            // Select all in section
+            selectedSet.add(tile);
+            tile.classList.add('ring-4', 'ring-primary', 'ring-inset');
+            const checkbox = tile.querySelector('.selection-checkbox');
+            if (checkbox) {
+              checkbox.classList.add('!opacity-100', '!bg-primary', '!text-on-primary');
+              checkbox.innerHTML = '<span class="material-symbols-outlined text-[16px] font-bold">check</span>';
+            }
+          }
+        });
+        updateSelectionUI();
+      });
+    });
+  })();
+</script></main></div>
+
+
+
+
+
+
+
+</body></html>

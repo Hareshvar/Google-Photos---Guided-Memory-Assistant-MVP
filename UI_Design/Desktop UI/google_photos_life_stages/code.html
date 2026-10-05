@@ -1,0 +1,493 @@
+<!DOCTYPE html><html lang="en" style=""><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"tertiary-fixed-dim":"#fbbc05","inverse-primary":"#adc6ff","on-surface-variant":"#424753","secondary-fixed":"#89fa9b","secondary-fixed-dim":"#6ddd81","surface-container-lowest":"#ffffff","inverse-on-surface":"#f1f0f4","tertiary":"#765700","surface-container-high":"#e9e7eb","on-secondary-fixed":"#002108","error-container":"#ffdad6","primary-fixed-dim":"#adc6ff","secondary-container":"#86f898","tertiary-container":"#956e00","on-primary":"#ffffff","surface-container-highest":"#e3e2e6","primary-container":"#2771df","on-tertiary-fixed":"#261a00","surface-container":"#efedf1","on-tertiary":"#ffffff","secondary":"#006e2c","on-secondary":"#ffffff","on-primary-fixed-variant":"#004494","primary":"#0058bd","on-background":"#1a1b1e","surface-container-low":"#f4f3f7","outline-variant":"#c2c6d5","on-primary-fixed":"#001a41","on-error":"#ffffff","on-tertiary-fixed-variant":"#5c4300","background":"#faf9fd","on-surface":"#1a1b1e","on-error-container":"#93000a","outline":"#727785","surface-tint":"#005ac1","surface-dim":"#dbd9dd","on-primary-container":"#fefcff","on-tertiary-container":"#fffbff","tertiary-fixed":"#ffdfa0","surface-variant":"#e3e2e6","on-secondary-fixed-variant":"#005320","inverse-surface":"#2f3033","primary-fixed":"#d8e2ff","surface-bright":"#faf9fd","on-secondary-container":"#00722f","surface":"#faf9fd","error":"#ba1a1a"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-md":"1rem","space-sm":"0.5rem","space-xs":"0.25rem","gutter-normal":"0.5rem","margin-mobile":"1rem","space-xl":"2rem","gutter-dense":"0.25rem","space-lg":"1.5rem","gutter":"1rem","margin":"1.5rem"},"fontFamily":{"headline-xl":["Roboto Flex"],"label-md":["Roboto Flex"],"headline-sm":["Roboto Flex"],"label-lg":["Roboto Flex"],"body-lg":["Roboto Flex"],"body-md":["Roboto Flex"],"headline-lg-mobile":["Roboto Flex"],"headline-xl-mobile":["Roboto Flex"],"headline-lg":["Roboto Flex"],"headline-md":["Roboto Flex"]},"fontSize":{"headline-xl":["36px",{"lineHeight":"44px","fontWeight":"400"}],"label-md":["14px",{"lineHeight":"18px","fontWeight":"500"}],"headline-sm":["18px",{"lineHeight":"24px","fontWeight":"500"}],"label-lg":["14px",{"lineHeight":"20px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-md":["14px",{"lineHeight":"20px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"500"}],"headline-xl-mobile":["28px",{"lineHeight":"36px","fontWeight":"400"}],"headline-lg":["28px",{"lineHeight":"36px","fontWeight":"400"}],"headline-md":["22px",{"lineHeight":"28px","fontWeight":"500"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest z-40 px-margin flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-sm w-64 shrink-0"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjkzKAKqF5Qxzc_9vcm0wk4Ani-yxvgTmu4gfixplycmOBzRo5CoNCUMvVQMwSUjDqqu0g88s3m3_C9g9Hg9taCSAcYgQs19LVquASGH-h3f42MIZ014j-p3jiDmRCXYeDP6Ms0zqf2X9yTM4TeZo3UXkQqHGN1SB7fI4dPSgi98F2ksFHFH0r6rjoCZISlf9xGh5G1Vmh_bC-q62FISeffjTSDxB4yu7SPI2puAYeoGpqBPTV4X-fGi5hrthisalLoHE" alt="Google Photos" class="w-8 h-8 object-contain"><span class="font-headline-md text-headline-md tracking-tight text-on-surface">Photos</span></div><div class="flex-1 max-w-3xl px-space-md hidden md:flex items-center"><div class="w-full h-12 bg-surface-container-low rounded-full flex items-center px-space-md gap-space-sm transition-all focus-within:bg-surface-container-lowest focus-within:shadow-[0_1px_8px_rgba(0,0,0,0.08)]"><span class="material-symbols-outlined text-outline shrink-0">search</span><input class="w-full bg-transparent border-none outline-none font-body-md text-body-md text-on-surface placeholder:text-outline" placeholder="Search your photos, memories, or ask a question..." type="text"><a class="shrink-0 flex items-center gap-space-xs px-space-md py-1.5 bg-primary-fixed text-on-primary-fixed rounded-full hover:bg-primary-fixed-dim transition-colors" data-path="guided-retrieval" href="#"><span class="material-symbols-outlined text-[18px] text-primary">auto_awesome</span><span class="font-label-md text-label-md font-medium text-primary">Can't describe it? Guided search</span></a></div></div><div class="flex items-center gap-space-sm shrink-0 pr-space-md"><button class="flex items-center gap-space-xs px-space-md h-9 bg-primary-fixed text-primary rounded-full hover:bg-primary-fixed-dim transition-colors font-label-md text-label-md font-medium"><span class="material-symbols-outlined text-[20px]">add</span><span class="">Upload</span></button><button class="p-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">help_outline</span></button><button class="p-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors"><span class="material-symbols-outlined">settings</span></button><button class="w-9 h-9 rounded-full overflow-hidden shrink-0 ml-space-xs focus:outline-none focus:ring-2 focus:ring-primary cursor-pointer" title="Google Account: Dev Patel"><img alt="Dev Patel" class="w-full h-full rounded-full object-cover object-center block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1xCKrNgetwgiQEuDgHmt9bs9YC3rx5hwszneYEZSDHPDHOFsGWHBHfqASgeNO0gJbIvrIdGfld3hHpRUHALploK07GHaJD5r8CKTjTQWd4X89wqmQCKvW2VbPCLG0Zw5Oe2hyCphz6IVjBawMP9kpeatrUiHyLm__j4ThlDzfDwFF8T2tAlrEG3JZIUpY5KeOx-FlWHI-BzpCBJh3-FBI6AZdkV7RmpDmcJLPLxj8GFczp7x_pI1wQsj7njQ2tNGxBEc"></button></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest z-30 flex flex-col justify-between py-space-md overflow-y-auto"><div class="flex flex-col gap-space-xs px-space-sm"><nav class="flex flex-col gap-1" data-active-classes="bg-primary-fixed text-primary font-medium rounded-full"><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="photos" href="#"><span class="material-symbols-outlined text-[22px]">photo_library</span><span class="font-label-lg text-label-lg">Photos</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="guided-retrieval" href="#"><span class="material-symbols-outlined text-[22px]">search</span><span class="font-label-lg text-label-lg">Explore / Search</span></a><a aria-current="page" class="flex items-center justify-between px-space-md py-2.5 transition-all bg-primary-fixed text-primary font-medium rounded-full" data-path="life-stages" href="#"><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-[22px]">loyalty</span><span class="font-label-lg text-label-lg">Life Stages</span></div><span class="bg-secondary-fixed text-on-secondary-fixed text-[11px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wider">NEW</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="tagging" href="#"><span class="material-symbols-outlined text-[22px]">label</span><span class="font-label-lg text-label-lg">Memory Tags</span></a><a class="flex items-center gap-space-md px-space-md py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="sharing" href="#"><span class="material-symbols-outlined text-[22px]">group</span><span class="font-label-lg text-label-lg">Sharing</span></a></nav><div class="h-px bg-surface-container-high my-space-sm mx-space-md"></div><div class="px-space-md py-space-xs font-label-md text-label-md text-on-surface-variant font-medium">Library</div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-fixed text-primary font-medium rounded-full"><a class="flex items-center gap-space-md px-space-md py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="favorites" href="#"><span class="material-symbols-outlined text-[20px]">star_outline</span><span class="font-label-md text-label-md">Favorites</span></a><a class="flex items-center gap-space-md px-space-md py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="albums" href="#"><span class="material-symbols-outlined text-[20px]">photo_album</span><span class="font-label-md text-label-md">Albums</span></a><a class="flex items-center gap-space-md px-space-md py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="utilities" href="#"><span class="material-symbols-outlined text-[20px]">auto_awesome</span><span class="font-label-md text-label-md">Utilities</span></a><a class="flex items-center gap-space-md px-space-md py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="archive" href="#"><span class="material-symbols-outlined text-[20px]">archive</span><span class="font-label-md text-label-md">Archive</span></a><a class="flex items-center gap-space-md px-space-md py-2 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="trash" href="#"><span class="material-symbols-outlined text-[20px]">delete</span><span class="font-label-md text-label-md">Trash</span></a></nav></div><div class="px-space-lg pt-space-md"><div class="flex items-center gap-space-sm text-on-surface-variant mb-space-xs"><span class="material-symbols-outlined text-[18px]">cloud</span><span class="font-label-md text-label-md">Storage</span></div><div class="w-full bg-surface-container h-1 rounded-full overflow-hidden mb-space-xs"><div class="bg-primary h-full rounded-full" style="width: 82%;"></div></div><p class="font-body-md text-[12px] text-outline">12.4 GB of 15 GB used</p></div></aside><div class="pl-64"><main class="w-full pt-16 bg-surface min-h-screen px-margin"><div class="flex flex-col w-full pb-space-xl">
+<!-- Interactive Top Multi-Action / Toast Notification Slot -->
+<div class="fixed bottom-6 right-8 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-space-sm bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded-full shadow-lg" id="actionToast">
+<span class="material-symbols-outlined text-[20px] text-secondary-fixed">check_circle</span>
+<span class="font-label-md text-label-md font-normal" id="toastMsg">Suggestion updated</span>
+</div>
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pt-space-md pb-space-lg">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-xs text-primary font-label-md text-label-md uppercase tracking-wider font-semibold">
+<span class="material-symbols-outlined text-[18px]">loyalty</span>
+<span class="">Semantic Memory Chapters</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Life Stages &amp; Milestones</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Key periods, places, and chapters of your life, automatically surfaced and organized.</p>
+</div>
+<!-- Top Action Pill -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="flex items-center gap-space-xs px-space-md h-10 bg-primary text-on-primary rounded-full hover:bg-primary-container shadow-sm hover:shadow transition-all font-label-md text-label-md" onclick="openCreateModal()">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span class="">Create Life Stage</span>
+</button>
+</div>
+</div>
+<!-- SECTION 1: Seattle Relocation & New Apartment -->
+<section class="mb-space-xl">
+<!-- Header with Review Suggestions Alert -->
+<div class="flex flex-wrap items-center justify-between gap-y-space-sm pb-space-sm mb-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-space-xs">
+<span class="">🏡</span>
+<span class="">Seattle Relocation &amp; New Apartment</span>
+</h2>
+<span class="font-body-md text-body-md text-outline">124 photos</span>
+<!-- Review Suggestions Chip (Alert State) -->
+<button class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md font-medium hover:bg-tertiary-fixed-dim transition-colors cursor-pointer shadow-sm" id="toggleSeattleTrayBtn" onclick="toggleSuggestionTray('seattleTray', this)">
+<span class="material-symbols-outlined text-[17px] text-tertiary">warning</span>
+<span class="">Review suggestions (6)</span>
+<span class="material-symbols-outlined text-[16px] ml-0.5">expand_less</span>
+</button>
+</div>
+<!-- Action Overflow Menu -->
+<div class="relative">
+<button class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="toggleMenu('menu-seattle')">
+<span class="material-symbols-outlined text-[22px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-60 bg-surface-container-lowest rounded-xl shadow-lg py-2 z-30" id="menu-seattle">
+<button class="w-full px-space-md py-2.5 flex items-center gap-space-sm text-left font-label-md text-label-md text-on-surface hover:bg-surface-container" onclick="openRenameModal('Seattle Relocation &amp; New Apartment'); toggleMenu('menu-seattle');">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">edit</span>
+<span class="">Rename tag group</span>
+</button>
+<button class="w-full px-space-md py-2.5 flex items-center gap-space-sm text-left font-label-md text-label-md text-on-surface hover:bg-surface-container" onclick="openMergeModal('Seattle Relocation &amp; New Apartment'); toggleMenu('menu-seattle');">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">merge_type</span>
+<span class="">Merge with another tag group</span>
+</button>
+<div class="h-px bg-surface-container my-1"></div>
+<button class="w-full px-space-md py-2.5 flex items-center gap-space-sm text-left font-label-md text-label-md text-error hover:bg-error-container/40" onclick="openConfirmDialog('Seattle Relocation &amp; New Apartment'); toggleMenu('menu-seattle');">
+<span class="material-symbols-outlined text-[18px] text-error">delete_outline</span>
+<span class="">Delete tag group entirely</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Suggested Photos Review Tray -->
+<div class="bg-surface-container-low rounded-xl p-space-md mb-space-md transition-all" id="seattleTray">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px]">auto_awesome</span>
+<span class="font-label-lg text-label-lg font-medium text-on-surface">Candidate Photos for Seattle Tag</span>
+<span class="font-body-md text-body-md text-outline">Detected around Belltown &amp; Capitol Hill • August 2023</span>
+</div>
+<button class="text-primary hover:text-primary-container font-label-md text-label-md font-medium px-space-sm py-1 rounded-full hover:bg-surface-container-high transition-colors" onclick="confirmAllSeattle()">
+          Confirm all 6
+        </button>
+</div>
+<!-- 3 Unconfirmed Candidate Photos -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Candidate 1 -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-2 shadow-sm transition-all hover:shadow-md" id="candidate-1">
+<div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Sunlit empty urban apartment hardwood floors with taped cardboard moving boxes and panoramic Puget Sound window view in Seattle, editorial documentary photo aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlVRAE-KMDEOIP58A3gWzxgACEGSBsUSFtzR5nkR1rlIQHYjcTdLkDPZodwQb4vCc8u59oQWXUJDIeMXQW2Jwd1YIVHv4BkGaGc-novD4hCnuSBHHzKgNif1eMgfz4kM1haY0Wax_jA6EHjMEP2GWLsCq8jW-XsXW4IUu2ehsu3Kj-7FNlr1QGCcd4JghyhJ9P-qIa4C667SiutZXVWmPOWqArv7wGiieDKn74dgDg7Tua9IBkqDtGhw">
+<div class="absolute top-2 left-2 bg-surface-container-lowest/90 backdrop-blur-sm text-tertiary px-2 py-0.5 rounded-full font-label-md text-[11px] font-semibold tracking-wide flex items-center gap-1 shadow-sm truncate">
+<span class="material-symbols-outlined text-[13px]">lightbulb</span>
+<span class="">89% Match • Box labeled "Kitchen"</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 px-1">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Living Room Moving In</span>
+<span class="font-body-md text-[12px] text-outline">Aug 14, 2023 • 10:24 AM</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-full flex items-center justify-center bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container transition-colors shadow-sm" onclick="confirmCandidate('candidate-1', 'Living Room Moving In')" title="Confirm tag">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" onclick="dismissCandidate('candidate-1')" title="Dismiss suggestion">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Candidate 2 -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-2 shadow-sm transition-all hover:shadow-md" id="candidate-2">
+<div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Golden hour view of the Seattle Space Needle seen through rain-streaked apartment window balcony on 4th Ave, cinematic architectural framing" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD71VBQRvDL28jZqiIiheXJ4tUtipkoYn8txNx8W3vxMurqX41P22saZOlfkRyzHsE8Ux2dbWuoiEhgKpNSE4nuXK_7nzKELDVDDXLHwsWbMrfTYqzAib_vQud-lqViNO22VIde-C8rOgMPEVR77poA26ejhoiUtjNnHqBH5kKGsTr367kotrPDNaTLqi7cCLAGgI_V6cUb4McUr62Gtnh3Kj1EfiY4jodw21CfyKUUtE8dILmuqydxyA">
+<div class="absolute top-2 left-2 bg-surface-container-lowest/90 backdrop-blur-sm text-tertiary px-2 py-0.5 rounded-full font-label-md text-[11px] font-semibold tracking-wide flex items-center gap-1 shadow-sm truncate">
+<span class="material-symbols-outlined text-[13px]">lightbulb</span>
+<span class="">Location: Belltown, WA</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 px-1">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">Balcony Sunset View</span>
+<span class="font-body-md text-[12px] text-outline">Aug 17, 2023 • 8:12 PM</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-full flex items-center justify-center bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container transition-colors shadow-sm" onclick="confirmCandidate('candidate-2', 'Balcony Sunset View')" title="Confirm tag">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" onclick="dismissCandidate('candidate-2')" title="Dismiss suggestion">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Candidate 3 -->
+<div class="flex flex-col bg-surface-container-lowest rounded-xl p-2 shadow-sm transition-all hover:shadow-md" id="candidate-3">
+<div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Friends smiling around a wooden picnic table at a Seattle craft brewery patio in Capitol Hill, afternoon sunny natural light with pint glasses" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_DocDLo8lwLyH1u_gYcFMqF4ZhFuxWIdlfZfBRXCBdVAhxklpRshEwARvx8lDdR0UF0kv5RTdl1QrZbxxLapf-oFiN2oCfGpZlijVsgWtjbj3ODIQSFKYmEIOxmvptRq8x0nD4noKBvkePMUfw9KGjQ9Mb87uApY77RJ0iOp8VoENdFSeukcIkkFAEHSDZBHt38pWi9Xtu8IPLb80ydwlH8BkUQ7Q5OUEH2ByrN7DvxYfg9YgDzmgyA">
+<div class="absolute top-2 left-2 bg-surface-container-lowest/90 backdrop-blur-sm text-tertiary px-2 py-0.5 rounded-full font-label-md text-[11px] font-semibold tracking-wide flex items-center gap-1 shadow-sm truncate">
+<span class="material-symbols-outlined text-[13px]">lightbulb</span>
+<span class="">Face Cluster • Seattle Trip</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-2 px-1">
+<div class="flex flex-col">
+<span class="font-label-md text-label-md text-on-surface font-medium truncate">First Saturday Drinks</span>
+<span class="font-body-md text-[12px] text-outline">Aug 19, 2023 • 4:45 PM</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-8 h-8 rounded-full flex items-center justify-center bg-secondary-container hover:bg-secondary-fixed text-on-secondary-container transition-colors shadow-sm" onclick="confirmCandidate('candidate-3', 'First Saturday Drinks')" title="Confirm tag">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+<button class="w-8 h-8 rounded-full flex items-center justify-center bg-surface-container hover:bg-surface-container-high text-on-surface-variant transition-colors" onclick="dismissCandidate('candidate-3')" title="Dismiss suggestion">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Dense Horizontal/Masonry Photo Grid (Confirmed) -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-gutter-dense">
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Keys in front of modern apartment door with brass numbering, warm bright hallway lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4doN6WGBzvHgpqD9M5B85ShDqmBrZZksXMICPvEl8GfE0Bwb0Jhytf2WgQBLqqY2sMifLTTTm2a6HObBnm4x926zO9m70WxGofUn1CQufMrpURA5jCvX1bWalGblOxw1NXwqJfLFVC59DsIh9NCeHLnlPstbqrmii6NMKhNiOKjzq7NGAlgFLfMT3bYhL5q0wZTbtlwb2miG1UlD5WpPRL3mGpN8R9jtnE36UDxI4aMsmJxfJAA8JVQ">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Assembled Scandinavian coffee table and green sofa in bright minimalist Seattle living room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeYJX9rXaxfe3Ceuw7RBjouKNj2FxW4_RMh617mwei6iMepFC_qwpPKRn_vTDQo46gfCTUVOOORc1LFi5miVXjBR6q5szPwl4G8yVXCec5cr33G6280v3w8C7abdmFwT3qrhvBfXi1zI4AkR8Q52oSd-DZo1ZbL5a6ybWHcHB5KjaBPUg_6sizue3L8UbFnW51fCAGsHG20lRbO8nEDi_8WdmWwMWsyiuPwdnVhdqof_Lo928aVbUq2A">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Morning coffee cup on windowsill overlooking rain-washed Seattle pine trees and street" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC1ftdxGpmLcjxAkIrwoOThWj6G3mUvLWm93Cd_STDk6mIWzaC5JQmQbvR-eh0tIHxFNYZhyKFWPHt945ZXliO9I8rq-nDRkuIZGwFdkJ46zyMhiGDP-pGkV_nH5m1z80LucfGG13-xQKI3bjbw6ckHbncufg0q4XRvbR_W5gqEpC5vDJ6mc5fCOUk-FPxmO0-7jiDJC2tWa9i0y3n3iW-QRzzHwIf4AqR9kTBEyMXcHgjvYBHvqeJPFQ">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Pike Place Market neon sign at dusk with floral bouquets and market stalls in Seattle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2xpE1CjhGpFvENTSNs-oGYm8BbIR4sFdGpuwSpypO7FoHInba6dx7Ev1voR7bvwcfHwmHzCuTB1_V9YCuLFk9kgEvVXosJphVOW9-l-An6e0KbalxkvEyIf3J6EwasEdODd90tNuexqef0NOh_zm_DRoObJU4phGb4A7X38vz7B7PNMNofW8lvoWt6NVXvohL33M0yQzqq5GV1s9FSjbVLHMJ7J5Rr6gJBVl1lO6zVhruZgPiV-PPXw">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Ferry crossing Elliott Bay Seattle skyline with misty water reflections in soft morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsYH37hHSJ6j7URghJ_LH_D5cnrWwWKRIPWg96SnKiXOc25rH6O3sx8tjakiHoLdQcgesXD4wzcQYMg8LkBZuU3X9o96kF7Cn94soI_5VxDeMP3lYWyGHSowmYJ5_Tyv7lieYHmvq433bEDOmqIzAUGFjst24NZ8JFVUybjS3tVmeplJh32vHASLfR6U3VT3EPjGt15pIjdp-NhODaLwgmetHjbpNGFFqFdJ-1HNn8YLRDTjksTQSBkQ">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Kitchen shelf filled with freshly unpacked ceramic mugs, spices, and a small potted succulent in Seattle apartment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPHrFvYP4XZWnmj5XCjR7-gQ8Jt7L4FGna_Qf98KI5goklR51cgvyjZtTQUjsBIIeYvaIxraKY3DQP5anZCNtgbLo3A0j2FhBGlVSXGAX798mwE-4Q6SXeqV5_omdkF94T44VVMKxGpMMtAg82GiA5yKMoBE_s4LzqHOv1BabJvTcpqft6iOpWi7VLw9Pk3IJTvwW6JvKJ-i_huk4dpT225FB0N1lDALHvePgjaUhW4UiUX60XHSDT9g">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: University & Grad School -->
+<section class="mb-space-xl">
+<div class="flex flex-wrap items-center justify-between gap-y-space-sm pb-space-sm mb-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-space-xs">
+<span class="">🎓</span>
+<span class="">University &amp; Grad School</span>
+</h2>
+<!-- Tag status: All confirmed -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-medium shadow-sm">
+<span class="material-symbols-outlined text-[17px] text-secondary">check_circle</span>
+<span class="">Confirmed • 340 photos</span>
+</span>
+</div>
+<!-- Action Overflow Menu -->
+<div class="relative">
+<button class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="toggleMenu('menu-university')">
+<span class="material-symbols-outlined text-[22px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-60 bg-surface-container-lowest rounded-xl shadow-lg py-2 z-30" id="menu-university">
+<button class="w-full px-space-md py-2.5 flex items-center gap-space-sm text-left font-label-md text-label-md text-on-surface hover:bg-surface-container" onclick="openRenameModal('University &amp; Grad School'); toggleMenu('menu-university');">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">edit</span>
+<span class="">Rename tag group</span>
+</button>
+<button class="w-full px-space-md py-2.5 flex items-center gap-space-sm text-left font-label-md text-label-md text-on-surface hover:bg-surface-container" onclick="openMergeModal('University &amp; Grad School'); toggleMenu('menu-university');">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">merge_type</span>
+<span class="">Merge with another tag group</span>
+</button>
+<div class="h-px bg-surface-container my-1"></div>
+<button class="w-full px-space-md py-2.5 flex items-center gap-space-sm text-left font-label-md text-label-md text-error hover:bg-error-container/40" onclick="openConfirmDialog('University &amp; Grad School'); toggleMenu('menu-university');">
+<span class="material-symbols-outlined text-[18px] text-error">delete_outline</span>
+<span class="">Delete tag group entirely</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Dense Grid: Campus, Graduation, Dorm, Friends -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-gutter-dense">
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Historic stone library on college quad during crisp autumn with vibrant golden maple foliage, student lifestyle photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC2GhIM3oTW2OyhkarhcY7JRxP1iafYrziDjpS1OXOjM1Q8m9i1OkSGcF2_dXlnN4gFx5qGwh8fW3p1dxKtG0CX-PJPEYUcSlHDoYHcYg28-NiHoL-F_IdCrlUWbRYTz1yzuJzo-r4YROG1iDPhGM7d5yykJ_V3KmVVR-f2kBUXRivLzcqOBsPsm4VcIZ-jRdY7UZ8Bz5Fbt5t0kTTbP-DyHgJlpRzf2CPDeL2SlEE9W7TzRajGU7wyQw">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Graduation commencement ceremony outdoors with black mortarboard caps thrown high into a bright azure sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCkumk19ntjABSEg2oz54BLvDzLhRdKv2VkQc78PfHagPlTVPLfv6D8K0JSnQaX1PEjYZcprjGMH0JMhgWqmlbPydl2Uk1fi3jRDnk4h09dmNkpDHjUL0KLrRVetEmU4O1obW-4UIXb03fstfe-wfeE9RUYOc05H9t5Eb5qRzg3hkH56aG5IqzKlRZhPj_zhanMra-3Kd7bstETf_QYRAEPoD_d5YU6yYjBKAhPv3fnvfFKqJ11gyf6Vw">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="College dorm study desk late at night with glowing laptop screen, textbooks, sticky notes and hot tea mug" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzdVLYzokmxXtpY5G5xGXZCfUMEUTS8myBbsW-8oh7lkYk-MTI4YQfZUzshlDSJTM2IvxkeTL8-HLzhwwsQipLt-uadZToa51kVXa1ym1b_zRccKwYzRg0B_r1Fo0cune9Cso0arASO_AOT85oYvU2fv6xMhitCS85drILqp5vIyMQxkZefq_fk1o3l14vXBruhn0rSYs8X30X3MQj2BbPxt700dip3Gaqxou5RKsebGSjEYE5qHomeg">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Diverse group of college friends laughing together on lawn outside university student union on sunny afternoon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSvHn2ZwVDZBDsU9SCmHdob7JjGfQwPFHGNNucUTIOFdyjxvoFpQNFz_cT5ynDnshpYfBh6UWJ_lTZQ8JHAIgZ9qn8B787XvX3PIKmmSaMcitsjvydE5R7TnmLRYfuofHs1O5qXBypUtTziQh3xyNdRwL1_Rlf7CtER13scNbxS6sNzT3F8pgQmz1ykWcApiQBDmiGJdg0YAhTaM6ImNZD7E2CZCxemSKVSv-EfuENQz9HKVtagYc4Sw">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Graduate student in laboratory lab coat taking notes beside optical microscope and clean work bench" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx87Mt2Z-zGPakqsKh1-Yi0pG4vA2LTr5c1OdaF_vfD9Z8oPY4FbnBnQKs1xGvECepFIyXW7PSqd6CSfvPpQVT783XsKr0im9CfqsD_Y45aOt0cxqCfH7tJCEy4Z3q6pCe1C-3vg435_syjIwE574DNlRzpudeyS-z6zr83a8egOQoaOP4pIUB4NBcHkjYc-ECT4E5krFfhdWgQV1aXmjbpFUwGRQ8PNsut-qcPekj2hJ6Wjft9zIcHg">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Smiling graduate holding ribboned diploma tube outdoors next to proud friends, candid moment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCR51IvrOFQ3JJt9Q81Y5IDBbe5KNWTTDC4ISiZbhXydpcU7rAhSMptWTpeFLZCOEjs2XLfqw7qLK6_1KRBtBmQK8OSu7wb9ZCR1VvQW9sU80KwFPenRoewj8SVu03SFP4N6-XkUwoSAr8PkYM0K4-2o9E2-tweH6LTUsLzQjCtembyz5cVW9Oc2zkqaX7483Vv5lo4hRxi58UKs-rUJeZKZryT7RwvGJ5nkGTQ1z7oVY8Wt6JoPbu3gA">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: First Year with Liam -->
+<section class="mb-space-xl">
+<div class="flex flex-wrap items-center justify-between gap-y-space-sm pb-space-sm mb-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface flex items-center gap-space-xs">
+<span class="">👶</span>
+<span class="">First Year with Liam</span>
+</h2>
+<!-- Milestone dates & Confirmed Chip -->
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-medium shadow-sm">
+<span class="material-symbols-outlined text-[17px] text-secondary">check_circle</span>
+<span class="">285 photos • 2021 – 2022</span>
+</span>
+</div>
+<!-- Action Overflow Menu -->
+<div class="relative">
+<button class="w-9 h-9 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high transition-colors" onclick="toggleMenu('menu-liam')">
+<span class="material-symbols-outlined text-[22px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-1 w-60 bg-surface-container-lowest rounded-xl shadow-lg py-2 z-30" id="menu-liam">
+<button class="w-full px-space-md py-2.5 flex items-center gap-space-sm text-left font-label-md text-label-md text-on-surface hover:bg-surface-container" onclick="openRenameModal('First Year with Liam'); toggleMenu('menu-liam');">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">edit</span>
+<span class="">Rename tag group</span>
+</button>
+<button class="w-full px-space-md py-2.5 flex items-center gap-space-sm text-left font-label-md text-label-md text-on-surface hover:bg-surface-container" onclick="openMergeModal('First Year with Liam'); toggleMenu('menu-liam');">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">merge_type</span>
+<span class="">Merge with another tag group</span>
+</button>
+<div class="h-px bg-surface-container my-1"></div>
+<button class="w-full px-space-md py-2.5 flex items-center gap-space-sm text-left font-label-md text-label-md text-error hover:bg-error-container/40" onclick="openConfirmDialog('First Year with Liam'); toggleMenu('menu-liam');">
+<span class="material-symbols-outlined text-[18px] text-error">delete_outline</span>
+<span class="">Delete tag group entirely</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Photo Grid: Baby Steps, Nursery, Park Strolls -->
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-gutter-dense">
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Toddler taking first wobbly steps on soft nursery rug holding parent hands, warm natural morning window light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwc8MAMGJ3wshpatO_9re6Yry_xxqzAqzUUE_tLyzk20ILN2wp_vyYciyLMgrxDCFNzR4f3oQBpOSIWlePwVHo_AWC5DrsErWfi13jhkvj_1smxumFP1zNQ7FPeYV7V7RlnOF8hGidjISLVs774lW5O5Eosvmw6dUhXknGgXvSRPT9Ad7jmboQAr6hOHGjj7-8zbKWgKq2RfeNfprE1LYThTSQ-sbX07I601FubYW4Az0RSeuQmIk-lg">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Cozy sunlit baby nursery with light wood crib, soft linen cushions and pastel wall art" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZIPCmAIfnBGnWqpirRe6UlxPSTfMMvZsME-kppqUaeZPQHrUpoi_bxiVyf33LZ_fFDe66GM0dqFusaAzjR7z93vNyB1sS1No8IyhofSPeEhtp863v2J8p1_WxuHooYdeGU-TAgFVlzJDuGg9CxnZUWgohgYvDZBG4WdunA9w9fJDKmwjGetziEnQI1wCLY6t1Mp1shD-GcF3QT8wguMj9P1uz3VDQVLfQPq8d2kyiHWlS9ssUUDVFDw">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Parent pushing modern stroller along tree-lined park path with gentle dappled afternoon sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhdkx5WVt-ClBC7xmXhbjsDbWMoCeJHEw7xD7ZqSt-TCzunbFJ3IkQjRF4v8hVZa-JC4z8hAcBtgi3KQdtpGO0cUNlPA3hxg1jzNTV7gs4korK6AczlsDRFvoZMSLWs8kPVS28k4Xk2DOvGsYQqhyZwyH_-h2hjHdGeHTnJgxpqdyHeBo3xE6kL0lJJ2HEA7kLgp6VfWH2K1fs8PCaYgyKhG1JYHpI8bjB0RWzqnitC9frWhVnBkxm2g">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="First birthday smash cake celebration with baby laughing covered in bright yellow frosting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj6ZqQ-8oh19CkYGbb_FtxUWDL9heOmNpIW-EWsboHnlzmConT_-XK1uMVQbfj9AFuv_ZcrbkLLJNb-WTlq3VmTA18zjXJ-NrQBE_jiHfTIpedxqVvBiLcqfKLNEVB_PUJVb-GwdWCQ95L4JYQngsMSK4B78jaT3fayuvljXb8EsPweak4qQ0B5RqDZqEkeYZUWzwN5b-rzbUSiwHoZ054xX51perpbKUgx5FKgnmYFxG9LYVHfmPPTQ">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Tiny baby feet curled inside knitted woolen blanket, soft macro warm baby portrait photography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4qg2eYWOriEL_SL4YodN75s2SWaRFvxOfsgKuATL3B35Y04q2t_Z6cgpNrms2RS0PJ2QFn4Kn-gMyBFeqd9r2HRVPy6F6mw_F2WjeLstaS1efPAith9cdQtumtghaEDx0gigmAKbyuCm-ixsuhYpjyLfrxVqW0Qdyj72tycuYzIjgYYiZVoEup3OS2n6R3i9dt7Q2nhxAoybL3WgqQbfvB-oNIL4lRBpTFbkq8moeVEgBlj1gpYdaMA">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="group relative aspect-square rounded-lg overflow-hidden bg-surface-container-low cursor-pointer">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Parent and baby playing peekaboo behind colorful cloth book in bright playroom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFCMJlIWeBakIQPKpthheIQ7NxeVNwbfOb7EFZJbRsYlkjyYfJFesLX-u5w-o5luKcQyaTCO4TqwRQJX6U8kfCjSWkTUHip6srzwgdGe8OexHGiYr8F2IIBUfNtLzei0ZC838Mll7_Vb_2QfLvw_UmkIO65rA6vteq2_7SnRRTRUahxVL76CMWsqrcP6ubzN-ih6kYZgSoH7Wyw0DBHMifoMW0RHBFFcTKjPKnM9oI0WdfcpXu0u_0Ng">
+<div class="absolute inset-0 bg-on-surface/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+</div>
+</section>
+<!-- CONFIRM DELETE DIALOG (MODAL) -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface/40 backdrop-blur-xs" id="deleteModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-md w-full p-space-lg shadow-xl">
+<div class="flex items-center gap-space-sm text-error mb-space-sm">
+<span class="material-symbols-outlined text-[24px]">warning</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Delete Life Stage Tag?</h3>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+        Are you sure you want to remove <strong class="text-on-surface font-semibold" id="deleteTargetName">this life stage</strong>? The tag grouping will be removed, but your original photos will remain safe in your library.
+      </p>
+<div class="flex items-center justify-end gap-space-sm">
+<button class="px-space-md h-9 rounded-full text-on-surface-variant hover:bg-surface-container font-label-md text-label-md font-medium transition-colors" onclick="closeConfirmDialog()">
+          Cancel
+        </button>
+<button class="px-space-md h-9 rounded-full bg-error text-on-error hover:bg-on-error-container transition-colors font-label-md text-label-md font-medium shadow-sm" onclick="performDelete()">
+          Delete Group
+        </button>
+</div>
+</div>
+</div>
+<!-- CREATE LIFE STAGE MODAL -->
+<div class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-on-surface/40 backdrop-blur-xs" id="createModal">
+<div class="bg-surface-container-lowest rounded-xl max-w-lg w-full p-space-lg shadow-xl">
+<div class="flex items-center justify-between mb-space-md">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[24px]">add_circle</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Create New Life Stage</h3>
+</div>
+<button class="w-8 h-8 rounded-full flex items-center justify-center text-outline hover:bg-surface-container" onclick="closeCreateModal()">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-md mb-space-lg">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">Tag Name &amp; Emoji</label>
+<input class="w-full h-11 px-space-md bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary outline-none transition-all" id="newStageName" placeholder="e.g. 🌲 Cabin in Tahoe • Sabbatical 2024" type="text">
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">Date Range (Optional)</label>
+<div class="grid grid-cols-2 gap-space-sm">
+<input class="h-10 px-space-sm bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface outline-none" type="month">
+<input class="h-10 px-space-sm bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface outline-none" type="month">
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1">Associated Locations or People</label>
+<input class="w-full h-10 px-space-md bg-surface-container-low rounded-lg font-body-md text-body-md text-on-surface outline-none" placeholder="Add location, person, or context clues" type="text">
+</div>
+</div>
+<div class="flex items-center justify-end gap-space-sm">
+<button class="px-space-md h-9 rounded-full text-on-surface-variant hover:bg-surface-container font-label-md text-label-md font-medium" onclick="closeCreateModal()">Cancel</button>
+<button class="px-space-md h-9 rounded-full bg-primary text-on-primary hover:bg-primary-container font-label-md text-label-md font-medium shadow-sm" onclick="submitCreate()">Create Chapter</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  let activeTarget = '';
+
+  function toggleMenu(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const isHidden = el.classList.contains('hidden');
+    document.querySelectorAll('[id^="menu-"]').forEach(m => m.classList.add('hidden'));
+    if (isHidden) el.classList.remove('hidden');
+  }
+
+  window.addEventListener('click', function(e) {
+    if (!e.target.closest('button[onclick*="toggleMenu"]') && !e.target.closest('[id^="menu-"]')) {
+      document.querySelectorAll('[id^="menu-"]').forEach(m => m.classList.add('hidden'));
+    }
+  });
+
+  function toggleSuggestionTray(trayId, btn) {
+    const tray = document.getElementById(trayId);
+    if (!tray) return;
+    const icon = btn.querySelector('.material-symbols-outlined:last-child');
+    if (tray.classList.contains('hidden')) {
+      tray.classList.remove('hidden');
+      if (icon) icon.textContent = 'expand_less';
+    } else {
+      tray.classList.add('hidden');
+      if (icon) icon.textContent = 'expand_more';
+    }
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById('actionToast');
+    const toastMsg = document.getElementById('toastMsg');
+    if (!toast || !toastMsg) return;
+    toastMsg.textContent = msg;
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0');
+    }, 2800);
+  }
+
+  function confirmCandidate(cardId, title) {
+    const el = document.getElementById(cardId);
+    if (el) {
+      el.style.opacity = '0.3';
+      el.style.transform = 'scale(0.96)';
+      setTimeout(() => el.remove(), 250);
+    }
+    showToast(`Added "${title}" to Seattle Relocation`);
+  }
+
+  function dismissCandidate(cardId) {
+    const el = document.getElementById(cardId);
+    if (el) {
+      el.style.opacity = '0.2';
+      setTimeout(() => el.remove(), 200);
+    }
+    showToast('Suggestion dismissed');
+  }
+
+  function confirmAllSeattle() {
+    ['candidate-1', 'candidate-2', 'candidate-3'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.remove();
+    });
+    const tray = document.getElementById('seattleTray');
+    if (tray) {
+      tray.innerHTML = '<div class="py-space-md text-center font-label-md text-label-md text-secondary flex items-center justify-center gap-space-xs"><span class="material-symbols-outlined text-[20px]">check_circle</span>All candidates confirmed! Seattle tag is now up to date.</div>';
+    }
+    const chip = document.getElementById('toggleSeattleTrayBtn');
+    if (chip) {
+      chip.className = 'inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-md text-label-md font-medium shadow-sm cursor-default';
+      chip.innerHTML = '<span class="material-symbols-outlined text-[17px] text-secondary">check_circle</span><span>All confirmed &bull; 130 photos</span>';
+      chip.onclick = null;
+    }
+    showToast('All 6 photos confirmed and tagged');
+  }
+
+  function openConfirmDialog(name) {
+    activeTarget = name;
+    document.getElementById('deleteTargetName').textContent = name;
+    document.getElementById('deleteModal').classList.remove('hidden');
+  }
+
+  function closeConfirmDialog() {
+    document.getElementById('deleteModal').classList.add('hidden');
+  }
+
+  function performDelete() {
+    closeConfirmDialog();
+    showToast(`Removed "${activeTarget}" life stage`);
+  }
+
+  function openRenameModal(name) {
+    const newName = prompt('Enter new tag group name:', name);
+    if (newName && newName.trim()) {
+      showToast(`Renamed to "${newName.trim()}"`);
+    }
+  }
+
+  function openMergeModal(name) {
+    const target = prompt(`Merge "${name}" into which tag group?`, 'University & Grad School');
+    if (target) {
+      showToast(`Merged into "${target}"`);
+    }
+  }
+
+  function openCreateModal() {
+    document.getElementById('createModal').classList.remove('hidden');
+  }
+
+  function closeCreateModal() {
+    document.getElementById('createModal').classList.add('hidden');
+  }
+
+  function submitCreate() {
+    const nameInput = document.getElementById('newStageName');
+    const val = nameInput && nameInput.value.trim() ? nameInput.value.trim() : 'New Life Stage';
+    closeCreateModal();
+    if (nameInput) nameInput.value = '';
+    showToast(`Created Life Stage: ${val}`);
+  }
+</script></main></div>
+
+
+
+
+
+</body></html>

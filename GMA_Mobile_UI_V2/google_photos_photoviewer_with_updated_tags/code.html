@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{width:100vw;margin:0;padding:0;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "surface-tint": "#005ac1", "surface-container-lowest": "#ffffff", "surface-container-high": "#e9e7eb", "tertiary-fixed-dim": "#fbbc05", "primary-container": "#2771df", "confirmed-tint": "#E6F4EA", "tertiary-container": "#956e00", "destructive-tint": "#FCE8E6", "on-surface-variant": "#424753", "surface": "#faf9fd", "secondary-fixed-dim": "#6ddd81", "on-background": "#1a1b1e", "on-tertiary": "#ffffff", "on-secondary-fixed-variant": "#005320", "text-secondary": "#5F6368", "secondary-container": "#86f898", "tertiary-fixed": "#ffdfa0", "outline-variant": "#c2c6d5", "on-primary-fixed-variant": "#004494", "on-tertiary-fixed-variant": "#5c4300", "suggested-tint": "#FEF7E0", "on-error": "#ffffff", "on-primary-fixed": "#001a41", "on-error-container": "#93000a", "surface-bright": "#faf9fd", "primary-fixed-dim": "#adc6ff", "error-container": "#ffdad6", "tertiary": "#765700", "secondary": "#006e2c", "surface-container-low": "#f4f3f7", "on-tertiary-fixed": "#261a00", "outline": "#727785", "surface-bg": "#FFFFFF", "error": "#ba1a1a", "surface-dim": "#dbd9dd", "background": "#faf9fd", "on-primary-container": "#fefcff", "on-tertiary-container": "#fffbff", "blue-tint": "#E8F0FE", "primary-fixed": "#d8e2ff", "on-primary": "#ffffff", "border-divider": "#DADCE0", "surface-container": "#efedf1", "surface-variant": "#F8F9FA", "secondary-fixed": "#89fa9b", "destructive-red": "#EA4335", "on-secondary": "#ffffff", "confirmed-green": "#34A853", "on-secondary-fixed": "#002108", "on-surface": "#1a1b1e", "inverse-on-surface": "#f1f0f4", "inverse-primary": "#adc6ff", "on-secondary-container": "#00722f", "inverse-surface": "#2f3033", "suggested-yellow": "#FBBC04", "primary": "#0058bd", "surface-container-highest": "#e3e2e6", "text-primary": "#202124" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-md": "0.75rem", "margin": "1rem", "space-xl": "1.5rem", "space-lg": "1rem", "gutter": "0.5rem", "space-sm": "0.5rem", "space-xs": "0.25rem" }, fontFamily: { "headline-md": ["Roboto Flex"], "body-md": ["Roboto Flex"], "label-md": ["Roboto Flex"], "headline-sm": ["Roboto Flex"], "headline-lg": ["Roboto Flex"], "label-sm": ["Roboto Flex"], "label-lg": ["Roboto Flex"], "display-lg": ["Roboto Flex"], "body-lg": ["Roboto Flex"] }, fontSize: { "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "0px", "fontWeight": "500" }], "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.25px", "fontWeight": "400" }], "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500" }], "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "0px", "fontWeight": "500" }], "headline-lg": ["24px", { "lineHeight": "32px", "letterSpacing": "0px", "fontWeight": "500" }], "label-sm": ["14px", { "lineHeight": "18px", "letterSpacing": "0.1px", "fontWeight": "500" }], "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.1px", "fontWeight": "500" }], "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.5px", "fontWeight": "500" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.15px", "fontWeight": "400" }] } } } };</script><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head><body class="bg-surface font-body-md text-body-md text-on-surface flex flex-col min-h-screen"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 px-space-md flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-xs"><button aria-label="Navigate Back" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface hover:bg-surface-container transition-colors" onclick="history.back()"><span class="material-symbols-outlined text-2xl">arrow_back</span></button><h1 class="font-headline-sm text-headline-sm text-on-surface font-medium truncate">Memory Detail View</h1></div><div class="flex items-center justify-center pr-space-xs flex-shrink-0"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-border-divider" src="https://lh3.googleusercontent.com/aida/AEtjO1Un9l0VyZhRisTwb8QpMctcrdgjaJVI1G1s_jl8aYoDJT_wNsURnmTf-OwTNKtPzI25U-dSubXpOOHQkytn6S-QXWlKf0Tw4gK-8m6H0DMhFL0U4jBBG2_IkJmFyVWciGSxSILCqFxpImlbXAs1PTkjVgst-83wxUbv3oxqmocPg2sTsJhXlXvUmMQXj-B_qRju5BMbPyWoUnIAG7HgJDJRCHbuzyLQPryfnN53q-oiNUpLBTF4eFj0UgHMaJbqZKqDCS3EzBaD2X4"/></div></div></header><main class="flex flex-col relative w-full pt-16 bg-surface min-h-screen pb-safe"><div class="flex flex-col w-full relative select-none">
+<!-- Top Scoped Context Header Overlay (Integrated sub-bar right below shell header) -->
+<div class="w-full px-space-md py-space-sm flex flex-col gap-space-xs bg-surface-container-lowest/90 backdrop-blur-md z-30 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex flex-col min-w-0 pr-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="font-headline-sm text-headline-sm text-on-surface font-medium truncate">Bangalore Days</span>
+<span class="material-symbols-outlined text-[16px] text-primary" title="Curated Life Stage">auto_awesome</span>
+</div>
+<span class="font-label-sm text-label-sm text-text-secondary">Photo 12 of 42 • May 18, 2024</span>
+</div>
+<!-- Quick Action Icons -->
+<div class="flex items-center gap-space-xs flex-shrink-0">
+<button aria-label="Favorite" class="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-container transition-colors active:scale-95" id="star-btn">
+<span class="material-symbols-outlined text-[22px]">star</span>
+</button>
+<button aria-label="Cast to display" class="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[22px]">cast</span>
+</button>
+<button aria-label="Toggle Photo Details" class="w-9 h-9 rounded-full flex items-center justify-center bg-blue-tint text-primary hover:bg-primary-fixed transition-colors active:scale-95" id="info-toggle-btn">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">info</span>
+</button>
+<button aria-label="More options" class="w-9 h-9 rounded-full flex items-center justify-center text-text-secondary hover:bg-surface-container transition-colors active:scale-95">
+<span class="material-symbols-outlined text-[22px]">more_vert</span>
+</button>
+</div>
+</div>
+<!-- Swipe Scope Pill Indicator -->
+<div class="flex items-center">
+<div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-tint text-primary font-label-sm text-label-sm font-medium shadow-sm">
+<span class="material-symbols-outlined text-[15px]">lock</span>
+<span>Swipe scope: <strong class="font-semibold">Bangalore Days</strong> (42 photos)</span>
+</div>
+</div>
+</div>
+<!-- Primary Scoped Photo Stage -->
+<div class="relative w-full aspect-[3/4] max-h-[580px] bg-inverse-surface overflow-hidden flex items-center justify-center group">
+<!-- Active Photo Dev Patel in Cubbon Park -->
+<img alt="Dev Patel walking smiling in sunlit Cubbon Park Bangalore" class="w-full h-full object-cover transition-transform duration-300" id="main-scoped-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt1XyLuly5B9wcFZ66Dp0oDbWajmCTXblSPOclRI3SgbQKWW4WxpTnt8hEC53lcb5d3JN8wxzB0VR8lBLhI4hfqki8wIdY-YzmvYYHIErXcAPchMZTG5LLMUG82Yz84xmkmDdnFCJZVzAcrHkUUQw-s9zn5uE_ikEfUqAB9kXhKTCFr1IgDqJD7Kzpq6x30Q4PKJTj225hfU18VqAdQ3GgjQQSskNBssRDjVJ3BkjWsXFq3lufEBihzfTRbWJM6hDB_iU"/>
+<!-- Ambient Subtle Vignette for Overlay Legibility -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none"></div>
+<!-- Left / Right Scoped Photo Navigation Edge Buttons -->
+<button aria-label="Previous photo in Bangalore Days" class="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-inverse-surface/60 backdrop-blur-md text-surface-container-lowest flex items-center justify-center hover:bg-inverse-surface/85 active:scale-90 transition-all shadow-md">
+<span class="material-symbols-outlined text-2xl">chevron_left</span>
+</button>
+<button aria-label="Next photo in Bangalore Days" class="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-inverse-surface/60 backdrop-blur-md text-surface-container-lowest flex items-center justify-center hover:bg-inverse-surface/85 active:scale-90 transition-all shadow-md">
+<span class="material-symbols-outlined text-2xl">chevron_right</span>
+</button>
+<!-- Top Floating Tags Snapshot Overlaid on Photo -->
+<div class="absolute top-3 left-3 flex items-center gap-1.5 z-10">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-lowest/90 backdrop-blur-md text-text-primary font-label-sm text-label-sm shadow-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary-fixed-dim" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+<span>Third Wave Coffee</span>
+</span>
+</div>
+<!-- Bottom Left: Primary Life Stage Badge -->
+<div class="absolute bottom-3 left-3 z-10">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-confirmed-tint text-on-secondary-fixed-variant shadow-md font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px] text-confirmed-green" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Bangalore Days</span>
+</div>
+</div>
+<!-- Bottom Right: Photo Counter Pill -->
+<div class="absolute bottom-3 right-3 z-10">
+<div class="px-2.5 py-1 rounded-full bg-inverse-surface/75 backdrop-blur-md text-surface-container-lowest font-label-sm text-label-sm tracking-wide shadow-md">
+        12 / 42
+      </div>
+</div>
+<!-- Floating Transient Confirmation Toast (Simulating recently committed state) -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex items-center justify-between gap-3 px-4 py-2.5 rounded-full bg-[#202124] text-surface-container-lowest shadow-xl transition-all duration-500 ease-out transform translate-y-0 opacity-100 max-w-[90%] w-auto" id="status-toast">
+<div class="flex items-center gap-2 min-w-0">
+<span class="material-symbols-outlined text-confirmed-green text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="font-body-md text-body-md truncate">Photo tags updated</span>
+</div>
+<button class="font-label-md text-label-md text-primary-fixed-dim hover:underline flex-shrink-0" onclick="document.getElementById('details-sheet').scrollIntoView({behavior: 'smooth'})">
+        View
+      </button>
+<button aria-label="Dismiss toast" class="text-surface-dim hover:text-surface-container-lowest flex items-center ml-1" onclick="document.getElementById('status-toast').classList.add('opacity-0', 'pointer-events-none')">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Adjacent Photos Filmstrip (Scoped inside Chapter) -->
+<div class="w-full bg-surface-container-lowest py-2.5 px-space-md flex flex-col gap-1.5 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider font-semibold">Timeline Context</span>
+<button class="text-primary font-label-sm text-label-sm hover:underline flex items-center gap-0.5">
+<span>View chapter</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+<div class="flex items-center gap-2 overflow-x-auto py-1 scroll-smooth">
+<!-- Item 10 -->
+<div class="relative flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden opacity-75 hover:opacity-100 cursor-pointer shadow-sm">
+<img alt="Indiranagar cafe snippet" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WFUhd9CiCcYUkH0zMhyeUqy3irEcOYVetGdb5gcXuaW2tlKZ_ycZnVUt6DwSbU8IqpIYR0iYCkgExQTUkXB2z8Ds1-WneEDGNcI0ngLngoiBwzqa334nBbW_sLMza2lg1wZyX_5YiLWzgKv3ZYgtjPaz7r7OrPIMOb3L75B8NwtN6flKk368H7umcfjVvNL0roZSoH3e-UuacpN1TMz7nW6rQwiBbdu-HtU8p08nus1jJElOOLlxPUaM2c"/>
+</div>
+<!-- Item 11 -->
+<div class="relative flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden opacity-75 hover:opacity-100 cursor-pointer shadow-sm">
+<img alt="Coffee prep at Third Wave" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WFUhd9CiCcYUkH0zMhyeUqy3irEcOYVetGdb5gcXuaW2tlKZ_ycZnVUt6DwSbU8IqpIYR0iYCkgExQTUkXB2z8Ds1-WneEDGNcI0ngLngoiBwzqa334nBbW_sLMza2lg1wZyX_5YiLWzgKv3ZYgtjPaz7r7OrPIMOb3L75B8NwtN6flKk368H7umcfjVvNL0roZSoH3e-UuacpN1TMz7nW6rQwiBbdu-HtU8p08nus1jJElOOLlxPUaM2c"/>
+</div>
+<!-- Item 12: Selected / Active Indicator -->
+<div class="relative flex-shrink-0 w-14 h-14 rounded-lg overflow-hidden shadow-md">
+<img alt="Dev Patel in Cubbon Park active frame" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApLIrD3Za6YOchiLAhn3AXryMwjDxiItGO9owL29oKh_yMuMsD8KsVww8r_EKccMuNf1S1n2HyolKB400buXSXtWXdcOf3Qhak-ZBO7ZWMmzikmwI4XlY7t4gZQNmTc_iXWqzmieHTdhVGoTLxMTufROtsKwZXOjXgYmZZ6ZSrb6jc2nogJMZZqB2XBzACrkbI1MklRhLF4ip9L9Uq5pTR2aYng7jweS8Zfrzagp9hbO-ESeCW3s-HT0HZmViPlH5J9lU"/>
+<div class="absolute inset-0 bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-surface-container-lowest text-[18px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+</div>
+<!-- Item 13 -->
+<div class="relative flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden opacity-75 hover:opacity-100 cursor-pointer shadow-sm">
+<img alt="Cubbon Park afternoon trees" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WFUhd9CiCcYUkH0zMhyeUqy3irEcOYVetGdb5gcXuaW2tlKZ_ycZnVUt6DwSbU8IqpIYR0iYCkgExQTUkXB2z8Ds1-WneEDGNcI0ngLngoiBwzqa334nBbW_sLMza2lg1wZyX_5YiLWzgKv3ZYgtjPaz7r7OrPIMOb3L75B8NwtN6flKk368H7umcfjVvNL0roZSoH3e-UuacpN1TMz7nW6rQwiBbdu-HtU8p08nus1jJElOOLlxPUaM2c"/>
+</div>
+<!-- Item 14 -->
+<div class="relative flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden opacity-75 hover:opacity-100 cursor-pointer shadow-sm">
+<img alt="Stroll near high court" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBczUuCR3NFeWRMeF1xPfhvbZg3Wpk8fBRUa7KRTENiIcGAAxCbWswKOw_veNk-7mEs0NFusTFZvcDmko08DJqOxmjUW0YcuFekVAsIMPAm7MzPPZGW2FGQrgAKJQ7m0vxd5ryMsF_PFEnXFYomrIs4Vic-rZgQHrUZilM0GKLwusa1kr73uFP8ecegMtRXr55RPLteyi_rk_WZYD94SMOhXHlD_1MmCG_LVzck2fCTF1eM_OOGA6H81wIrsiOQaKkSDlw"/>
+</div>
+<!-- End Chapter Card -->
+<div class="flex-shrink-0 w-16 h-12 rounded-lg bg-surface-container flex flex-col items-center justify-center text-text-secondary cursor-pointer hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-[18px]">photo_library</span>
+<span class="text-[10px] font-label-sm">+29 more</span>
+</div>
+</div>
+</div>
+<!-- Standard Google Photos Main Utility Action Bar -->
+<div class="w-full bg-surface-container-lowest px-space-md py-2 flex items-center justify-around shadow-sm">
+<!-- Share -->
+<button class="flex flex-col items-center gap-1 text-on-surface hover:text-primary transition-colors py-1 px-2.5 rounded-lg active:bg-surface-container">
+<span class="material-symbols-outlined text-[24px]">share</span>
+<span class="font-label-sm text-label-sm">Share</span>
+</button>
+<!-- Edit -->
+<button class="flex flex-col items-center gap-1 text-on-surface hover:text-primary transition-colors py-1 px-2.5 rounded-lg active:bg-surface-container">
+<span class="material-symbols-outlined text-[24px]">tune</span>
+<span class="font-label-sm text-label-sm">Edit</span>
+</button>
+<!-- Scoped Tag Action (Active State with Tag count = 3) -->
+<button class="flex flex-col items-center gap-1 text-primary py-1 px-3 rounded-full bg-blue-tint transition-all shadow-sm active:scale-95">
+<div class="relative">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">label</span>
+<span class="absolute -top-1 -right-2 bg-primary text-on-primary text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center leading-none">3</span>
+</div>
+<span class="font-label-sm text-label-sm font-semibold">Tagged</span>
+</button>
+<!-- Google Lens -->
+<button class="flex flex-col items-center gap-1 text-on-surface hover:text-primary transition-colors py-1 px-2.5 rounded-lg active:bg-surface-container">
+<span class="material-symbols-outlined text-[24px]">center_focus_strong</span>
+<span class="font-label-sm text-label-sm">Lens</span>
+</button>
+<!-- Delete -->
+<button class="flex flex-col items-center gap-1 text-destructive-red hover:bg-destructive-tint transition-colors py-1 px-2.5 rounded-lg active:scale-95">
+<span class="material-symbols-outlined text-[24px]">delete</span>
+<span class="font-label-sm text-label-sm">Delete</span>
+</button>
+</div>
+<!-- Peeking / Expanded Bottom Details Sheet ("Memory Tags & Details") -->
+<div class="w-full bg-surface-container-lowest rounded-t-3xl shadow-xl flex flex-col p-space-lg gap-space-lg transition-transform" id="details-sheet">
+<!-- Sheet Drag Handle -->
+<div class="w-10 h-1 bg-surface-container-highest rounded-full mx-auto -mt-1"></div>
+<!-- Sheet Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]" style="font-variation-settings: 'FILL' 1;">bookmarks</span>
+<h2 class="font-headline-sm text-headline-sm font-medium text-text-primary">Memory Tags &amp; Details</h2>
+</div>
+<button class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-blue-tint text-primary hover:bg-primary-fixed transition-colors font-label-md text-label-md font-medium">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+<span>Edit tags</span>
+</button>
+</div>
+<!-- Confirmed Life Stage & Attached Tags Section -->
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-text-secondary font-semibold uppercase tracking-wider">Confirmed Tags (3)</span>
+<span class="font-label-sm text-label-sm text-confirmed-green flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[14px]">done_all</span> All saved
+        </span>
+</div>
+<!-- Chips Cluster: 3 Confirmed Tags -->
+<div class="flex flex-wrap gap-2 pt-1">
+<!-- Tag 1: Bangalore Days (Life Stage) -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-confirmed-tint text-on-secondary-fixed-variant shadow-sm font-label-md text-label-md font-medium hover:bg-confirmed-tint/90">
+<span class="material-symbols-outlined text-[17px] text-confirmed-green" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span>Bangalore Days</span>
+<span class="material-symbols-outlined text-[16px] text-confirmed-green">check</span>
+</div>
+<!-- Tag 2: Cubbon Park -->
+<div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-confirmed-tint text-on-secondary-fixed-variant shadow-sm font-label-md text-label-md font-medium hover:bg-confirmed-tint/90">
+<span class="material-symbols-outlined text-[17px] text-confirmed-green" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span>Cubbon Park</span>
+<span class="material-symbols-outlined text-[16px] text-confirmed-green">check</span>
+</div>
+<!-- Tag 3: Third Wave Coffee (Newly Committed Tag with playful highlight sparkle) -->
+<div class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-confirmed-tint text-on-secondary-fixed-variant shadow-sm font-label-md text-label-md font-semibold transition-transform animate-pulse">
+<span class="material-symbols-outlined text-[17px] text-confirmed-green" style="font-variation-settings: 'FILL' 1;">coffee</span>
+<span>Third Wave Coffee</span>
+<span class="material-symbols-outlined text-[16px] text-confirmed-green">check</span>
+</div>
+</div>
+</div>
+<!-- Suggested Section: Remaining Suggestions -->
+<div class="flex flex-col gap-space-xs p-3 rounded-2xl bg-surface-container-low">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-text-secondary">
+<span class="material-symbols-outlined text-[18px] text-suggested-yellow" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<span class="font-label-sm text-label-sm font-medium">Gemini suggestion based on trajectory</span>
+</div>
+</div>
+<div class="flex items-center gap-2 pt-1">
+<!-- Suggestion chip -->
+<button class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-suggested-tint text-text-primary hover:bg-suggested-yellow/20 active:scale-95 transition-all font-label-md text-label-md shadow-sm" onclick="this.classList.remove('bg-suggested-tint'); this.classList.add('bg-confirmed-tint', 'text-on-secondary-fixed-variant'); this.innerHTML = '&lt;span class=\'material-symbols-outlined text-[17px] text-confirmed-green\'&gt;check_circle&lt;/span&gt; Indiranagar Stroll &lt;span class=\'material-symbols-outlined text-[16px] text-confirmed-green\'&gt;check&lt;/span&gt;';">
+<span class="material-symbols-outlined text-[16px] text-suggested-yellow">add</span>
+<span>Indiranagar Stroll</span>
+<span class="text-[11px] px-1.5 py-0.5 rounded-full bg-surface-container-lowest font-medium text-text-secondary shadow-sm">Suggested</span>
+</button>
+</div>
+</div>
+<!-- Metadata & EXIF Information Card -->
+<div class="flex flex-col gap-space-md p-space-md rounded-2xl bg-surface-container-low">
+<span class="font-label-sm text-label-sm text-text-secondary uppercase tracking-wider font-semibold">Photo Metadata</span>
+<!-- Date & Time -->
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-text-secondary text-[20px] mt-0.5">calendar_today</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-text-primary font-medium">Saturday, May 18, 2024</span>
+<span class="font-label-sm text-label-sm text-text-secondary">11:42 AM • GMT+05:30</span>
+</div>
+</div>
+<!-- Device / Camera Spec -->
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-text-secondary text-[20px] mt-0.5">photo_camera</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md text-text-primary font-medium">Google Pixel 8 Pro</span>
+<span class="font-label-sm text-label-sm text-text-secondary">50 MP • ƒ/1.68 • 1/1250 • ISO 32 • 25mm</span>
+</div>
+</div>
+<!-- Location / Static Map Preview Indicator -->
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-text-secondary text-[20px] mt-0.5">location_on</span>
+<div class="flex flex-col w-full">
+<span class="font-body-md text-body-md text-text-primary font-medium">Cubbon Park, Kasturba Road</span>
+<span class="font-label-sm text-label-sm text-text-secondary">Behind High Court, Bengaluru, Karnataka</span>
+<!-- Static Location Representation container -->
+<div class="w-full h-28 rounded-xl mt-2 overflow-hidden relative shadow-sm" data-alt="Stylized Google Maps satellite top-down view of lush green Cubbon Park in Bangalore showing shaded walking paths and park groves in warm sunlight" data-location="Cubbon Park, Bengaluru, India" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCzN8XE1NJqh679PLevzfp2BOV7OJoCtb6siQDhj3CrmnPeXEECQJ6Tiy_ntbo0E--Kh37SjC9a89ZucQMVBLPg1ys1NAHJ4wwSCFJe3iCEaPZvmCiq3gZ2dE7QMvjHdk-Ga2-2Lh5M0UWvDZlL46vTkY7z5pkXfFfpa0CKEp2DQJvJooi8zKHjOTgqw2vH03P4KwIypXM6gGqM0F5nVHibi8OcxReU1QLL8RNSzPpF7guMkkoCmZkK8w')">
+<div class="absolute inset-0 bg-primary/10 pointer-events-none"></div>
+<div class="absolute bottom-2 left-2 px-2.5 py-1 rounded-md bg-surface-container-lowest/90 backdrop-blur-sm text-text-primary font-label-sm text-label-sm flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-destructive-red text-[16px]" style="font-variation-settings: 'FILL' 1;">pin_drop</span>
+<span>Cubbon Park Walkways</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Chapter Management Action Link -->
+<button class="w-full py-3.5 px-4 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-colors flex items-center justify-between text-left active:scale-[0.99]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-blue-tint text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">folder_special</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-label-md font-semibold text-text-primary">Manage Bangalore Days Chapter</span>
+<span class="font-label-sm text-label-sm text-text-secondary">Reorder, export, or add life milestone notes</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-text-secondary text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+<script>
+  // Simple micro-interactions for favorite and info toggle
+  const starBtn = document.getElementById('star-btn');
+  if (starBtn) {
+    starBtn.addEventListener('click', () => {
+      const starIcon = starBtn.querySelector('.material-symbols-outlined');
+      const isFilled = starIcon.getAttribute('style')?.includes("'FILL' 1");
+      if (isFilled) {
+        starIcon.removeAttribute('style');
+        starBtn.classList.remove('text-suggested-yellow');
+        starBtn.classList.add('text-text-secondary');
+      } else {
+        starIcon.setAttribute('style', "font-variation-settings: 'FILL' 1;");
+        starBtn.classList.remove('text-text-secondary');
+        starBtn.classList.add('text-suggested-yellow');
+      }
+    });
+  }
+
+  // Auto-dismiss transient toast after 6 seconds
+  setTimeout(() => {
+    const toast = document.getElementById('status-toast');
+    if (toast) {
+      toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-2');
+    }
+  }, 6000);
+</script></main></body></html>

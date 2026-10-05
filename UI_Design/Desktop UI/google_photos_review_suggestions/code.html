@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary-fixed":"#261a00","secondary-fixed":"#89fa9b","on-primary":"#ffffff","on-error":"#ffffff","tertiary":"#765700","on-primary-fixed-variant":"#004494","surface":"#faf9fd","on-secondary-container":"#00722f","inverse-primary":"#adc6ff","inverse-surface":"#2f3033","tertiary-container":"#956e00","on-background":"#1a1b1e","surface-bright":"#faf9fd","on-secondary":"#ffffff","inverse-on-surface":"#f1f0f4","surface-container":"#efedf1","error-container":"#ffdad6","surface-container-low":"#f4f3f7","surface-container-high":"#e9e7eb","on-secondary-fixed":"#002108","tertiary-fixed-dim":"#fbbc05","secondary-container":"#86f898","tertiary-fixed":"#ffdfa0","surface-container-highest":"#e3e2e6","primary-fixed-dim":"#adc6ff","surface-tint":"#005ac1","secondary-fixed-dim":"#6ddd81","outline":"#727785","primary-container":"#2771df","on-secondary-fixed-variant":"#005320","surface-container-lowest":"#ffffff","outline-variant":"#c2c6d5","primary-fixed":"#d8e2ff","background":"#faf9fd","on-surface":"#1a1b1e","primary":"#0058bd","surface-variant":"#e3e2e6","on-primary-container":"#fefcff","on-primary-fixed":"#001a41","on-error-container":"#93000a","on-tertiary":"#ffffff","error":"#ba1a1a","on-tertiary-fixed-variant":"#5c4300","surface-dim":"#dbd9dd","secondary":"#006e2c","on-surface-variant":"#424753","on-tertiary-container":"#fffbff"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"gutter-normal":"0.5rem","gutter":"1rem","margin":"1.5rem","gutter-dense":"0.25rem","space-lg":"1.5rem","space-md":"1rem","space-sm":"0.5rem","space-xl":"2rem","space-xs":"0.25rem","margin-mobile":"1rem"},fontFamily:{"headline-xl-mobile":["Roboto Flex"],"headline-lg-mobile":["Roboto Flex"],"headline-xl":["Roboto Flex"],"label-lg":["Roboto Flex"],"headline-lg":["Roboto Flex"],"headline-sm":["Roboto Flex"],"body-md":["Roboto Flex"],"body-lg":["Roboto Flex"],"headline-md":["Roboto Flex"],"label-md":["Roboto Flex"]},fontSize:{"headline-xl-mobile":["28px",{lineHeight:"36px",fontWeight:"400"}],"headline-lg-mobile":["24px",{lineHeight:"32px",fontWeight:"500"}],"headline-xl":["36px",{lineHeight:"44px",fontWeight:"400"}],"label-lg":["14px",{lineHeight:"20px",fontWeight:"500"}],"headline-lg":["28px",{lineHeight:"36px",fontWeight:"400"}],"headline-sm":["18px",{lineHeight:"24px",fontWeight:"500"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-md":["22px",{lineHeight:"28px",fontWeight:"500"}],"label-md":["14px",{lineHeight:"18px",fontWeight:"500"}]}}}};</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest z-40 px-margin flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md w-64"><button aria-label="Main menu" class="p-space-xs rounded-full hover:bg-surface-container-high hover:text-on-surface text-on-surface-variant flex items-center justify-center"><span class="material-symbols-outlined">menu</span></button><div class="flex items-center gap-space-xs select-none"><span class="material-symbols-outlined text-primary text-[28px]">filter_vintage</span><span class="font-headline-md text-headline-md tracking-tight text-on-surface">Photos</span></div></div><div class="flex-1 max-w-[720px] mx-margin hidden sm:flex items-center"><div class="w-full h-12 bg-surface-container-low rounded-full flex items-center px-space-md gap-space-sm text-on-surface-variant focus-within:bg-surface-container-lowest focus-within:shadow-[0_1px_3px_rgba(60,64,67,0.12),0_1px_2px_rgba(60,64,67,0.24)] transition-all"><span class="material-symbols-outlined text-on-surface-variant">search</span><input class="w-full bg-transparent border-none outline-none font-body-md text-body-md text-on-surface placeholder:text-on-surface-variant" placeholder="Search your photos, people, places, and life stages" type="text"/><button aria-label="Ask Photos" class="p-space-xs rounded-full hover:bg-surface-container-high hover:text-on-surface text-on-surface-variant flex items-center justify-center"><span class="material-symbols-outlined text-primary">auto_awesome</span></button></div></div><div class="flex items-center justify-end gap-space-sm"><button aria-label="Upload" class="hidden md:flex items-center gap-space-xs px-space-md h-9 rounded-full bg-surface-container hover:bg-surface-container-high hover:text-on-surface text-on-surface-variant font-label-md text-label-md transition-colors"><span class="material-symbols-outlined text-[20px]">cloud_upload</span><span>Upload</span></button><button aria-label="Help" class="p-space-xs rounded-full hover:bg-surface-container-high hover:text-on-surface text-on-surface-variant flex items-center justify-center"><span class="material-symbols-outlined">help_outline</span></button><button aria-label="Settings" class="p-space-xs rounded-full hover:bg-surface-container-high hover:text-on-surface text-on-surface-variant flex items-center justify-center"><span class="material-symbols-outlined">settings</span></button><div class="pl-space-xs flex items-center"><img alt="Dev Patel profile avatar" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WMfMCNtup-8tKMS5NlCIelA9yNlKjh9LCj9Ty014BJP2WvT0IhfGgDKycYjp50Gey6qTneamhnU6VIUi6JiYVwnM7biHZXMD5Jy6ovqfGDS-ByEhz4bzhaIp9KQ-sJqAMsGqhJnI28zqNrxPsVw6DotV-7kWUi7mlNtF84exeb3VLVKfu0SViQNrb-HChWAvWuaSg9DtV3UuqAOGhzXcPjxFwhfCRo3hRtcHF_51ukZ7Xg_Vhf2NAG2yviE9pPAtv9TjJeUZNrjas"/></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest z-30 flex flex-col justify-between py-space-md px-space-sm"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-fixed text-on-primary-fixed font-semibold rounded-full"><a class="flex items-center gap-space-md px-space-md h-12 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="photos" href="#"><span class="material-symbols-outlined">photo_library</span><span>Photos</span></a><a class="flex items-center gap-space-md px-space-md h-12 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="explore" href="#"><span class="material-symbols-outlined">search</span><span>Explore</span></a><a class="flex items-center gap-space-md px-space-md h-12 rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-label-lg text-label-lg" data-path="sharing" href="#"><span class="material-symbols-outlined">group</span><span>Sharing</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md h-12 transition-colors bg-primary-fixed text-on-primary-fixed font-semibold rounded-full" data-path="life-stages" href="#"><span class="material-symbols-outlined">family_history</span><span>Life Stages</span></a></nav><div class="px-space-md py-space-sm flex flex-col gap-space-xs"><div class="flex items-center justify-between text-on-surface-variant font-label-md text-label-md"><span>Storage</span><span>48.2 GB of 100 GB</span></div><div class="w-full h-1 bg-surface-container-high rounded-full overflow-hidden"><div class="bg-primary h-full w-[48%]"></div></div><a class="text-primary font-label-md text-label-md hover:underline pt-space-xs inline-block" data-path="storage-management" href="#">Get more storage</a></div></aside><div class="pl-64"><main class="relative pt-16 min-h-screen bg-surface w-full px-margin"><div class="flex flex-col w-full relative">
+<!-- Underlying Context: Life Stages Page view faintly visible behind modal overlay -->
+<div class="w-full pb-16 pointer-events-none select-none opacity-40 filter blur-[1px] transition-all duration-300">
+<!-- Life Stage Section Header -->
+<div class="flex items-center justify-between pb-space-md border-b border-surface-container-high mb-space-lg">
+<div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md mb-1">
+<span>Life Stages</span>
+<span class="material-symbols-outlined text-[16px]">chevron_right</span>
+<span>Timeline Curation</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-medium">Bangalore Relocation</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">October 2024 • Indiranagar &amp; Koramangala, Bangalore</p>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-space-md py-1.5 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md">Edit Stage</button>
+<button class="p-space-xs rounded-full bg-surface-container-high text-on-surface"><span class="material-symbols-outlined">more_vert</span></button>
+</div>
+</div>
+<!-- Underlying timeline preview grid -->
+<div class="grid grid-cols-4 gap-gutter-normal">
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Warm sunlight streaming through an open apartment window overlooking tropical green Bangalore trees, moving boxes and plants on floor" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKMVV5MfojBn-SvHqMRAJjN_-rTD6msd1Zh_xwIZIjTxP2XGiMCPUnfpvAmWfVU8rQZDeZ-tE_98WMPZ9yPJruA0nf81p8kjypS98WObXJr0Wg9x3lPtvHOEAdR6CULdpwSgB2Oizri5zGCy9JZGwSoEeCcUrh4rMIpD1-VLW3QPE0z16fEXr-3L2poM2B7BH5gU5j8xJgyxIYu7j2v8-z1hxjiqAlxHGZlt-WSKL6jZlvXe_VJEk8vw"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Overhead perspective of unpacking kitchenware and ceramic mugs onto light wood kitchen countertops" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfaPe6qEONI07XYn19OHAd9a4csbeAr0Z4pMcTJixxN-276ZE94TwtC1iao-eYcNti0ykd58xt_jPt7kNH2b_v2MytkzmmDCS0xzsdAa6qa3dyeSMor9GZjqHymK6Vhi9G-pmoh9yY4sgBtgYsgU3BNmWamxWPkEkMo9Jdawo2uzF0mxd3r2cvSdEyKY3qKtaV6f-ZScedLL4aeZTPr03F4o_yDmtzH5F53aJh7z3jfNRVph17QSpz2g"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Chic Bangalore third-wave cafe with aeropress coffee and laptop workspace with street foliage outside" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCscsYREduCHF-vVJ0-4Ovu90wXophF350OnrkBHk5uy771Tu7ActGiuNev8Y5pmr02Rk0oKwRqoKmP0mKJ7ghQVpQfVE_FSg7BAiP7173IZcUZGaKP-BBORS76u0KtZGsRwUx-lnfBgQvc3FPIpJlOb9ma5WpFj0xTSiCwHXDBW5QHElBYk80ZeBCkeos-2JVu2nPP_wOPJ__NYde2Dit29OgFRI1qUrDYZFFNtuH7c_sgasvGIWXbKA"/>
+</div>
+<div class="aspect-square bg-surface-container rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Evening twilight street view with illuminated auto-rickshaws and rain-washed pavement in Indiranagar Bangalore" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjZWA3WAC1KmEGUQrubtQXVdponubEqBmoMGbFHPhfrU8tjGNQabGxzAboTUXu3_oRcM89X_ky35qr-9XxyfGpPwUVS5bW0iI8bAPnAZJxMCGT5qq3aSPi0OqRZtgd7pTDwhhtW_53WpMrLwyHsDaiGheUb0ODFXWrH_BMMcfyCudoCnVDexkfauoeNRTHq1KH7vjB5lfBt8Ln0NsDIzCFYRW9L2NKzchJJ_hLUWLsunXHHkXKqCtPeg"/>
+</div>
+</div>
+</div>
+<!-- Dedicated Modal Backdrop & Container -->
+<div class="fixed inset-0 z-50 flex items-center justify-center p-space-md md:p-space-xl bg-on-surface/40 backdrop-blur-[2px] transition-opacity duration-200" id="review-modal">
+<div class="w-full max-w-6xl max-h-[92vh] flex flex-col bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+<!-- Modal Header Bar -->
+<div class="px-space-lg py-space-md bg-surface-container-lowest border-b border-surface-container-high flex flex-col md:flex-row md:items-center justify-between gap-space-md sticky top-0 z-20">
+<div class="flex items-start gap-space-md">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[24px]">auto_awesome</span>
+</div>
+<div>
+<div class="flex items-center gap-space-xs flex-wrap">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-medium">Review Suggestions</h2>
+<span class="text-outline text-[18px]">•</span>
+<span class="font-headline-sm text-headline-sm text-primary font-medium">Bangalore Relocation</span>
+<span class="ml-2 px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md text-[12px] tracking-wide uppercase font-semibold">6 New</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">
+              Google Photos grouped 6 photos taken around Indiranagar &amp; Koramangala (Oct 12–18, 2024). Confirm or dismiss each to train your memory timeline.
+            </p>
+</div>
+</div>
+<!-- Quick Batch Controls & Close -->
+<div class="flex items-center gap-space-sm self-end md:self-center shrink-0">
+<button class="h-9 px-space-md rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface font-label-md text-label-md transition-colors" id="btn-dismiss-all">
+            Dismiss all
+          </button>
+<button class="h-9 px-space-md rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md shadow-sm transition-colors flex items-center gap-space-xs" id="btn-confirm-all">
+<span class="material-symbols-outlined text-[18px]">done_all</span>
+<span>Confirm all (6)</span>
+</button>
+<div class="h-6 w-px bg-surface-container-high mx-space-xs hidden sm:block"></div>
+<button aria-label="Close modal" class="p-2 rounded-full text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[22px]">close</span>
+</button>
+</div>
+</div>
+<!-- Modal Body: Responsive Candidate Photo Grid -->
+<div class="flex-1 overflow-y-auto p-space-lg bg-surface">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Card 1: Keys Handover (Suggested State) -->
+<div class="card-item bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col justify-between group" data-card-id="1">
+<div class="flex flex-col gap-space-xs">
+<div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300" data-alt="Dev holding a brass set of new apartment keys in the foreground with a modern bright Bangalore apartment doorway in blurred background, warm natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4XRt4NRHDB4PupchibeRlw0Hb7jHo8pEL4SLzgWtqQ2p0PEhNlnkt5qOlUUjTsKnRdsOMWStc-ZNU4VT2zCh55xc3U4zN0nR-xaqtlbc4D1lQLefR_2WnxDybDX3zrgwmu_R07yo8KzjUBx1c2PvRfYH3iXF_pAWWJfxoLQOH1IJbbF3zRUOqntsLzKQvM2Uq2JnDXk8NX6t56HaPSdkK7Pn2-MiPuY601nk1S19398RZAAudiVKo8A"/>
+<div class="absolute top-2 left-2 bg-on-surface/70 backdrop-blur-sm text-surface-container-lowest px-2 py-0.5 rounded text-[11px] font-medium tracking-wide flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+<span>Oct 12, 11:20 AM</span>
+</div>
+</div>
+<!-- Metadata & AI Pill -->
+<div class="pt-2 px-1 flex flex-col gap-1.5">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-md text-[13px]">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span class="truncate">Indiranagar 1st Stage, Bangalore</span>
+</div>
+<!-- TagChip: Suggested State -->
+<div class="chip-container flex items-center flex-wrap gap-1">
+<div class="h-7 px-2.5 rounded-full inline-flex items-center gap-1.5 bg-[#FEF7E0] border border-dashed border-[#FBBC04] text-[#B06000] font-label-md text-[12px] font-medium select-none">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>Suggested: Bangalore Relocation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Pair Bar -->
+<div class="action-bar pt-3 mt-2 border-t border-surface-container-high flex items-center justify-between gap-space-xs">
+<button class="btn-dismiss flex-1 h-8 rounded-full bg-surface-container-low hover:bg-error-container hover:text-on-error-container text-on-surface-variant font-label-md text-[13px] flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Dismiss</span>
+</button>
+<button class="btn-confirm flex-1 h-8 rounded-full bg-[#E6F4EA] hover:bg-secondary-fixed text-[#137333] border border-[#34A853] font-label-md text-[13px] font-medium flex items-center justify-center gap-1 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Confirm</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Moving Boxes in Hallway (Suggested State) -->
+<div class="card-item bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col justify-between group" data-card-id="2">
+<div class="flex flex-col gap-space-xs">
+<div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300" data-alt="Stacked kraft cardboard moving boxes labeled living room and books inside an airy Indian flat with sunlight and potted palm plant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeizrtLJgOUFRxkR0Jmdbs8d-4WVaU5Ouk9BaJ_unn4Q9Se7vReCtTXgNMDEtD4xmiyv5SUqaEVdhrkmOQdEn3zJKJ-oZk8Uw_WRrbM-mtIQp5iRX79dRgvsGNxFD1MYPSXlb-1YCTHJ8Aj5u_1YpoFUkACziLRJ7gCBkPEXV-VM_eIlPktiDEHEv1di9pal24NeVjitrLNkK5a_I-j3LmW3PmNbsLQtyTV4ENwshpXBqMhKUzmEyeWA"/>
+<div class="absolute top-2 left-2 bg-on-surface/70 backdrop-blur-sm text-surface-container-lowest px-2 py-0.5 rounded text-[11px] font-medium tracking-wide flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+<span>Oct 13, 03:45 PM</span>
+</div>
+</div>
+<!-- Metadata & AI Pill -->
+<div class="pt-2 px-1 flex flex-col gap-1.5">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-md text-[13px]">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span class="truncate">HAL 2nd Stage, Indiranagar</span>
+</div>
+<div class="chip-container flex items-center flex-wrap gap-1">
+<div class="h-7 px-2.5 rounded-full inline-flex items-center gap-1.5 bg-[#FEF7E0] border border-dashed border-[#FBBC04] text-[#B06000] font-label-md text-[12px] font-medium select-none">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>Suggested: Bangalore Relocation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Pair Bar -->
+<div class="action-bar pt-3 mt-2 border-t border-surface-container-high flex items-center justify-between gap-space-xs">
+<button class="btn-dismiss flex-1 h-8 rounded-full bg-surface-container-low hover:bg-error-container hover:text-on-error-container text-on-surface-variant font-label-md text-[13px] flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Dismiss</span>
+</button>
+<button class="btn-confirm flex-1 h-8 rounded-full bg-[#E6F4EA] hover:bg-secondary-fixed text-[#137333] border border-[#34A853] font-label-md text-[13px] font-medium flex items-center justify-center gap-1 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Confirm</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Dev in Bangalore Park/Street (MANDATORY IMAGE_13) - Showing CONFIRMED Instant Feedback State -->
+<div class="card-item bg-surface-container-lowest rounded-xl p-space-sm shadow-sm ring-2 ring-[#34A853] flex flex-col justify-between" data-card-id="3">
+<div class="flex flex-col gap-space-xs">
+<div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container">
+<img alt="Dev walking on 100ft road Indiranagar Bangalore" class="w-full h-full object-cover object-top" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8vz8PhPojbdBxwJG2DWEF6Gg-UxpgJM6L7X5y2Ptju6l26WFC6WiLRAGycWt2tOmO01NgQuc-l_4hlo8WY4337lKYmmsT3llR8dOxbRoFyRl4FKZKogOKRq8umgCsT9YGwcKujJehPa9ugx5ItfkhCvu78h87ziDNTFkid59oveTe7v5v_R5NAOra0P82cQ20t0Vuringkmk2JwQx_tOqujJ4Pfgnmh0fqfaVG_OTwSM8AUT_lGwDoIcmhpGC4Ibzaxg"/>
+<div class="absolute top-2 left-2 bg-[#34A853] text-on-primary px-2 py-0.5 rounded text-[11px] font-semibold tracking-wide flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[13px]">check_circle</span>
+<span>Confirmed</span>
+</div>
+</div>
+<!-- Metadata & AI Pill -->
+<div class="pt-2 px-1 flex flex-col gap-1.5">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-md text-[13px]">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span class="truncate">100ft Rd, Indiranagar • Bangalore</span>
+</div>
+<!-- TagChip: Confirmed Tag State -->
+<div class="chip-container flex items-center flex-wrap gap-1">
+<div class="h-7 px-2.5 rounded-full inline-flex items-center gap-1.5 bg-[#E6F4EA] border border-solid border-[#34A853] text-[#137333] font-label-md text-[12px] font-medium select-none">
+<span class="material-symbols-outlined text-[15px]">check</span>
+<span>Bangalore Relocation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Instant Feedback Status Bar with Undo -->
+<div class="action-bar pt-3 mt-2 border-t border-surface-container-high flex items-center justify-between px-1">
+<div class="flex items-center gap-1.5 text-[#137333] font-label-md text-[12px] font-medium">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Added to timeline</span>
+</div>
+<button class="btn-undo text-on-surface-variant hover:text-on-surface hover:underline font-label-md text-[12px] px-2 py-1 rounded">
+                Undo
+              </button>
+</div>
+</div>
+<!-- Card 4: First Apartment Balcony View (Suggested State) -->
+<div class="card-item bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col justify-between group" data-card-id="4">
+<div class="flex flex-col gap-space-xs">
+<div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300" data-alt="High-angle view from a modern Bangalore highrise balcony overlooking vibrant green tree canopy with coffee cup on railing, morning golden hour light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8dmE7AM7eV2eyGEqfRQCDW8f-D5hcKIGHgU_nJtk6HdsgiLG9A-LnixQ79Sp5V8Vszogm71m2V4kk30rx1R-oVZEyS1RV9PDphWTnCckc9FxWJ3JKnkSwFcp2H9t1scHsqKM1zHCCEWnGIYYGj6WQGmXWI7AgWhnVkA6zdTV6oCTV3AZGWZjunWKNVolU6fmJHJ52y28C0W-mJHB1RCvegIt3A136BVCslKyhK8PJggMQ-7imVJP_yw"/>
+<div class="absolute top-2 left-2 bg-on-surface/70 backdrop-blur-sm text-surface-container-lowest px-2 py-0.5 rounded text-[11px] font-medium tracking-wide flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+<span>Oct 15, 07:15 AM</span>
+</div>
+</div>
+<!-- Metadata & AI Pill -->
+<div class="pt-2 px-1 flex flex-col gap-1.5">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-md text-[13px]">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span class="truncate">Koramangala 4th Block, Bangalore</span>
+</div>
+<div class="chip-container flex items-center flex-wrap gap-1">
+<div class="h-7 px-2.5 rounded-full inline-flex items-center gap-1.5 bg-[#FEF7E0] border border-dashed border-[#FBBC04] text-[#B06000] font-label-md text-[12px] font-medium select-none">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>Suggested: First Apartment</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Pair Bar -->
+<div class="action-bar pt-3 mt-2 border-t border-surface-container-high flex items-center justify-between gap-space-xs">
+<button class="btn-dismiss flex-1 h-8 rounded-full bg-surface-container-low hover:bg-error-container hover:text-on-error-container text-on-surface-variant font-label-md text-[13px] flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Dismiss</span>
+</button>
+<button class="btn-confirm flex-1 h-8 rounded-full bg-[#E6F4EA] hover:bg-secondary-fixed text-[#137333] border border-[#34A853] font-label-md text-[13px] font-medium flex items-center justify-center gap-1 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Confirm</span>
+</button>
+</div>
+</div>
+<!-- Card 5: Remote Work Setup at Cafe (Suggested State) -->
+<div class="card-item bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col justify-between group" data-card-id="5">
+<div class="flex flex-col gap-space-xs">
+<div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300" data-alt="Laptop open with wireframe design on screen next to iced pour-over coffee in an aesthetic artisanal cafe in Koramangala Bangalore, natural soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfRi6gM3QJUge7A8hV1nk8tcZcdPXC72XxwoYGDjZJp9fcTZxYlUCMMJtycofRwQm72McIN86GbdLqrWyz0jPoK1XZrIoNaRAYzjGmCxGaTbxiKwiuQ393g7zbNl5p1As18UgN7Cu2mHGsJ4pWMgqzUcp688yGTLx-kqGTa5RMG9jdR6NJorauigZjskJ47OGQVcpvZfGk3qz9P17sb4MOU9Pl5Y6BlZHP6F9PO1ijpaktRhn90GdMmQ"/>
+<div class="absolute top-2 left-2 bg-on-surface/70 backdrop-blur-sm text-surface-container-lowest px-2 py-0.5 rounded text-[11px] font-medium tracking-wide flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+<span>Oct 16, 02:40 PM</span>
+</div>
+</div>
+<!-- Metadata & AI Pill -->
+<div class="pt-2 px-1 flex flex-col gap-1.5">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-md text-[13px]">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span class="truncate">80ft Rd, Koramangala</span>
+</div>
+<div class="chip-container flex items-center flex-wrap gap-1">
+<div class="h-7 px-2.5 rounded-full inline-flex items-center gap-1.5 bg-[#FEF7E0] border border-dashed border-[#FBBC04] text-[#B06000] font-label-md text-[12px] font-medium select-none">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>Suggested: Bangalore Relocation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Pair Bar -->
+<div class="action-bar pt-3 mt-2 border-t border-surface-container-high flex items-center justify-between gap-space-xs">
+<button class="btn-dismiss flex-1 h-8 rounded-full bg-surface-container-low hover:bg-error-container hover:text-on-error-container text-on-surface-variant font-label-md text-[13px] flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Dismiss</span>
+</button>
+<button class="btn-confirm flex-1 h-8 rounded-full bg-[#E6F4EA] hover:bg-secondary-fixed text-[#137333] border border-[#34A853] font-label-md text-[13px] font-medium flex items-center justify-center gap-1 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Confirm</span>
+</button>
+</div>
+</div>
+<!-- Card 6: Room Setup & Plants (Suggested State) -->
+<div class="card-item bg-surface-container-lowest rounded-xl p-space-sm shadow-sm hover:shadow-md transition-all flex flex-col justify-between group" data-card-id="6">
+<div class="flex flex-col gap-space-xs">
+<div class="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-300" data-alt="Dev setting up a minimalist wooden bookshelf with potted fiddle leaf fig and architectural sketchbooks in sunlit white-walled bedroom" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAeuTmFF2jzzRTf3-4J6SZiLqH_d8uO0RuOdJfunczTScHlhYj7S-ZF2sXbe93RfkZfvAvoRPBwPLtF3fVQszDDOQJx5uLsCKMn_5bWDBcGdl4ZnCRtxpmCgiBngLm85XJ5ZF9UpEpOnONDCAufMAwLptRy-KafA2BnW_ANdMoiWBDCKzpFyrWx5nexkPYxk-GJlHgamh0YjwjmhkUmTs5OuZlXMmZ-uD4o-3Cljmrpcj4X9YhN352iw"/>
+<div class="absolute top-2 left-2 bg-on-surface/70 backdrop-blur-sm text-surface-container-lowest px-2 py-0.5 rounded text-[11px] font-medium tracking-wide flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">schedule</span>
+<span>Oct 18, 05:10 PM</span>
+</div>
+</div>
+<!-- Metadata & AI Pill -->
+<div class="pt-2 px-1 flex flex-col gap-1.5">
+<div class="flex items-center gap-1 text-on-surface-variant font-label-md text-[13px]">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span class="truncate">Indiranagar 1st Stage, Bangalore</span>
+</div>
+<div class="chip-container flex items-center flex-wrap gap-1">
+<div class="h-7 px-2.5 rounded-full inline-flex items-center gap-1.5 bg-[#FEF7E0] border border-dashed border-[#FBBC04] text-[#B06000] font-label-md text-[12px] font-medium select-none">
+<span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+<span>Suggested: First Apartment</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Pair Bar -->
+<div class="action-bar pt-3 mt-2 border-t border-surface-container-high flex items-center justify-between gap-space-xs">
+<button class="btn-dismiss flex-1 h-8 rounded-full bg-surface-container-low hover:bg-error-container hover:text-on-error-container text-on-surface-variant font-label-md text-[13px] flex items-center justify-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Dismiss</span>
+</button>
+<button class="btn-confirm flex-1 h-8 rounded-full bg-[#E6F4EA] hover:bg-secondary-fixed text-[#137333] border border-[#34A853] font-label-md text-[13px] font-medium flex items-center justify-center gap-1 shadow-sm transition-colors">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Confirm</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Modal Footer -->
+<div class="px-space-lg py-space-md bg-surface-container-lowest border-t border-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-md text-[13px]">
+<span class="material-symbols-outlined text-[18px] text-secondary">info</span>
+<span>Confirmed photos appear in your <strong>Bangalore Relocation</strong> album and Life Stages timeline.</span>
+</div>
+<div class="flex items-center gap-space-sm w-full sm:w-auto justify-end">
+<button class="w-full sm:w-auto h-9 px-6 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-md text-label-md font-medium shadow-sm transition-colors" id="btn-done">
+            Done reviewing
+          </button>
+</div>
+</div>
+</div>
+</div>
+<script>
+    (function initReviewSuggestions() {
+      const cards = document.querySelectorAll('.card-item');
+
+      function confirmCard(card) {
+        card.classList.add('ring-2', 'ring-[#34A853]');
+        
+        // Update tag chip to confirmed green
+        const chipContainer = card.querySelector('.chip-container');
+        if (chipContainer) {
+          chipContainer.innerHTML = `
+            <div class="h-7 px-2.5 rounded-full inline-flex items-center gap-1.5 bg-[#E6F4EA] border border-solid border-[#34A853] text-[#137333] font-label-md text-[12px] font-medium select-none">
+              <span class="material-symbols-outlined text-[15px]">check</span>
+              <span>Bangalore Relocation</span>
+            </div>
+          `;
+        }
+
+        // Add confirmed banner tag in photo thumbnail
+        const thumbContainer = card.querySelector('.relative.w-full');
+        if (thumbContainer && !thumbContainer.querySelector('.confirmed-badge')) {
+          const badge = document.createElement('div');
+          badge.className = 'confirmed-badge absolute top-2 left-2 bg-[#34A853] text-on-primary px-2 py-0.5 rounded text-[11px] font-semibold tracking-wide flex items-center gap-1 shadow-sm';
+          badge.innerHTML = '<span class="material-symbols-outlined text-[13px]">check_circle</span><span>Confirmed</span>';
+          thumbContainer.appendChild(badge);
+        }
+
+        // Swap action buttons for Undo status
+        const actionBar = card.querySelector('.action-bar');
+        if (actionBar) {
+          actionBar.innerHTML = `
+            <div class="flex items-center gap-1.5 text-[#137333] font-label-md text-[12px] font-medium">
+              <span class="material-symbols-outlined text-[16px]">verified</span>
+              <span>Added to timeline</span>
+            </div>
+            <button class="btn-undo text-on-surface-variant hover:text-on-surface hover:underline font-label-md text-[12px] px-2 py-1 rounded">
+              Undo
+            </button>
+          `;
+          const undoBtn = actionBar.querySelector('.btn-undo');
+          if (undoBtn) {
+            undoBtn.addEventListener('click', () => resetCard(card));
+          }
+        }
+      }
+
+      function dismissCard(card) {
+        card.style.opacity = '0.35';
+        card.style.pointerEvents = 'none';
+        card.style.filter = 'grayscale(100%)';
+        setTimeout(() => {
+          card.classList.add('hidden');
+        }, 300);
+      }
+
+      function resetCard(card) {
+        card.classList.remove('ring-2', 'ring-[#34A853]');
+        card.style.opacity = '1';
+        card.style.pointerEvents = 'auto';
+        card.style.filter = 'none';
+
+        const thumbContainer = card.querySelector('.relative.w-full');
+        const badge = thumbContainer ? thumbContainer.querySelector('.confirmed-badge') : null;
+        if (badge) badge.remove();
+
+        const chipContainer = card.querySelector('.chip-container');
+        if (chipContainer) {
+          chipContainer.innerHTML = `
+            <div class="h-7 px-2.5 rounded-full inline-flex items-center gap-1.5 bg-[#FEF7E0] border border-dashed border-[#FBBC04] text-[#B06000] font-label-md text-[12px] font-medium select-none">
+              <span class="material-symbols-outlined text-[14px]">auto_awesome</span>
+              <span>Suggested: Bangalore Relocation</span>
+            </div>
+          `;
+        }
+
+        const actionBar = card.querySelector('.action-bar');
+        if (actionBar) {
+          actionBar.innerHTML = `
+            <button class="btn-dismiss flex-1 h-8 rounded-full bg-surface-container-low hover:bg-error-container hover:text-on-error-container text-on-surface-variant font-label-md text-[13px] flex items-center justify-center gap-1 transition-colors">
+              <span class="material-symbols-outlined text-[16px]">close</span>
+              <span>Dismiss</span>
+            </button>
+            <button class="btn-confirm flex-1 h-8 rounded-full bg-[#E6F4EA] hover:bg-secondary-fixed text-[#137333] border border-[#34A853] font-label-md text-[13px] font-medium flex items-center justify-center gap-1 shadow-sm transition-colors">
+              <span class="material-symbols-outlined text-[16px]">check</span>
+              <span>Confirm</span>
+            </button>
+          `;
+          wireCard(card);
+        }
+      }
+
+      function wireCard(card) {
+        const confirmBtn = card.querySelector('.btn-confirm');
+        const dismissBtn = card.querySelector('.btn-dismiss');
+        const undoBtn = card.querySelector('.btn-undo');
+
+        if (confirmBtn) {
+          confirmBtn.addEventListener('click', () => confirmCard(card));
+        }
+        if (dismissBtn) {
+          dismissBtn.addEventListener('click', () => dismissCard(card));
+        }
+        if (undoBtn) {
+          undoBtn.addEventListener('click', () => resetCard(card));
+        }
+      }
+
+      cards.forEach(wireCard);
+
+      // Batch Action: Confirm All
+      const confirmAllBtn = document.getElementById('btn-confirm-all');
+      if (confirmAllBtn) {
+        confirmAllBtn.addEventListener('click', () => {
+          cards.forEach(card => {
+            if (!card.classList.contains('hidden')) {
+              confirmCard(card);
+            }
+          });
+        });
+      }
+
+      // Batch Action: Dismiss All
+      const dismissAllBtn = document.getElementById('btn-dismiss-all');
+      if (dismissAllBtn) {
+        dismissAllBtn.addEventListener('click', () => {
+          cards.forEach(card => {
+            dismissCard(card);
+          });
+        });
+      }
+
+      // Done / Close interaction
+      const doneBtn = document.getElementById('btn-done');
+      const closeBtn = document.querySelector('[aria-label="Close modal"]');
+      const modal = document.getElementById('review-modal');
+
+      function closeModal() {
+        if (modal) {
+          modal.style.opacity = '0';
+          setTimeout(() => {
+            modal.style.display = 'none';
+          }, 200);
+        }
+      }
+
+      if (doneBtn) doneBtn.addEventListener('click', closeModal);
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    })();
+  </script>
+</div></main></div></body></html>

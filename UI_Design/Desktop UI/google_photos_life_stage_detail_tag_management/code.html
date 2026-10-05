@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"secondary-fixed":"#89fa9b","on-surface":"#1a1b1e","inverse-primary":"#adc6ff","primary-fixed-dim":"#adc6ff","surface-container-highest":"#e3e2e6","on-tertiary-fixed-variant":"#5c4300","outline-variant":"#c2c6d5","surface-tint":"#005ac1","surface-dim":"#dbd9dd","primary-fixed":"#d8e2ff","on-error-container":"#93000a","error":"#ba1a1a","tertiary-fixed-dim":"#fbbc05","on-background":"#1a1b1e","inverse-on-surface":"#f1f0f4","on-tertiary-container":"#fffbff","on-secondary-fixed":"#002108","surface-container-high":"#e9e7eb","secondary-fixed-dim":"#6ddd81","on-primary":"#ffffff","background":"#faf9fd","on-secondary-fixed-variant":"#005320","surface":"#faf9fd","primary-container":"#2771df","on-tertiary":"#ffffff","tertiary-fixed":"#ffdfa0","on-primary-fixed":"#001a41","inverse-surface":"#2f3033","on-error":"#ffffff","on-tertiary-fixed":"#261a00","surface-container":"#efedf1","surface-variant":"#e3e2e6","primary":"#0058bd","on-primary-fixed-variant":"#004494","secondary-container":"#86f898","surface-bright":"#faf9fd","on-secondary-container":"#00722f","error-container":"#ffdad6","on-primary-container":"#fefcff","surface-container-low":"#f4f3f7","outline":"#727785","tertiary-container":"#956e00","tertiary":"#765700","on-secondary":"#ffffff","surface-container-lowest":"#ffffff","on-surface-variant":"#424753","secondary":"#006e2c"},borderRadius:{DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem"},spacing:{"gutter-dense":"0.25rem","space-sm":"0.5rem","margin":"1.5rem","margin-mobile":"1rem","space-lg":"1.5rem","space-xs":"0.25rem","space-xl":"2rem","gutter-normal":"0.5rem","gutter":"1rem","space-md":"1rem"},fontFamily:{"headline-xl-mobile":["Roboto Flex"],"label-md":["Roboto Flex"],"label-lg":["Roboto Flex"],"headline-lg":["Roboto Flex"],"body-lg":["Roboto Flex"],"headline-xl":["Roboto Flex"],"headline-sm":["Roboto Flex"],"body-md":["Roboto Flex"],"headline-lg-mobile":["Roboto Flex"],"headline-md":["Roboto Flex"]},fontSize:{"headline-xl-mobile":["28px",{lineHeight:"36px",fontWeight:"400"}],"label-md":["14px",{lineHeight:"18px",fontWeight:"500"}],"label-lg":["14px",{lineHeight:"20px",fontWeight:"500"}],"headline-lg":["28px",{lineHeight:"36px",fontWeight:"400"}],"body-lg":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-xl":["36px",{lineHeight:"44px",fontWeight:"400"}],"headline-sm":["18px",{lineHeight:"24px",fontWeight:"500"}],"body-md":["14px",{lineHeight:"20px",fontWeight:"400"}],"headline-lg-mobile":["24px",{lineHeight:"32px",fontWeight:"500"}],"headline-md":["22px",{lineHeight:"28px",fontWeight:"500"}]}}}};</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface-container-lowest z-50 flex items-center justify-between px-margin shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md w-64"><button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container hover:text-on-surface text-on-surface-variant transition-colors"><span class="material-symbols-outlined text-2xl">menu</span></button><div class="flex items-center gap-space-sm"><span class="material-symbols-outlined text-primary text-2xl">filter_vintage</span><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Photos</span></div></div><div class="flex-1 max-w-3xl px-space-md hidden sm:flex"><div class="w-full h-12 bg-surface-container-low hover:bg-surface-container-lowest focus-within:bg-surface-container-lowest rounded-full flex items-center px-space-md gap-space-sm shadow-[0_1px_3px_rgba(60,64,67,0.12)] transition-all"><span class="material-symbols-outlined text-outline">search</span><input class="w-full bg-transparent border-none outline-none font-body-md text-body-md text-on-surface placeholder:text-outline" placeholder="Search your photos, albums, and memories" type="text"/><button class="w-8 h-8 flex items-center justify-center rounded-full hover:bg-surface-container hover:text-on-surface text-on-surface-variant transition-colors"><span class="material-symbols-outlined text-xl">mic</span></button></div></div><div class="flex items-center justify-end gap-space-sm"><button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container hover:text-on-surface text-on-surface-variant transition-colors hidden md:flex"><span class="material-symbols-outlined text-2xl">cloud_upload</span></button><button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container hover:text-on-surface text-on-surface-variant transition-colors hidden md:flex"><span class="material-symbols-outlined text-2xl">help</span></button><button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container hover:text-on-surface text-on-surface-variant transition-colors hidden md:flex"><span class="material-symbols-outlined text-2xl">settings</span></button><div class="pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida/AEtjO1WMfMCNtup-8tKMS5NlCIelA9yNlKjh9LCj9Ty014BJP2WvT0IhfGgDKycYjp50Gey6qTneamhnU6VIUi6JiYVwnM7biHZXMD5Jy6ovqfGDS-ByEhz4bzhaIp9KQ-sJqAMsGqhJnI28zqNrxPsVw6DotV-7kWUi7mlNtF84exeb3VLVKfu0SViQNrb-HChWAvWuaSg9DtV3UuqAOGhzXcPjxFwhfCRo3hRtcHF_51ukZ7Xg_Vhf2NAG2yviE9pPAtv9TjJeUZNrjas"/></div></div></header><aside class="fixed left-0 top-16 bottom-0 w-64 bg-surface-container-lowest z-40 flex flex-col justify-between py-space-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="px-space-sm"><nav class="flex flex-col gap-space-xs" data-active-classes="bg-primary-fixed text-on-primary-fixed font-medium rounded-full"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="photos" href="#"><span class="material-symbols-outlined text-2xl">photo</span><span class="font-label-lg text-label-lg">Photos</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="explore" href="#"><span class="material-symbols-outlined text-2xl">search</span><span class="font-label-lg text-label-lg">Explore</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="sharing" href="#"><span class="material-symbols-outlined text-2xl">group</span><span class="font-label-lg text-label-lg">Sharing</span></a><a aria-current="page" class="flex items-center gap-space-md px-space-md py-space-sm transition-colors bg-primary-fixed text-on-primary-fixed font-medium rounded-full" data-path="life-stages" href="#"><span class="material-symbols-outlined text-2xl">auto_awesome</span><span class="font-label-lg text-label-lg">Life Stages</span></a></nav><div class="my-space-md px-space-md"><div class="h-px bg-surface-container-high w-full"></div></div><div class="px-space-md py-space-xs font-label-md text-label-md text-outline uppercase tracking-wider">Library</div><nav class="flex flex-col gap-space-xs mt-space-xs"><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="favorites" href="#"><span class="material-symbols-outlined text-2xl">star</span><span class="font-label-lg text-label-lg">Favorites</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="albums" href="#"><span class="material-symbols-outlined text-2xl">photo_library</span><span class="font-label-lg text-label-lg">Albums</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="archive" href="#"><span class="material-symbols-outlined text-2xl">archive</span><span class="font-label-lg text-label-lg">Archive</span></a><a class="flex items-center gap-space-md px-space-md py-space-sm rounded-full text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="trash" href="#"><span class="material-symbols-outlined text-2xl">delete</span><span class="font-label-lg text-label-lg">Trash</span></a></nav></div><div class="px-space-md py-space-sm"><div class="flex items-center gap-space-sm text-outline font-label-md text-label-md px-space-sm"><span class="material-symbols-outlined text-xl">cloud</span><span>Storage: 42% used</span></div></div></aside><div class="pl-64"><main class="w-full pt-16 bg-surface min-h-screen px-margin"><div class="flex flex-col w-full relative pb-space-xl">
+<!-- Top Navigation & Breadcrumbs Bar -->
+<div class="flex items-center justify-between py-space-sm mb-space-sm">
+<a class="inline-flex items-center gap-space-xs text-on-surface-variant hover:text-primary transition-colors font-label-lg text-label-lg" href="#">
+<span class="material-symbols-outlined text-xl">arrow_back</span>
+<span>Back to Life Stages</span>
+</a>
+<div class="flex items-center gap-space-sm text-outline font-label-md text-label-md">
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-secondary text-base">verified</span>
+<span>Auto-clustered via timeline &amp; location</span>
+</span>
+</div>
+</div>
+<!-- Header Title, Badges, and Action Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md pb-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex flex-wrap items-center gap-space-sm">
+<h1 class="font-headline-xl text-headline-xl text-on-surface font-normal tracking-tight">Bangalore Relocation</h1>
+<div class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#E6F4EA] text-[#137333] font-label-md text-label-md border border-[#34A853]">
+<span class="material-symbols-outlined text-sm font-semibold">check</span>
+<span>Confirmed Life Stage</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span>October 12 – November 4, 2024</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span>18 items</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span class="inline-flex items-center gap-1">
+<span class="material-symbols-outlined text-base">location_on</span>
+          Indiranagar &amp; Koramangala, Bengaluru
+        </span>
+</p>
+</div>
+<!-- Actions & Open Dropdown Container -->
+<div class="relative flex flex-wrap items-center gap-space-xs self-start lg:self-center">
+<button class="h-9 px-4 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-space-xs font-label-lg text-label-lg shadow-sm transition-colors">
+<span class="material-symbols-outlined text-lg">add_photo_alternate</span>
+<span>Add photos</span>
+</button>
+<button class="h-9 px-4 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface flex items-center gap-space-xs font-label-lg text-label-lg shadow-sm transition-colors">
+<span class="material-symbols-outlined text-lg">share</span>
+<span>Share</span>
+</button>
+<!-- Review Suggestions Pill with Yellow Indicator -->
+<button class="h-9 px-4 rounded-full bg-[#FEF7E0] hover:bg-[#FEEFC3] text-[#B06000] border border-dashed border-[#FBBC04] flex items-center gap-space-xs font-label-lg text-label-lg shadow-sm transition-colors">
+<span class="material-symbols-outlined text-lg text-[#FBBC04]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<span>Review suggestions (2)</span>
+</button>
+<!-- More Options Button & Visible Dropdown -->
+<div class="relative" id="dropdownContainer">
+<button class="w-9 h-9 rounded-full bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-colors" id="moreActionsBtn">
+<span class="material-symbols-outlined text-xl">more_vert</span>
+</button>
+<!-- Dropdown Menu Section 4 Specification -->
+<div class="absolute right-0 top-11 w-72 bg-surface-container-lowest rounded-xl shadow-xl z-30 py-2 border border-outline-variant/30" id="moreActionsMenu">
+<div class="px-4 py-2 text-xs font-label-md text-outline uppercase tracking-wider">
+            Tag Group Actions
+          </div>
+<button class="w-full text-left px-4 py-2.5 hover:bg-surface-container-low flex items-center gap-3 text-on-surface transition-colors">
+<span class="material-symbols-outlined text-xl text-on-surface-variant">edit</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg">Rename tag group</span>
+<span class="text-xs text-outline font-body-md">Update label across all items</span>
+</div>
+</button>
+<button class="w-full text-left px-4 py-2.5 hover:bg-surface-container-low flex items-center gap-3 text-on-surface transition-colors">
+<span class="material-symbols-outlined text-xl text-on-surface-variant">call_split</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg">Merge with another tag</span>
+<span class="text-xs text-outline font-body-md">Combine photos under one tag</span>
+</div>
+</button>
+<div class="my-1.5 h-px bg-surface-container"></div>
+<button class="w-full text-left px-4 py-2.5 hover:bg-error-container/40 flex items-center gap-3 text-[#EA4335] transition-colors" id="openDeleteModalBtn">
+<span class="material-symbols-outlined text-xl text-[#EA4335]">delete</span>
+<div class="flex flex-col">
+<span class="font-label-lg text-label-lg font-medium">Delete tag group entirely</span>
+<span class="text-xs text-[#BA1A1A]/80 font-body-md">Keeps your photos intact</span>
+</div>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Highlights Mosaic Strip -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter-normal mb-space-lg">
+<!-- Featured Dev Patel in Indiranagar Photo using required IMAGE_21 -->
+<div class="relative md:col-span-2 h-72 rounded-xl overflow-hidden group bg-surface-container">
+<img alt="Dev Patel walking through Indiranagar streets" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaWyGo4r2y8kHY8E86H7kHKpa21N-38P0JPjekX8d3Cc4yR9IVf4EXGJDPMXu-j1aFFqusy-NDMdAFpopN3r2z5MupfY6SH7GePflIqrNOxGsvNO60QEuA7Og6IW4y8wyNHz0O4Kb-f53Kaw4cswGKSz1fYaVvzKbTFafPTYEGvE2AhU7z4dvSz1lYmbCE4hGOdvA6UZpcajnPt7WPOdvXNiP51CbfSMdka5kC1ZmbtoTPXeCkcrR2TVr4ZTFRe2Jy95w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex flex-col justify-end p-space-md">
+<span class="text-xs uppercase tracking-wider text-white/80 font-label-md">Highlight Moment</span>
+<p class="font-headline-sm text-headline-sm text-white font-medium">Exploring 12th Main Indiranagar</p>
+<div class="mt-2 inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#E6F4EA] text-[#137333] font-label-md text-xs w-max border border-[#34A853]">
+<span class="material-symbols-outlined text-xs">check</span>
+<span>Bangalore Relocation</span>
+</div>
+</div>
+</div>
+<!-- Secondary highlight 1: Boxes unpacked -->
+<div class="relative h-72 rounded-xl overflow-hidden group bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Warm modern apartment living room with brown cardboard moving boxes unpacked, green house plants placed near a sunlit window, cozy wooden floor in Bangalore, documentary style warm lighting, 35mm photograph" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTxnyAUoMpma67UH3rni1RYM1dd-uWgFC-kDBQLO4tx09Xgc7tB0WhAZNcD1vxf7WtWFeaLuQgz4QQWLh6OImWdRMzTvFSSQS8N-xiw6AFqLgL3gmuMgqvTot93RSb3g-J-rL0f5ig5j_JauSkBvihw_4VWnfnD4jYB7xLC0eybXCnAOD9BpQiGYXtfdro-WqLQkDd3NZ3QLTMRu2rf_CcuYyEFKPuu9WA1NQZwuXVRj_XfW6d0E8p9w"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex flex-col justify-end p-space-sm">
+<span class="text-white font-label-lg text-label-lg drop-shadow">Move-in day unpacking</span>
+<span class="text-white/80 text-xs font-body-md">Oct 14, 2024</span>
+</div>
+</div>
+<!-- Secondary highlight 2: Morning balcony tea -->
+<div class="relative h-72 rounded-xl overflow-hidden group bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="Traditional Indian ceramic cup of hot filter coffee resting on a balcony railing overlooking lush green Bangalore canopy trees and morning golden hour mist, gentle sunlight, peaceful relocation morning" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkIbahjdFTk970ogu0Htjjvuh1AAELOBQITkAsrYSFGC6EzGoX0g1dZkIG9FcuGdWoemhfG-g64lBlpekQ8NQ7JmHs9Fve7ZlPKhKHpyRIcENnGAKky4Zz7SPklTJhDr8lTZIGDrCwzj8_m5YKRJdm5b3ooOJubPZ_o68tMQr3vPE5PP6KEeamZ-o8qeaTtZhGnjGjcUUurFKzy6eW9gfX9ARizk0l_kDjptARWE78tExHNQcj0xui-g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent flex flex-col justify-end p-space-sm">
+<span class="text-white font-label-lg text-label-lg drop-shadow">First balcony sunrise</span>
+<span class="text-white/80 text-xs font-body-md">Oct 16, 2024</span>
+</div>
+</div>
+</div>
+<!-- Unconfirmed Suggestions Alert Callout -->
+<div class="flex items-center justify-between bg-[#FEF7E0] border border-[#FBBC04] rounded-xl px-space-md py-space-sm mb-space-lg">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[#B06000]" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+<div>
+<span class="font-label-lg text-label-lg text-[#202124] font-medium">2 pending photos identified near Koramangala &amp; Indiranagar</span>
+<p class="font-body-md text-xs text-[#5F6368]">Google Photos detected timeline overlaps during your relocation dates.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-3 py-1 rounded-full text-xs font-label-md bg-transparent hover:bg-black/5 text-[#5F6368]">Dismiss</button>
+<button class="px-3 py-1 rounded-full text-xs font-label-md bg-[#FBBC04] hover:bg-[#E3A600] text-[#202124] font-medium">Review (2)</button>
+</div>
+</div>
+<!-- Chronological Section 1: First walk in Indiranagar -->
+<div class="mb-space-lg">
+<!-- LifeStageSectionHeader -->
+<div class="flex items-baseline justify-between mb-space-sm border-b border-surface-container pb-2">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-medium">Sunday, Oct 15, 2024</h2>
+<span class="font-body-md text-body-md text-outline">First walk in Indiranagar • 6 photos</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary p-1 rounded-full">
+<span class="material-symbols-outlined text-lg">select_all</span>
+</button>
+</div>
+<!-- CandidatePhotoGrid -->
+<div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-gutter-dense">
+<!-- Item 1: Using Dev Patel Image 21 as card -->
+<div class="relative group aspect-square rounded-lg overflow-hidden bg-surface-container shadow-sm">
+<img alt="Dev Patel in street scene Indiranagar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4POTVBX_NoxJPCdvwZwUzPXf8NV0-0ayjG_bBtPjLazSZCGSIh3jqYiRKplRlg9kkj8ZDB1U6BqxBJUrElrvQ-w5YkF348Nv1NZR1PEpVExkPb6O60BVHNR1PYWBUG33JfEl9j3sovtO738B4d8a94BszdfD4WZXiqP5E25n20XUcgHxSlEtiLGhOgQTlswhDKyQADVQBhOU6PzsdXhXKUs2xU4OTMXXhv4oxdmXiL04SH6mocJq3rkmTt18MfAMtA0c"/>
+<div class="absolute top-2 left-2 w-6 h-6 rounded-full bg-primary text-white flex items-center justify-center shadow opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-sm">check</span>
+</div>
+<div class="absolute bottom-1.5 left-1.5 px-2 py-0.5 rounded-full bg-[#E6F4EA] text-[#137333] border border-[#34A853] text-[11px] font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">check</span>
+<span>Bangalore</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="relative group aspect-square rounded-lg overflow-hidden bg-surface-container shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" data-alt="Charming outdoor artisan cafe in Indiranagar Bangalore, wooden patio seating, hanging macrame planters, barista brewing espresso, natural warm sunshine" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXSzZk86Za04bjHNIQUVH6eV3Gkg0B29Pp7gwT6ECWQfaxwew7CMqtSj3JETsRilqbdZhMVhhsIJNhLfNSdpRQWkb_fgFidfS4AqKtPt7u7bUPAOgkynxOVEAL-OoFjV1TU7BYlGp5rlIu1cykWkklM3w6oUU6YHeTGszutV3udPIQhcFveOD0qgrRWEcx2fyO3v4EWs2nwk7b9EUGY2PqrDI88iB5DxQLSIG5By9DoPbuz3YepiKItg"/>
+<div class="absolute bottom-1.5 left-1.5 px-2 py-0.5 rounded-full bg-[#E6F4EA] text-[#137333] border border-[#34A853] text-[11px] font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">check</span>
+<span>Bangalore</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="relative group aspect-square rounded-lg overflow-hidden bg-surface-container shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" data-alt="Vibrant street view with colorful yellow auto-rickshaw waiting at leafy crossroad in Bangalore, clear blue skies, tropical roadside trees, candid urban travel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrUV1kF5K8Bm5OJmR6vAekRu1Wri4jchf1VShSc0dd_S-pV7gB63w5jukEvZBsMpZi5yi01T-DAZxGivYkAoRKgvfoOb8xUHUZeOxAOK9PuRwkjrD7e_r2FeiVaOPYI5AeOWjeCHKkUlXsSoPGh_J0Xb7zXym-gs99HtjywpdbIlqWmcF5LfyBJ4S_pWTlRgXKdU9CMwvU9veGtE6kMtUUIw0m3b9EXrUr-lmZufuDhgRoD2zOVFk2Rg"/>
+<div class="absolute bottom-1.5 left-1.5 px-2 py-0.5 rounded-full bg-[#E6F4EA] text-[#137333] border border-[#34A853] text-[11px] font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">check</span>
+<span>Bangalore</span>
+</div>
+</div>
+<!-- Item 4 -->
+<div class="relative group aspect-square rounded-lg overflow-hidden bg-surface-container shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" data-alt="Cozy bookstore cafe interior in Bangalore, shelf lined with novels, soft lamp lighting, quiet corner table with vintage wood finish" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCgP38D_sd4PKucjCPafEuiuS5JR4LNZhvneZtXmv727j3175zzUvHYmtXE_SH8NaGr5OnNxdWxQ4CiWfK0dwkY6mKHaipScjHCan19Mw2Y9LCCe-lfyWpZSgG6GqqJdTQMKTKk62XyXj7gjtTJxAJdKMEWw1lsgm8KVYTDQfy_ne1duJZCBltd5Mt9sSftxBNEt-YMQXnot-MFOKTxcrNjIHNwMJdABa614edwC4Pc2IMRTnjj5UmgQ"/>
+<div class="absolute bottom-1.5 left-1.5 px-2 py-0.5 rounded-full bg-[#E6F4EA] text-[#137333] border border-[#34A853] text-[11px] font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">check</span>
+<span>Bangalore</span>
+</div>
+</div>
+<!-- Item 5: Unconfirmed suggestion card -->
+<div class="relative group aspect-square rounded-lg overflow-hidden bg-surface-container shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" data-alt="Street vendor selling fresh fragrant jasmine flowers and marigold garlands in Bangalore market, vibrant saffron and white blossoms, bright sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3JYKchieDzgWo159vGloikbxnhXGwFHIO6S5tJV0f5782G1NkLfg1ljHoGjzWVqbfv0DA4S7_wT5bVF_pqLyfgbTzs5eXT7pzoctygOum9bGv7AyNIdAaXUhUnPRy_ju4Cu3rUNpzkckCs-Ix2Qc7jI-YWPbZVFtI7zIMnVqWDJzzyTv9ucpEopZGV1Wqz9YXo5j6Q7Y3mGGFjIvMrvsCcDkagWjm6368VjLTpjRKFzVAeKoRPLNgkQ"/>
+<div class="absolute bottom-1.5 left-1.5 px-2 py-0.5 rounded-full bg-[#FEF7E0] text-[#B06000] border border-dashed border-[#FBBC04] text-[11px] font-label-md flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[10px]">auto_awesome</span>
+<span>Suggested</span>
+</div>
+</div>
+<!-- Item 6 -->
+<div class="relative group aspect-square rounded-lg overflow-hidden bg-surface-container shadow-sm">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200" data-alt="Evening sunset sky over Bangalore city terrace, silhouetted palm fronds and distant urban skyline bathed in warm magenta and golden orange hues" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8iTSeSdcR0-s5TVl6o-mCMHLt1vv_brhhuA4iOg03u9NctoTxru5HWRiSvFUh84_qPXFUSAFGk6KXvUc1dOi8nmnA4esTowRqu1esJFsFjlBxdOGHI2TWl01lqekwQ_jJN7y_o4tqxMPvw4dzfvPQIOeiLYPxJHDSobI0Flc2a5q0E6BunlheOqGAQj3dJa-spRXXsKHZcmSyd3LE-lNAPnzpWwlrdpkIn-cfD_vYNVpEClYcziTRkQ"/>
+<div class="absolute bottom-1.5 left-1.5 px-2 py-0.5 rounded-full bg-[#E6F4EA] text-[#137333] border border-[#34A853] text-[11px] font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">check</span>
+<span>Bangalore</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Chronological Section 2: Move-in day -->
+<div class="mb-space-lg">
+<div class="flex items-baseline justify-between mb-space-sm border-b border-surface-container pb-2">
+<div class="flex items-center gap-space-sm">
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-medium">Saturday, Oct 14, 2024</h2>
+<span class="font-body-md text-body-md text-outline">Move-in day • 8 photos</span>
+</div>
+<button class="text-on-surface-variant hover:text-primary p-1 rounded-full">
+<span class="material-symbols-outlined text-lg">select_all</span>
+</button>
+</div>
+<!-- Photo row -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-gutter-dense">
+<div class="relative group aspect-[4/3] rounded-lg overflow-hidden bg-surface-container shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Neatly arranged apartment keys with a brass keychain resting on polished wooden countertop beside fresh housewarming sweets in a steel bowl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC221Zhf-dOQDG8PAc_dk4HhtX63RcolHSRFdfTJfmuIWMeIRuiObzbAk6SJLaH2YoX0NI5HUKjj0fouxiwxm6p4BbhXkxcV_dbjySOeZ_MVTCspW8s0CoE_Tf4eSCFuctdAtbJsgmeUDM_k42mqNoXiNTxB-NcXJL_MWtQtHkFFZNJ8TDQpl6wnI3vP5Pwz6gYil-Xn0cGBKz-5P6o3E9Dg485r7eItjiVHvRYlCptXN6pIbA0flPsUg"/>
+<div class="absolute bottom-1.5 left-1.5 px-2 py-0.5 rounded-full bg-[#E6F4EA] text-[#137333] border border-[#34A853] text-[11px] font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">check</span>
+<span>Bangalore Relocation</span>
+</div>
+</div>
+<div class="relative group aspect-[4/3] rounded-lg overflow-hidden bg-surface-container shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Stack of carton moving boxes with black marker labels saying Kitchen and Books in an airy Indian living room with sheer curtains blowing in soft wind" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpf4vwGxeEIxeGYnpVxKikxf4HxHIB2Z0rjmB08NKOxP31hDNFE5vkqfxvCJcRt3ZV80G7mOg-_XBeYg1TysWd4Yw2ttIxfxps-gwY3RUb1zgPufOiRzPGPDMpGqunqOhNbAemvwNNdc7GDbqdDL3A_0ioygy-8oO1GidoHkfDbUrfkteEVIaya6IEiF4n0PjoHJftudUQSkBOIi05JtQkFNLWr86XVIGgtCrI0D_rkJ7EhUr1sc7-iw"/>
+<div class="absolute bottom-1.5 left-1.5 px-2 py-0.5 rounded-full bg-[#E6F4EA] text-[#137333] border border-[#34A853] text-[11px] font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">check</span>
+<span>Bangalore Relocation</span>
+</div>
+</div>
+<div class="relative group aspect-[4/3] rounded-lg overflow-hidden bg-surface-container shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Work desk setup near sunlit balcony with laptop, notebook, steel water flask and small potted succulent overlooking Bangalore gardens" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAROedfp4NWNflDEGE_GIMYMytP0d5iIqzbVWn3nW2uIYBwi1rGWw4skOZz_so3cd2cDtb7cnv4fshV50TZATjuzQ6aOkwWpU6dr3Zq2QIPL5O1SARQlLBL2C6t1UiX1NGx6MwVeHEd_dyARNNtRu6DEpRnFrRE99yb06CUpNvTqUgtuUWgTcGTgm2y0BrM8tZYtbM9sa75cVSCQQvIiqlpXT7UttMOcQPi6z_tmqlB15vJdCfmGC9Ejg"/>
+<div class="absolute bottom-1.5 left-1.5 px-2 py-0.5 rounded-full bg-[#E6F4EA] text-[#137333] border border-[#34A853] text-[11px] font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">check</span>
+<span>Bangalore Relocation</span>
+</div>
+</div>
+<div class="relative group aspect-[4/3] rounded-lg overflow-hidden bg-surface-container shadow-sm">
+<img class="w-full h-full object-cover" data-alt="Evening dinner of traditional South Indian crispy dosa served on green banana leaf with coconut chutney, celebratory first night meal after moving" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAx6CgKBMct4RferWEiPK_GHHHZ2fveCtudNDoixBikvxNEazro9Rwq3XBtKFSZb7THBr1XphmKBmvQVAAS91xn4EJbJJO3ukzQOKUJtZjIjs89b7R0miNwTeayT5cIXN2dvyBwrnKZg7GCtMqxNpb9PUhwvIcVobXF2vali8vkkB62fXnGPH65R0zEv_CvWI5pPyRlrEFh6DhcbZHnmCZptraS6E2nuWnEDbvmcc4veIOVHUkzsjyYEg"/>
+<div class="absolute bottom-1.5 left-1.5 px-2 py-0.5 rounded-full bg-[#E6F4EA] text-[#137333] border border-[#34A853] text-[11px] font-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[10px]">check</span>
+<span>Bangalore Relocation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- IN-CONTEXT CONFIRM DIALOG MODAL (Requirement 3: ConfirmDialog for Tag Management) -->
+<div class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 backdrop-blur-[1px] p-4 transition-opacity" id="deleteModal">
+<div class="bg-surface-container-lowest max-w-md w-full rounded-2xl p-6 shadow-2xl flex flex-col gap-4 transform transition-transform border border-outline-variant/20">
+<!-- Modal Header -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-[#FCE8E6] flex items-center justify-center text-[#EA4335]">
+<span class="material-symbols-outlined text-2xl">label_off</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-semibold">
+            Delete “Bangalore Relocation” tag group?
+          </h3>
+</div>
+</div>
+<!-- Warning Body Copy strictly matching specification -->
+<div class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+        Delete this tag group? Your photos will not be deleted, only the tag. The 18 photos will remain safely in your Google Photos library.
+      </div>
+<!-- Clarification Chip List -->
+<div class="bg-surface-container-low rounded-xl p-3 flex flex-col gap-1.5 text-xs text-outline">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-secondary">check_circle</span>
+<span class="text-on-surface font-label-md">18 photos retained in your library timeline</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-[#EA4335]">close</span>
+<span class="text-on-surface-variant font-label-md">Tag group removed from “Life Stages”</span>
+</div>
+</div>
+<!-- Modal Action Buttons -->
+<div class="flex items-center justify-end gap-2 pt-2">
+<button class="px-5 h-9 rounded-full text-[#0058BD] hover:bg-[#E8F0FE] font-label-lg text-label-lg font-medium transition-colors" id="cancelModalBtn">
+          Cancel
+        </button>
+<button class="px-5 h-9 rounded-full bg-[#EA4335] hover:bg-[#D93025] text-white font-label-lg text-label-lg font-medium shadow-sm transition-colors flex items-center gap-1.5" id="confirmDeleteBtn">
+<span class="material-symbols-outlined text-lg">delete</span>
+<span>Delete tag</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive toggle for menu & modal demonstration
+  const moreActionsBtn = document.getElementById('moreActionsBtn');
+  const moreActionsMenu = document.getElementById('moreActionsMenu');
+  const openDeleteModalBtn = document.getElementById('openDeleteModalBtn');
+  const deleteModal = document.getElementById('deleteModal');
+  const cancelModalBtn = document.getElementById('cancelModalBtn');
+  const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+
+  moreActionsBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    moreActionsMenu.classList.toggle('hidden');
+  });
+
+  openDeleteModalBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    deleteModal.classList.remove('hidden');
+  });
+
+  cancelModalBtn?.addEventListener('click', () => {
+    deleteModal.classList.add('hidden');
+  });
+
+  confirmDeleteBtn?.addEventListener('click', () => {
+    deleteModal.classList.add('hidden');
+    // Notification hint
+    alert('Tag group "Bangalore Relocation" deleted. 18 photos kept in main library.');
+  });
+
+  // Close dropdown on outside click
+  document.addEventListener('click', (e) => {
+    if (!moreActionsMenu?.contains(e.target) && e.target !== moreActionsBtn) {
+      moreActionsMenu?.classList.add('hidden');
+    }
+  });
+</script></main></div></body></html>
