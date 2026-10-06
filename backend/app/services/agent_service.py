@@ -103,6 +103,50 @@ Extract a JSON object with these keys:
                 meta=meta
             )
 
+        # Check if user is confirming a pending clarifying question from assistant history
+        if history:
+            last_assistant_msg = next(
+                (m.content if hasattr(m, 'content') else m.get('content', '')
+                 for m in reversed(history)
+                 if (m.role if hasattr(m, 'role') else m.get('role')) == "assistant"),
+                None
+            )
+            if last_assistant_msg and "?" in last_assistant_msg and "no exact date or perfect keyword needed" not in last_assistant_msg:
+                # Check if user message is an affirmative confirmation or contains key confirmation details
+                is_affirmative = any(w in msg_lower for w in ["yes", "yeah", "sure", "correct", "that's right", "that one"]) or msg_lower in ACKNOWLEDGMENTS
+                q_year_match = re.search(r'\b(202[0-9]|201[0-9])\b', last_assistant_msg)
+                user_has_q_year = bool(q_year_match and q_year_match.group(1) in msg_lower)
+
+                if is_affirmative or user_has_q_year:
+                    # Identify the target anchor tag from the question
+                    target_tag = None
+                    last_q_lower = last_assistant_msg.lower()
+                    if "job" in last_q_lower:
+                        target_tag = "job"
+                    elif "goa" in last_q_lower or "trip" in last_q_lower:
+                        target_tag = "trip"
+                    elif "city" in last_q_lower or "moved" in last_q_lower:
+                        target_tag = "city"
+                    elif "diwali" in last_q_lower:
+                        target_tag = "diwali"
+
+                    target_yr = q_year_match.group(1) if q_year_match else None
+
+                    if target_tag or target_yr:
+                        all_photos = data_manager.load_photos()
+                        matching_photos = [
+                            p for p in all_photos
+                            if (not target_yr or p.timestamp.startswith(target_yr))
+                            and (not target_tag or any(target_tag in t.label.lower() for t in p.tags))
+                        ]
+                        if matching_photos:
+                            return ChatResponse(
+                                response="Here are the photos from your library that match what you described.",
+                                candidates=matching_photos,
+                                needs_followup=False,
+                                meta=meta
+                            )
+
         # 2. Conversational Acknowledgments / Small Talk
         ACKNOWLEDGMENTS = ["fine", "ok", "okay", "cool", "yeah", "yes", "sure", "thanks", "thank you", "got it", "great", "nice", "awesome", "alright"]
         if msg_lower in ACKNOWLEDGMENTS:
