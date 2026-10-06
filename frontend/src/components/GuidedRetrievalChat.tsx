@@ -327,7 +327,7 @@ export const GuidedRetrievalChat: React.FC<GuidedRetrievalChatProps> = ({ onClos
             onChange={(e) => setInput(e.target.value)}
             placeholder={
               selectedPhotoIds.length > 0
-                ? `Ask about these ${selectedPhotoIds.length} selected photo(s)...`
+                ? `${selectedPhotoIds.length} photo${selectedPhotoIds.length > 1 ? 's' : ''} selected -- tap Confirm above`
                 : 'Describe your memory (e.g. Goa trip)...'
             }
             className="w-full bg-transparent text-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none font-sans"
